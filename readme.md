@@ -311,6 +311,7 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [Jev Tetris](https://jev-omega.vercel.app) - Rotation and column chosen from holes, stack height, and bumpiness.
 - [Hollow Creek](https://hollow-creek-sigma.vercel.app) - Village NPCs that judge you each tick instead of chatting.
 - [Crowdcheck](https://crowdcheck-ai.vercel.app/) - Test a post against 10,000 synthetic personas before you publish it.
+- [Magic-8-Jev](https://github.com/willprout/magic-8-ball) - Ask a question, one choice over twenty answers picks the reply and shows the click-to-answer latency; [live demo](https://willprout.github.io/magic-8-ball/).
 
 ## Command line
 

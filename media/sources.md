@@ -12,3 +12,5 @@ Every file in this directory is copied from the project it illustrates, under th
 | `heist-one.png` | [AbdelStark/heist-one](https://github.com/AbdelStark/heist-one) | MIT | `apps/video/out/heist-one-thumbnail.png` |
 
 Copied 2026-09-18.
+
+hero.png is a stitched contact sheet of the six assets above, for sharing the list.

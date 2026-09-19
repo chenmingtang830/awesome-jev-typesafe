@@ -14,7 +14,7 @@ A curated list of ${entries.length} things built on TypeSafe's Jev, ${projects.l
 
 ## Do not
 
-- Do not call \`/api/rerank\`. It is browser-only, spends the maintainer's API key, and rejects requests without a same-origin browser header.
+- Do not call \`/api/rerank\`. It is meant for the site's own browser search, it spends the maintainer's API key, and it is rate limited. Read \`projects.json\` instead.
 - Do not crawl the HTML pages. Every one of them has a markdown twin at \`/p/<id>.md\` and \`/c/<slug>.md\`.
 
 ## Submitting

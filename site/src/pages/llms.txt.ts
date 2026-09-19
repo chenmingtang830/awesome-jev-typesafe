@@ -13,7 +13,7 @@ export const GET: APIRoute = ({ site }) => {
     `> ${t("en", "lede")}`,
     "",
     `${entries.length} entries, ${projects.length} of them projects, hand-reviewed and link-checked weekly.`,
-    "Fetch /projects.json for everything in one request. Do not call /api/rerank; it is browser-only and rejects agents.",
+    "Fetch /projects.json for everything in one request. /api/rerank is meant for the site's own browser search and is rate limited; do not call it, read projects.json instead.",
     "",
     "## Sections",
     "",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Fetch repo metadata for every GitHub entry with GraphQL aliases, ~50 repos per query. Writes data/github.json.
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from "node:fs";
 
 export const batches = (arr, n) => Array.from({ length: Math.ceil(arr.length / n) }, (_, i) => arr.slice(i * n, i * n + n));
 export const toMeta = (r) => ({
@@ -38,7 +38,12 @@ async function main() {
     if (errors?.some((e) => e.type !== "NOT_FOUND")) console.error(JSON.stringify(errors.filter((e) => e.type !== "NOT_FOUND"), null, 1));
     console.log(`batch done, rate limit remaining ${data?.rateLimit?.remaining}`);
   }
-  writeFileSync("data/github.json", JSON.stringify({ fetchedAt: new Date().toISOString().slice(0, 10), repos: out }, null, 1) + "\n");
+  const today = new Date().toISOString().slice(0, 10);
+  writeFileSync("data/github.json", JSON.stringify({ fetchedAt: today, repos: out }, null, 1) + "\n");
+  // one small star snapshot per day feeds the trending page; keep the last 60
+  mkdirSync("data/stars", { recursive: true });
+  writeFileSync(`data/stars/${today}.json`, JSON.stringify(Object.fromEntries(Object.entries(out).filter(([, m]) => m.stars != null).map(([k, m]) => [k, m.stars]))) + "\n");
+  for (const f of readdirSync("data/stars").sort().slice(0, -60)) unlinkSync(`data/stars/${f}`);
 
   const stale = Object.entries(out).filter(([, m]) => m.pushedAt && Date.now() - Date.parse(m.pushedAt) > 90 * 864e5).map(([k]) => k);
   const archived = Object.entries(out).filter(([, m]) => m.archived).map(([k]) => k);

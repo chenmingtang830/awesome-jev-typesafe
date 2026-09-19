@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Awesome Jev: typed decisions, System One">
+  <rect width="1200" height="300" fill="#F4F6F8"/>
+  <g stroke="#D9DEE3" stroke-width="1">
+    <path d="M0 60H1200M0 120H1200M0 180H1200M0 240H1200"/>
+  </g>
+  <g fill="#14181D" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <text x="72" y="130" font-size="64" font-weight="700" letter-spacing="-2">Awesome Jev</text>
+    <text x="72" y="178" font-size="24" fill="#5B6670">Typed decisions with TypeSafe's Jev, the first System One model</text>
+    <text x="72" y="226" font-size="20" fill="#0E8FB5">state in, calibrated probabilities out, no text to parse</text>
+  </g>
+  <g transform="translate(900 80)">
+    <circle cx="90" cy="90" r="82" fill="none" stroke="#D9DEE3" stroke-width="10"/>
+    <path d="M90 90 m-82 0 a82 82 0 1 1 116 58" fill="none" stroke="#0E8FB5" stroke-width="10" stroke-linecap="round"/>
+    <line x1="90" y1="90" x2="146" y2="36" stroke="#B8690A" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="90" cy="90" r="8" fill="#B8690A"/>
+    <text x="90" y="150" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="18" fill="#14181D">p = 0.93</text>
+  </g>
+</svg>

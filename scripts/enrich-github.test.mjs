@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { toMeta, batches } from "./enrich-github.mjs";
+import { toMeta, batches, excerpt, repoQuery } from "./enrich-github.mjs";
 
 test("maps a GraphQL repository node", () => {
   const m = toMeta({
@@ -35,4 +35,51 @@ test("maps a node with every optional field missing", () => {
 test("batches of 50", () => {
   assert.equal(batches(Array.from({ length: 120 }), 50).length, 3);
   assert.equal(batches([], 50).length, 0);
+});
+
+test("readme text becomes an excerpt on the meta", () => {
+  const m = toMeta({ stargazerCount: 0, forkCount: 0, isArchived: false, readme: { text: "# jev-thing\n\nRoutes tasks.\n" } });
+  assert.equal(m.readmeExcerpt, "jev-thing\nRoutes tasks.");
+});
+
+test("a repo with no readme has no excerpt key", () => {
+  assert.equal("readmeExcerpt" in toMeta({ stargazerCount: 0, forkCount: 0, isArchived: false }), false);
+});
+
+test("excerpt strips badges, images, html, and code fences", () => {
+  const md = [
+    "# Title",
+    "",
+    "[![build](https://img.shields.io/x.svg)](https://ci.example/x)",
+    "![screenshot](docs/shot.png)",
+    "<p align=\"center\">centered</p>",
+    "",
+    "Gates tool calls with [Jev](https://typesafe.ai).",
+    "",
+    "```bash",
+    "npm i jev-gate",
+    "```",
+    "",
+    "Done.",
+  ].join("\n");
+  assert.equal(excerpt(md), "Title\ncentered\nGates tool calls with Jev.\nDone.");
+});
+
+test("excerpt keeps reference link text and drops the definitions", () => {
+  assert.equal(excerpt("[![ci][badge]][ci]\nSee [the docs][docs].\n\n[docs]: https://example.com\n"), "See the docs.");
+});
+
+test("excerpt caps at 900 characters", () => {
+  assert.equal(excerpt("word ".repeat(400)).length, 900);
+});
+
+test("readme batches are 25 wide", () => {
+  assert.equal(batches(Array.from({ length: 120 }), 25).length, 5);
+});
+
+test("the repo query asks for the readme blob once per repo", () => {
+  const q = repoQuery(["a/b", "c/d"], 'x readme: object(expression:"HEAD:README.md"){... on Blob{text}}');
+  assert.match(q, /r0: repository\(owner:"a", name:"b"\)/);
+  assert.match(q, /r1: repository\(owner:"c", name:"d"\)/);
+  assert.equal(q.match(/HEAD:README\.md/g).length, 2);
 });

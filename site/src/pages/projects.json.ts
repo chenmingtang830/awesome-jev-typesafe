@@ -1,6 +1,13 @@
 import type { APIRoute } from "astro";
 import { entries, sections, intents, firstSeen } from "../lib/data";
 
+// The readme excerpt is tagging input, not public data: it would add megabytes here.
+const publicGithub = (g: any) => {
+  if (!g) return g;
+  const { readmeExcerpt, ...rest } = g;
+  return rest;
+};
+
 export const GET: APIRoute = ({ site }) =>
   new Response(
     JSON.stringify(
@@ -12,7 +19,7 @@ export const GET: APIRoute = ({ site }) =>
           intents,
           sections: sections.map((s) => s.name),
         },
-        entries: entries.map(({ line, ...e }) => ({ ...e, firstSeen: firstSeen[e.id] ?? null })),
+        entries: entries.map(({ line, ...e }) => ({ ...e, github: publicGithub(e.github), firstSeen: firstSeen[e.id] ?? null })),
       },
       null,
       1,

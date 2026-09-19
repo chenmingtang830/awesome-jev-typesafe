@@ -1,9 +1,16 @@
 ---
 import { t, sect, localePath } from "../lib/i18n";
+import { jevText } from "../lib/data";
 interface Props { lang: string; total: number; facets: Record<string, [string, number][]> }
 const { lang, total, facets } = Astro.props;
+// Section chips carry readme headings; the Jev facets carry keys with their own labels.
 const label = (key: string, v: string) =>
-  key === "media" || key === "maintainer" ? t(lang, v === "yes" ? "yes" : "no") : key === "section" || key === "host" ? sect(lang, v) : v;
+  key === "maintainer" ? t(lang, v === "yes" ? "yes" : "no")
+  : key === "section" ? sect(lang, v)
+  : key === "useCase" ? jevText(lang, "useCase", v)
+  : key === "form" ? jevText(lang, "form", v)
+  : key === "host" ? jevText(lang, "host", v)
+  : v;
 ---
 <search class="searchbox" data-results={t(lang, "results")} data-no-results={t(lang, "noResults")}>
   <div class="search-row">

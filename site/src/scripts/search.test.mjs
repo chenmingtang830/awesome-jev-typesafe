@@ -1,10 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildIndex, applyFacets, expandQuery, facetCounts, matchIntent, sortDocs } from "./search-core.mjs";
+import { buildIndex, applyFacets, expandQuery, facetCounts, facetValue, matchIntent, sortDocs } from "./search-core.mjs";
 
 const docs = [
-  { id: "a", name: "fast-jev-compaction", description: "Replaces the compaction summary with Jev decisions.", section: "Coding agents", host: "Claude Code", language: "TypeScript", license: "MIT", stars: 50, starsBucket: "10-100", hasMedia: false, maintainer: false, intents: { "compact context": 0.9 } },
-  { id: "b", name: "jev-router", description: "Routes each task to the cheapest model.", section: "Coding agents", host: "Claude Code", language: "Python", license: "MIT", stars: 5, starsBucket: "0-10", hasMedia: true, maintainer: true, intents: { "route between models": 0.95 } },
+  { id: "a", name: "fast-jev-compaction", description: "Replaces the compaction summary with Jev decisions.", section: "Coding agents", host: "Claude Code", language: "TypeScript", license: "MIT", stars: 50, starsBucket: "10-100", hasMedia: false, maintainer: false, intents: { "compact context": 0.9 }, useCases: ["context_compaction", "tool_gating"], form: "hook_or_plugin" },
+  { id: "b", name: "jev-router", description: "Routes each task to the cheapest model.", section: "Coding agents", host: "Claude Code", language: "Python", license: "MIT", stars: 5, starsBucket: "0-10", hasMedia: true, maintainer: true, intents: { "route between models": 0.95 }, useCases: ["model_routing", "tool_gating"], form: "cli" },
 ];
 
 test("text search finds compaction first", () => {
@@ -74,4 +74,37 @@ test("facet counts follow the other facets", () => {
   const counts = facetCounts(docs, { maintainer: ["yes"] }, "language");
   assert.equal(counts.get("Python"), 1);
   assert.equal(counts.get("TypeScript"), undefined);
+});
+
+test("a use case facet matches a doc that holds it among several", () => {
+  assert.deepEqual(applyFacets(docs, { useCase: ["model_routing"] }).map((d) => d.id), ["b"]);
+  assert.deepEqual(applyFacets(docs, { useCase: ["tool_gating"] }).map((d) => d.id), ["a", "b"]);
+});
+
+test("several chips of a multi-valued facet are any of, not all of", () => {
+  assert.deepEqual(applyFacets(docs, { useCase: ["model_routing", "context_compaction"] }).map((d) => d.id), ["a", "b"]);
+});
+
+test("a doc with no use cases drops out of every use case chip", () => {
+  const bare = [...docs, { id: "c", name: "plain", description: "No tags yet.", section: "Data and ops" }];
+  assert.deepEqual(applyFacets(bare, { useCase: ["tool_gating"] }).map((d) => d.id), ["a", "b"]);
+  assert.deepEqual(facetValue(bare[2], "useCase"), []);
+});
+
+test("counts for a multi-valued facet count a doc once per value", () => {
+  const counts = facetCounts(docs, {}, "useCase");
+  assert.equal(counts.get("tool_gating"), 2);
+  assert.equal(counts.get("model_routing"), 1);
+  assert.equal(counts.get("context_compaction"), 1);
+});
+
+test("a multi-valued facet count still follows the other facets", () => {
+  const counts = facetCounts(docs, { language: ["Python"] }, "useCase");
+  assert.equal(counts.get("tool_gating"), 1);
+  assert.equal(counts.get("context_compaction"), undefined);
+});
+
+test("form stays a single-valued facet", () => {
+  assert.deepEqual(applyFacets(docs, { form: ["cli"] }).map((d) => d.id), ["b"]);
+  assert.equal(facetCounts(docs, {}, "form").get("hook_or_plugin"), 1);
 });

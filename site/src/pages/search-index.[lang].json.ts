@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { projects, hostOf, starsBucket, firstSeen, describe } from "../lib/data";
+import { projects, hostOfJev, useCasesOf, formOf, starsBucket, firstSeen, describe } from "../lib/data";
 import { locales } from "../lib/i18n";
 
 export const getStaticPaths = () => locales.map((lang) => ({ params: { lang } }));
@@ -12,7 +12,7 @@ export const GET: APIRoute = ({ params }) => {
     description: describe(e, lang),
     section: e.section,
     subsection: e.subsection ?? "",
-    host: hostOf(e),
+    host: hostOfJev(e),
     owner: e.owner,
     topics: e.github?.topics?.join(" ") ?? "",
     language: e.github?.language ?? "unknown",
@@ -21,6 +21,9 @@ export const GET: APIRoute = ({ params }) => {
     starsBucket: starsBucket(e.github?.stars),
     hasMedia: !!e.image,
     maintainer: e.maintainer,
+    useCases: useCasesOf(e).map(([k]) => k),
+    form: formOf(e),
+    jevHost: e.jev?.host ?? null,
     intents: e.jev?.intents ?? {},
     firstSeen: firstSeen[e.id] ?? "",
     pushedAt: e.github?.pushedAt ?? "",

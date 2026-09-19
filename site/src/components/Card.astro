@@ -1,11 +1,10 @@
 ---
-import Bar from "./Bar.astro";
-import { describe, image, hostOf, topTag, type Entry } from "../lib/data";
-import { localePath, t, sect } from "../lib/i18n";
+import { describe, image, useCasesOf, formOf, jevText, type Entry } from "../lib/data";
+import { localePath, t } from "../lib/i18n";
 interface Props { e: Entry; lang: string }
 const { e, lang } = Astro.props;
-const top = topTag(e);
-const host = hostOf(e);
+const uses = useCasesOf(e).slice(0, 2);
+const form = formOf(e);
 const href = localePath(lang, `/p/${e.id}/`);
 const shot = image(e);
 ---
@@ -21,13 +20,17 @@ const shot = image(e);
     <div class="card-meta num">
       {e.github && <span class="stars">★ {e.github.stars.toLocaleString("en-US")}</span>}
       {e.github?.language && <span>{e.github.language}</span>}
-      {host && <span class="tag accent">{sect(lang, host)}</span>}
+      {form && <span class="card-form">{jevText(lang, "form", form)}</span>}
       {e.github?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
     </div>
     <div class="bar bar-rerank small" hidden>
       <span class="bar-label">jev</span>
       <span class="bar-track"><span class="bar-fill"></span></span>
     </div>
-    {e.jev && top && top[1] >= 0.5 && <Bar p={top[1]} label={top[0]} small />}
+    {uses.length > 0 && (
+      <div class="card-uses">
+        {uses.map(([k]) => <span class="tag accent">{jevText(lang, "useCase", k)}</span>)}
+      </div>
+    )}
   </div>
 </article>

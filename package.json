@@ -7,5 +7,8 @@
     "test": "node --test scripts/*.test.mjs",
     "lint": "npx awesome-lint",
     "count-check": "node scripts/count-check.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.127.0"
   }
 }

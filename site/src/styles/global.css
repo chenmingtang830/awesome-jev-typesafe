@@ -239,3 +239,6 @@ th { color: var(--muted); font-family: var(--mono); font-size: .72rem; text-tran
   .detail { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.detail-banner { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 18px 0 26px; }
+.detail-banner img { display: block; width: 100%; object-fit: cover; }

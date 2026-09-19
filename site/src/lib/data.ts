@@ -106,3 +106,21 @@ export const topTag = (e: Entry): [string, number] | null => {
 
 export const readmePath = (e: Entry) =>
   `https://github.com/valentynkit/awesome-jev-typesafe/blob/main/readme.md?plain=1#L${e.line}`;
+
+/** Repo file read at build (readme.md, media/sources.md). Empty string when missing. */
+export const repoText = (name: string) => {
+  for (const p of [`../${name}`, fileURLToPath(new URL(`../../../${name}`, import.meta.url))]) {
+    if (existsSync(p)) return readFileSync(p, "utf8");
+  }
+  return "";
+};
+
+/** Bullets under an H2 in readme.md, markdown stripped to plain text. */
+export const readmeBullets = (heading: string) => {
+  const body = repoText("readme.md").split(`\n## ${heading}\n`)[1] ?? "";
+  return body
+    .split("\n## ")[0]
+    .split("\n")
+    .filter((l) => l.startsWith("- "))
+    .map((l) => l.slice(2).replace(/`([^`]+)`/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"));
+};

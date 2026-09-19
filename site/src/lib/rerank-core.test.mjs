@@ -1,6 +1,16 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validate, questionsFor, order, Limiter } from "./rerank-core.mjs";
+import { validate, dailyCap, questionsFor, order, Limiter } from "./rerank-core.mjs";
+
+test("dailyCap falls back on anything that is not a positive number", () => {
+  assert.equal(dailyCap("250"), 250);
+  assert.equal(dailyCap(undefined), 5000);
+  assert.equal(dailyCap(""), 5000);
+  assert.equal(dailyCap("lots"), 5000);
+  assert.equal(dailyCap("0"), 5000);
+  assert.equal(dailyCap("-1"), 5000);
+  assert.equal(dailyCap("Infinity"), 5000);
+});
 
 test("validate rejects bad shapes", () => {
   assert.equal(validate({ query: "x", ids: ["a"] }), null);

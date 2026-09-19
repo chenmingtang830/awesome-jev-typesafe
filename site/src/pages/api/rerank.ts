@@ -1,10 +1,18 @@
 import type { APIRoute } from "astro";
-import { byId } from "../../lib/data";
-import { validate, questionsFor, order, Limiter } from "../../lib/rerank-core.mjs";
+import projects from "../../../../data/projects.json";
+import { validate, dailyCap, questionsFor, order, Limiter } from "../../lib/rerank-core.mjs";
 
 export const prerender = false;
 
-const limiter = new Limiter({ perDay: Number(process.env.JEV_DAILY_CAP ?? 5000) });
+// Straight from the JSON rather than lib/data, which would pull github.json and the
+// readme file reads into the serverless bundle for two fields.
+const byId: Record<string, { name: string; description: string }> = Object.create(null);
+for (const e of (projects as { entries: { id: string; name: string; description: string }[] }).entries) {
+  byId[e.id] = { name: e.name, description: e.description };
+}
+
+const MAX_BODY = 8 * 1024;
+const limiter = new Limiter({ perDay: dailyCap(process.env.JEV_DAILY_CAP) });
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -28,15 +36,27 @@ export const POST: APIRoute = async ({ request, site }) => {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   if (!limiter.take(ip)) return json({ error: "rate limited" }, 429);
 
-  const body = await request.json().catch(() => null);
+  const declared = Number(request.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > MAX_BODY) return json({ error: "body too large" }, 413);
+  const text = await request.text().catch(() => "");
+  // content-length is the client's word for it, so the read itself is checked too.
+  if (text.length > MAX_BODY) return json({ error: "body too large" }, 413);
+
+  let body: any = null;
+  try {
+    body = JSON.parse(text);
+  } catch {
+    body = null;
+  }
   const bad = validate(body);
   if (bad) return json({ error: bad }, 400);
 
   // Text comes from our own copy of the data, never the client, and stays short enough that 30 candidates fit one request.
   const cands: { id: string; text: string }[] = [];
-  for (const id of body.ids) {
+  for (const id of body.ids as string[]) {
+    if (!Object.hasOwn(byId, id)) continue;
     const e = byId[id];
-    if (e) cands.push({ id: e.id, text: `${e.name}: ${e.description}`.slice(0, 160) });
+    cands.push({ id, text: `${e.name}: ${e.description}`.slice(0, 160) });
   }
   if (!cands.length) return json({ ranked: [] });
 

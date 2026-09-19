@@ -59,7 +59,6 @@ export const entries: Entry[] = raw.entries.map((e) => ({
 }));
 
 export const projects = entries.filter((e) => e.type === "project");
-export const lists = entries.filter((e) => e.type === "list");
 export const byId: Record<string, Entry> = Object.fromEntries(entries.map((e) => [e.id, e]));
 export const bySection = (name: string) => entries.filter((e) => e.section === name);
 
@@ -163,3 +162,14 @@ export const decisions: Decision[] = [
   { project: "jev-guard", question: "Allow, ask, or deny this command?", answer: "deny", p: 0.96 },
   { project: "fast-jev-compaction", question: "Does this tool result still matter?", answer: "drop", p: 0.23 },
 ];
+
+/** Star count for the header button. One call per build, and the header survives a miss. */
+let starCall: Promise<number | null> | null = null;
+export const repoStars = () =>
+  (starCall ??= fetch("https://api.github.com/repos/valentynkit/awesome-jev-typesafe", {
+    headers: { accept: "application/vnd.github+json" },
+    signal: AbortSignal.timeout(3000),
+  })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d: any) => (typeof d?.stargazers_count === "number" ? d.stargazers_count : null))
+    .catch(() => null));

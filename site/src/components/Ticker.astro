@@ -1,0 +1,40 @@
+---
+import { decisions, byId } from "../lib/data";
+import { t, localePath } from "../lib/i18n";
+interface Props { lang: string }
+const { lang } = Astro.props;
+---
+<div class="ticker" title="example values">
+  <p class="ticker-head micro">
+    <span class="pulse" aria-hidden="true"></span>{t(lang, "decisionTicker")}
+  </p>
+  <div class="ticker-stack">
+    {decisions.map((d, i) => (
+      <article class:list={["tick", { on: i === 0 }]} style={`--p:${Math.round(d.p * 100)}%`}>
+        <a class="tick-proj micro" href={localePath(lang, `/p/${d.project}/`)}>{byId[d.project]?.name ?? d.project}</a>
+        <p class="tick-q">{d.question}</p>
+        <div class="tick-out">
+          <span class="tick-track"><span class="tick-fill"></span></span>
+          <b class="tick-ans">{d.answer}</b>
+          <span class="tick-p num">{d.p.toFixed(2)}</span>
+        </div>
+      </article>
+    ))}
+  </div>
+  <p class="ticker-foot micro">example values</p>
+</div>
+<script>
+  const box = document.querySelector<HTMLElement>(".ticker");
+  const items = [...(box?.querySelectorAll<HTMLElement>(".tick") ?? [])];
+  if (box && items.length > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let at = 0, held = false;
+    box.addEventListener("pointerenter", () => (held = true));
+    box.addEventListener("pointerleave", () => (held = false));
+    setInterval(() => {
+      if (held || document.hidden) return;
+      items[at].classList.remove("on");
+      at = (at + 1) % items.length;
+      items[at].classList.add("on");
+    }, 4000);
+  }
+</script>

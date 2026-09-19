@@ -12,8 +12,8 @@ const lum = (hex) => {
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
 
 for (const [name, v] of [["dark", vars(block(":root {"))], ["light", vars(block(':root[data-theme="light"]'))]]) {
-  test(`${name}: text and muted on canvas and surface >= 4.5`, () => {
-    for (const bg of ["canvas", "surface"])
+  test(`${name}: text and muted on canvas, surface and raised >= 4.5`, () => {
+    for (const bg of ["canvas", "surface", "raised"])
       for (const fg of ["text", "muted", "accent"])
         assert.ok(ratio(v[fg], v[bg]) >= 4.5, `${name} ${fg} on ${bg} = ${ratio(v[fg], v[bg]).toFixed(2)}`);
   });

@@ -11,10 +11,10 @@
 [![Last commit](https://img.shields.io/github/last-commit/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](https://github.com/valentynkit/awesome-jev-typesafe/commits/main)
 [![License](https://img.shields.io/github/license/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](license)
 
-[Search the site](https://awesome-jev.vercel.app) · [Categories](#contents) · [Contribute](#contributing) · [Agent skill](SKILL.md) · [llms.txt](https://awesome-jev.vercel.app/llms.txt) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+[Search the site](https://awesomejev.vercel.app) · [Categories](#contents) · [Contribute](#contributing) · [Agent skill](SKILL.md) · [llms.txt](https://awesomejev.vercel.app/llms.txt) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
 > [!TIP]
-> Agents can install this list as a skill: `npx skills add valentynkit/awesome-jev-typesafe`. It teaches them to fetch [projects.json](https://awesome-jev.vercel.app/projects.json) once and filter locally.
+> Agents can install this list as a skill: `npx skills add valentynkit/awesome-jev-typesafe`. It teaches them to fetch [projects.json](https://awesomejev.vercel.app/projects.json) once and filter locally.
 
 Typed decisions from TypeSafe's Jev, the first System One model: state in, calibrated probabilities out, no text to parse.
 

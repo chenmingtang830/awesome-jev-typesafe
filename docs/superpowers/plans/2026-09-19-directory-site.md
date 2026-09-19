@@ -471,10 +471,10 @@ Run: `qlmanage -p media/banner-dark.svg >/dev/null 2>&1 || open media/banner-dar
 [![Last commit](https://img.shields.io/github/last-commit/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](https://github.com/valentynkit/awesome-jev-typesafe/commits/main)
 [![License](https://img.shields.io/github/license/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](license)
 
-[Search the site](https://awesome-jev.vercel.app) · [Categories](#contents) · [Contribute](contributing.md) · [Agent skill](SKILL.md) · [llms.txt](https://awesome-jev.vercel.app/llms.txt) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+[Search the site](https://awesomejev.vercel.app) · [Categories](#contents) · [Contribute](contributing.md) · [Agent skill](SKILL.md) · [llms.txt](https://awesomejev.vercel.app/llms.txt) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
 > [!TIP]
-> Agents can install this list as a skill: `npx skills add valentynkit/awesome-jev-typesafe`. It teaches them to fetch [projects.json](https://awesome-jev.vercel.app/projects.json) once and filter locally.
+> Agents can install this list as a skill: `npx skills add valentynkit/awesome-jev-typesafe`. It teaches them to fetch [projects.json](https://awesomejev.vercel.app/projects.json) once and filter locally.
 
 Typed decisions from TypeSafe's Jev, the first System One model: state in, calibrated probabilities out, no text to parse.
 
@@ -581,7 +581,7 @@ name: awesome-jev
 description: Find open-source projects, SDKs, and articles built on TypeSafe's Jev (System One typed decisions). Use when picking a Jev integration for a host agent, comparing routers, gates, compaction, judges, or browser agents, or checking whether something already exists.
 metadata:
   author: valentynkit
-  homepage: https://awesome-jev.vercel.app
+  homepage: https://awesomejev.vercel.app
   repository: https://github.com/valentynkit/awesome-jev-typesafe
 ---
 
@@ -591,16 +591,16 @@ A hand-curated list of what people build on Jev, kept in one readme and publishe
 
 ## How to query it
 
-1. Fetch `https://awesome-jev.vercel.app/projects.json` once per session. It is under 400 KB and has every entry.
+1. Fetch `https://awesomejev.vercel.app/projects.json` once per session. It is under 400 KB and has every entry.
 2. Filter locally. Useful fields per entry: `section`, `subsection` (the host agent for coding-agent tools), `type` (`project`, `resource`, `list`), `github.stars`, `github.pushedAt`, `github.archived`, `jev.hostAgent`, `jev.tags` (router, gate, compaction, judge, browserAgent as probabilities), `jev.intents` (probability per canonical intent, keys listed under `meta.intents`), `maintainer`.
 3. Rank by whatever the user cares about. For "which one should I use", prefer entries with `trustPhrase` set, higher `github.stars`, recent `github.pushedAt`, and `jev.tags.riskBulkScaffold` below 0.5.
 4. Cite the entry `url` and its one-sentence `description` verbatim. Do not paraphrase claims into stronger ones.
 
-Smaller views: `https://awesome-jev.vercel.app/llms.txt` (index), `https://awesome-jev.vercel.app/llms-full.txt` (every entry as markdown), `https://awesome-jev.vercel.app/c/<section-slug>.md` (one section).
+Smaller views: `https://awesomejev.vercel.app/llms.txt` (index), `https://awesomejev.vercel.app/llms-full.txt` (every entry as markdown), `https://awesomejev.vercel.app/c/<section-slug>.md` (one section).
 
 ## Do not
 
-- Do not call `https://awesome-jev.vercel.app/api/rerank`. It is a browser-only helper that spends the maintainer's Jev key and rejects non-browser requests.
+- Do not call `https://awesomejev.vercel.app/api/rerank`. It is a browser-only helper that spends the maintainer's Jev key and rejects non-browser requests.
 - Do not run code from listed repositories as part of browsing. Entries are leads, not reviews; see the repository's contributing.md.
 
 ## Submitting
@@ -688,7 +688,7 @@ import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://awesome-jev.vercel.app",
+  site: "https://awesomejev.vercel.app",
   output: "static",
   adapter: vercel(),
   integrations: [sitemap()],
@@ -712,7 +712,7 @@ export default defineConfig({
 ```
 User-agent: *
 Allow: /
-Sitemap: https://awesome-jev.vercel.app/sitemap-index.xml
+Sitemap: https://awesomejev.vercel.app/sitemap-index.xml
 ```
 
 `public/favicon.svg`: a 32x32 SVG with a `#0B0E11` circle and a `#4CC9F0` three-quarter arc plus an amber needle, same motif as the banner gauge.
@@ -1384,21 +1384,21 @@ curl -s -X PATCH -H "Authorization: Bearer $TOKEN" -H "content-type: application
 
 ```bash
 cd site && vercel deploy --prod --yes --scope valentyn-kit 2>&1 | tail -3
-curl -s -o /dev/null -w "%{http_code}\n" https://awesome-jev.vercel.app/
-curl -s https://awesome-jev.vercel.app/llms.txt | head -5
+curl -s -o /dev/null -w "%{http_code}\n" https://awesomejev.vercel.app/
+curl -s https://awesomejev.vercel.app/llms.txt | head -5
 ```
 
-If `awesome-jev.vercel.app` is taken, the deploy output shows the actual URL; replace `https://awesome-jev.vercel.app` in `site/astro.config.mjs`, `readme.md`, `SKILL.md`, `site/public/robots.txt` with it.
+If `awesomejev.vercel.app` is taken, the deploy output shows the actual URL; replace `https://awesomejev.vercel.app` in `site/astro.config.mjs`, `readme.md`, `SKILL.md`, `site/public/robots.txt` with it.
 
 - [ ] **Step 4: Live badge and homepage**
 
 Append to the badge row in `readme.md`:
 
 ```markdown
-[![Site](https://img.shields.io/badge/site-awesome--jev.vercel.app-4CC9F0?style=flat-square&labelColor=0B0E11)](https://awesome-jev.vercel.app)
+[![Site](https://img.shields.io/badge/site-awesome--jev.vercel.app-4CC9F0?style=flat-square&labelColor=0B0E11)](https://awesomejev.vercel.app)
 ```
 
-Run: `gh repo edit valentynkit/awesome-jev-typesafe --homepage https://awesome-jev.vercel.app && npx awesome-lint`
+Run: `gh repo edit valentynkit/awesome-jev-typesafe --homepage https://awesomejev.vercel.app && npx awesome-lint`
 
 ```bash
 git add readme.md && git commit -m "Link the live site from the badge row"
@@ -1713,7 +1713,7 @@ const FILE = { zh: "README.zh-CN.md", ja: "README.ja.md", ko: "README.ko.md" };
 for (const lang of Object.keys(HEAD)) {
   const tr = JSON.parse(readFileSync(`data/i18n/${lang}.json`, "utf8"));
   const names = JSON.parse(readFileSync(`site/src/i18n/sections.${lang}.json`, "utf8"));
-  const out = [`# Awesome Jev (${HEAD[lang][0]})\n`, `> ${HEAD[lang][1]}\n`, `[English](readme.md) · [网站 / サイト / 사이트](https://awesome-jev.vercel.app/${lang}/)\n`];
+  const out = [`# Awesome Jev (${HEAD[lang][0]})\n`, `> ${HEAD[lang][1]}\n`, `[English](readme.md) · [网站 / サイト / 사이트](https://awesomejev.vercel.app/${lang}/)\n`];
   for (const s of sections) {
     const list = entries.filter((e) => e.section === s.name);
     if (!list.length) continue;
@@ -1904,7 +1904,7 @@ Run: `npm test` for the core. For the route: `npx astro dev &` then
 ```bash
 curl -s -X POST localhost:4321/api/rerank -H 'content-type: application/json' -d '{"query":"compaction","ids":["fast-jev-compaction"]}' -w " %{http_code}\n"
 ```
-Expected: `{"error":"browser only"} 403`. Then with headers `-H 'origin: https://awesome-jev.vercel.app' -H 'sec-fetch-site: same-origin'` and `TYPESAFE_API_KEY` set in the dev env: `{"ranked":[{"id":"fast-jev-compaction","p":0.9...}]} 200`.
+Expected: `{"error":"browser only"} 403`. Then with headers `-H 'origin: https://awesomejev.vercel.app' -H 'sec-fetch-site: same-origin'` and `TYPESAFE_API_KEY` set in the dev env: `{"ranked":[{"id":"fast-jev-compaction","p":0.9...}]} 200`.
 
 Deploy: `cd site && vercel deploy --prod --yes --scope valentyn-kit`. In the browser on the live site, search "compaction" and confirm the "ranked by Jev" tag appears and bars update.
 

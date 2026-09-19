@@ -55,7 +55,7 @@
 /* The sweep passes a dot at --d seconds into its eight second turn, so the ping starts
    there: full brightness and a 1.6x radius on the crossing, back to rest a moment later. */
 .radar .dot { opacity: .7; transform-box: fill-box; transform-origin: center; animation: ping 8s linear infinite var(--d); }
-.radar .dot-label { fill: var(--text); opacity: 0; animation: ping-label 8s linear infinite var(--d); pointer-events: none; }
+.radar .dot-label { fill: var(--text); stroke: var(--canvas); opacity: 0; animation: ping-label 8s linear infinite var(--d); pointer-events: none; }
 @keyframes ping {
   0% { opacity: 1; transform: scale(1.6); }
   12% { opacity: .7; transform: scale(1); }
@@ -91,7 +91,8 @@
 .key-dot.quiet { background: var(--radar-quiet); }
 .key-dot.archived { background: var(--radar-grey); }
 .radar.compact { gap: 0; }
-.radar.compact svg { max-width: 320px; }
+/* The hero radar carries names now, so it gets the room the column already had. */
+.radar.compact svg { max-width: 420px; }
 
 /* SMIL runs through the global animation reset, which is why the calm sweep is a second
    SMIL clock rather than slower keyframes: the reset would kill those with !important.

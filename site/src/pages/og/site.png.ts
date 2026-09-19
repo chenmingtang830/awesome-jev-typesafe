@@ -9,5 +9,5 @@ export const GET: APIRoute = async () => {
     subtitle: t("en", "lede"),
     meta: `${projects.length} projects  ·  ${entries.length} entries`,
   });
-  return new Response(png, { headers: { "content-type": "image/png" } });
+  return new Response(new Uint8Array(png), { headers: { "content-type": "image/png" } });
 };

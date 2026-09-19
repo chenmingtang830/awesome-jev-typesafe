@@ -13,5 +13,5 @@ export const GET: APIRoute = async ({ params }) => {
     meta: [e.section, e.github ? `★ ${e.github.stars}` : null].filter(Boolean).join("  ·  "),
     p: top ? top[1] : undefined,
   });
-  return new Response(png, { headers: { "content-type": "image/png", "cache-control": "public, max-age=31536000, immutable" } });
+  return new Response(new Uint8Array(png), { headers: { "content-type": "image/png", "cache-control": "public, max-age=31536000, immutable" } });
 };

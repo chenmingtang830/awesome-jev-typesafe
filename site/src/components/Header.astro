@@ -1,0 +1,62 @@
+---
+import { t, names, locales, localePath } from "../lib/i18n";
+interface Props { lang: string; path: string }
+const { lang, path } = Astro.props;
+const nav = [
+  ["categories", localePath(lang, "/") + "#categories"],
+  ["insights", localePath(lang, "/insights/")],
+  ["lists", localePath(lang, "/lists/")],
+  ["about", localePath(lang, "/about/")],
+] as const;
+---
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="logo" href={localePath(lang, "/")}>
+      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M8.22 23.78 A11 11 0 1 1 23.78 23.78" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".25"></path>
+        <path d="M8.22 23.78 A11 11 0 0 1 12.8 6.2" fill="none" stroke="#4CC9F0" stroke-width="2.5" stroke-linecap="round"></path>
+        <line x1="16" y1="16" x2="23.39" y2="12.94" stroke="#FFB454" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+      Awesome Jev
+    </a>
+    <nav>
+      {nav.map(([key, href]) => (
+        <a href={href} aria-current={path === href.replace(/^\/(zh|ja|ko)/, "") ? "page" : undefined}>{t(lang, key)}</a>
+      ))}
+      <a href="https://github.com/valentynkit/awesome-jev-typesafe" rel="noopener">GitHub</a>
+    </nav>
+    <div class="hdr-tools">
+      <button id="theme" class="icon-btn" type="button" aria-label={t(lang, "theme")} title={t(lang, "theme")}>◐</button>
+      <label class="skip" for="lang">{t(lang, "language")}</label>
+      <select id="lang" data-path={path}>
+        {locales.map((l) => <option value={l} selected={l === lang}>{names[l]}</option>)}
+      </select>
+    </div>
+  </div>
+</header>
+<script>
+  const root = document.documentElement;
+  document.getElementById("theme")?.addEventListener("click", () => {
+    const now = root.dataset.theme ?? (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    const next = now === "light" ? "dark" : "light";
+    root.dataset.theme = next;
+    localStorage.setItem("theme", next);
+  });
+
+  const select = document.getElementById("lang") as HTMLSelectElement | null;
+  if (select) {
+    const path = select.dataset.path ?? "/";
+    select.addEventListener("change", () => {
+      localStorage.setItem("lang", select.value);
+      location.href = select.value === "en" ? path : `/${select.value}${path}`;
+    });
+    // First visit only: follow the stored choice, else the browser language.
+    if (path === "/" && !sessionStorage.getItem("redirected")) {
+      sessionStorage.setItem("redirected", "1");
+      const stored = localStorage.getItem("lang");
+      const guess = (navigator.language || "").slice(0, 2);
+      const want = stored ?? (["zh", "ja", "ko"].includes(guess) ? guess : null);
+      if (want && want !== select.value) location.replace(want === "en" ? "/" : `/${want}/`);
+    }
+  }
+</script>

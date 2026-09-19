@@ -20,8 +20,8 @@ const svg = radarSvg({
   labelHref: labels ? sectorHref(lang) : () => null,
 });
 const key: [string, string][] = [
-  ["active", "active"],
-  ["quiet", "quiet"],
+  ["active", t(lang, "active")],
+  ["quiet", t(lang, "quiet")],
   ["archived", t(lang, "archived")],
   ["rising", t(lang, "rising")],
 ];

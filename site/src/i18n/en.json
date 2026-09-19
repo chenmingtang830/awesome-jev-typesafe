@@ -164,5 +164,7 @@
     "app_developers": "App developers",
     "researchers": "Researchers",
     "end_users": "End users"
-  }
+  },
+  "active": "active",
+  "quiet": "quiet"
 }

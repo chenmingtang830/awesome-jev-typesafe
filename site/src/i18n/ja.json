@@ -164,5 +164,7 @@
     "app_developers": "アプリ開発者",
     "researchers": "研究者",
     "end_users": "エンドユーザー"
-  }
+  },
+  "active": "活発",
+  "quiet": "休止"
 }

@@ -164,5 +164,7 @@
     "app_developers": "应用开发者",
     "researchers": "研究人员",
     "end_users": "最终用户"
-  }
+  },
+  "active": "活跃",
+  "quiet": "沉寂"
 }

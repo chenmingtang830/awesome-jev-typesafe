@@ -19,14 +19,6 @@ test("entry ids are unique", () => {
   assert.equal(new Set(ids).size, ids.length);
 });
 
-test("every ticker decision names a listed project", () => {
-  const ids = new Set(projects.entries.filter((e) => e.type === "project").map((e) => e.id));
-  const src = readFileSync(new URL("./data.ts", import.meta.url), "utf8");
-  const named = [...src.matchAll(/\{ project: "([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(named.length >= 6, `only ${named.length} decisions`);
-  for (const id of named) assert.ok(ids.has(id), id);
-});
-
 test("the home page category grid drops prose and reading sections", () => {
   const skipped = ["Jev on one screen", "Know before you build", "Start here", "Articles and talks", "Other lists"];
   const withProjects = projects.sections

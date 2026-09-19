@@ -54,7 +54,7 @@ body:
       options:
         - label: It calls the Jev API, or is a documented replica of the System One interface on open models.
           required: true
-        - label: It is public, has a readme that explains what it does, and is not archived.
+        - label: It is public, has a readme that says what it does, and actually runs (no mocked Jev call, no hard-coded demo).
           required: true
-        - label: It is not already listed.
+        - label: It does nothing shady and is not already listed.
           required: true

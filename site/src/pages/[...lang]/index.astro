@@ -1,7 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Card from "../../components/Card.astro";
-import Ticker from "../../components/Ticker.astro";
 import Radar from "../../components/Radar.astro";
 import SearchBox from "../../components/SearchBox.astro";
 import {
@@ -87,7 +86,7 @@ const jsonld = {
       </div>
     </div>
 
-    <div class="hero-visual" data-slot="radar"><Radar lang={lang} size={440} labels={false} compact /><Ticker lang={lang} /></div>
+    <div class="hero-visual"><Radar lang={lang} size={520} labels={false} compact /></div>
   </section>
 
   <div class="search-panel">

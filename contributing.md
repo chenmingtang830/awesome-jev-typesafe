@@ -4,22 +4,20 @@ Thanks for helping keep this list useful. It is a curation, not a collection: th
 
 ## What gets in
 
-An entry must:
+The bar is low on purpose. An entry must:
 
-- Actually call the Jev API, or be a documented replica of the System One interface on open models. A router or classifier that merely resembles the pattern does not count.
-- Be public, have a readme that explains what it does, and not be archived.
+- Call the Jev API, or be a documented replica of the System One interface on open models.
+- Be a public repo or page with a readme that says what it does.
+- Actually run. A stubbed API call, a hard-coded demo, or a readme with no code does not count.
+- Do nothing shady: no credential harvesting, no obfuscated payloads, no miners, nothing that phones home beyond the APIs it documents.
+- Not be archived, and not already be listed.
 
-And meet at least one of:
-
-- Listed in five or more other Jev lists.
-- Twenty or more stars.
-- Fills a gap in a category nobody else covers.
-- Publishes measured numbers (accuracy, latency, cost) with a method someone else could repeat.
+Stars, age, and polish do not matter. A weekend project that works belongs here.
 
 ## What stays out
 
-- Repos with no code, or with more prose than code and no runnable check.
-- Anything private, paywalled, or too vague to categorize.
+- Fake demos, where the Jev call is mocked and the screenshot is the product.
+- Private, paywalled, or malicious code.
 - Launch commentary with no artifact.
 - Duplicates. If a project already appears, improve its line instead of adding another.
 

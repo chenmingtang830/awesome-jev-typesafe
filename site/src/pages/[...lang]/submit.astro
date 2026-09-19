@@ -25,19 +25,13 @@ const bar = (() => {
     ? kept
     : [
         {
-          lead: "An entry must:",
+          lead: "The bar is low on purpose. An entry must:",
           items: [
-            "Actually call the Jev API, or be a documented replica of the System One interface on open models. A router or classifier that merely resembles the pattern does not count.",
-            "Be public, have a readme that explains what it does, and not be archived.",
-          ],
-        },
-        {
-          lead: "And meet at least one of:",
-          items: [
-            "Listed in five or more other Jev lists.",
-            "Twenty or more stars.",
-            "Fills a gap in a category nobody else covers.",
-            "Publishes measured numbers (accuracy, latency, cost) with a method someone else could repeat.",
+            "Call the Jev API, or be a documented replica of the System One interface on open models.",
+            "Be a public repo or page with a readme that says what it does.",
+            "Actually run. A stubbed API call, a hard-coded demo, or a readme with no code does not count.",
+            "Do nothing shady: no credential harvesting, no obfuscated payloads, no miners, nothing that phones home beyond the APIs it documents.",
+            "Not be archived, and not already be listed.",
           ],
         },
       ];

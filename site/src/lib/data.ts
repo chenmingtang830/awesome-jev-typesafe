@@ -150,18 +150,8 @@ export const compact = (n: number) =>
 export const topStarred = (n: number) =>
   projects.filter((e) => e.github).sort((a, b) => stars(b) - stars(a)).slice(0, n);
 
-export type Decision = { project: string; question: string; answer: string; p: number };
 
 /** Real projects, real questions taken from their one-liners. The probabilities are illustrative. */
-export const decisions: Decision[] = [
-  { project: "jev-belay", question: "Is the agent really done?", answer: "no", p: 0.18 },
-  { project: "pi-warden", question: "Is this tool call irreversible?", answer: "yes", p: 0.91 },
-  { project: "jev-router-gargpratyush", question: "Cheapest model that can handle this task?", answer: "haiku", p: 0.87 },
-  { project: "jev-ultrafast", question: "Which element completes the booking?", answer: "Search flights", p: 0.94 },
-  { project: "jevmeter", question: "Is this debate sentence a dodge?", answer: "yes", p: 0.72 },
-  { project: "jev-guard", question: "Allow, ask, or deny this command?", answer: "deny", p: 0.96 },
-  { project: "fast-jev-compaction", question: "Does this tool result still matter?", answer: "drop", p: 0.23 },
-];
 
 /** Star count for the header button. One call per build, and the header survives a miss. */
 let starCall: Promise<number | null> | null = null;

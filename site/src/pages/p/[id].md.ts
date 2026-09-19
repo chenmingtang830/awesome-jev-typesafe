@@ -3,6 +3,9 @@ import { entries, byId, firstSeen, hostOf } from "../../lib/data";
 
 export const getStaticPaths = () => entries.map((e) => ({ params: { id: e.id } }));
 
+// A newline inside a field would end the bullet it belongs to.
+const line = (s: string) => s.replace(/\s+/g, " ").trim();
+
 export const GET: APIRoute = ({ params, site }) => {
   const e = byId[params.id!];
   const g = e.github;
@@ -10,9 +13,9 @@ export const GET: APIRoute = ({ params, site }) => {
     ? `router ${e.jev.router}, gate ${e.jev.gate}, compaction ${e.jev.compaction}, judge ${e.jev.judge}, browser agent ${e.jev.browserAgent}`
     : null;
   const body = [
-    `# ${e.name}`,
+    `# ${line(e.name)}`,
     "",
-    e.description,
+    line(e.description),
     "",
     `- URL: ${e.url}`,
     `- Section: ${e.section}${e.subsection ? ` / ${e.subsection}` : ""}`,
@@ -24,7 +27,7 @@ export const GET: APIRoute = ({ params, site }) => {
     g?.license ? `- License: ${g.license}` : null,
     g?.archived ? "- Archived: yes" : null,
     e.maintainer ? "- By this list's maintainer" : null,
-    e.trustPhrase ? `- Claim in the entry: ${e.trustPhrase}` : null,
+    e.trustPhrase ? `- Claim in the entry: ${line(e.trustPhrase)}` : null,
     firstSeen[e.id] ? `- First seen: ${firstSeen[e.id]}` : null,
     tags ? `- Jev tags: ${tags}` : null,
     "",

@@ -3,6 +3,11 @@
 // Anything not yet translated falls back to English, so the three files always list every entry.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
+// Brackets in a name and a bare ) in a url both break the link they sit in.
+const label = (s) => s.replace(/[[\]]/g, "");
+const href = (s) => s.replace(/\)/g, "%29");
+const line = (s) => s.replace(/\s+/g, " ").trim();
+
 const optional = (path) => (existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : {});
 const { sections, entries } = JSON.parse(readFileSync("data/projects.json", "utf8"));
 const HEAD = { zh: ["简体中文", "此文件由英文列表自动生成，请勿直接编辑。贡献请修改 [readme.md](readme.md)。"], ja: ["日本語", "このファイルは英語のリストから自動生成されています。直接編集せず、[readme.md](readme.md) に貢献してください。"], ko: ["한국어", "이 파일은 영어 목록에서 자동 생성됩니다. 직접 수정하지 말고 [readme.md](readme.md)에 기여해 주세요."] };
@@ -19,7 +24,7 @@ for (const lang of Object.keys(HEAD)) {
     let sub = null;
     for (const e of list) {
       if (e.subsection !== sub) { sub = e.subsection; if (sub) out.push(`### ${names[sub] ?? sub}\n`); }
-      out.push(`- [${e.name}](${e.url}) - ${tr[e.id] ?? e.description}`);
+      out.push(`- [${label(e.name)}](${href(e.url)}) - ${line(tr[e.id] ?? e.description)}`);
     }
     out.push("");
   }

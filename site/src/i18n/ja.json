@@ -166,5 +166,6 @@
     "end_users": "エンドユーザー"
   },
   "active": "活発",
-  "quiet": "休止"
+  "quiet": "休止",
+  "fromReadme": "readme より"
 }

@@ -166,5 +166,6 @@
     "end_users": "End users"
   },
   "active": "active",
-  "quiet": "quiet"
+  "quiet": "quiet",
+  "fromReadme": "From the readme"
 }

@@ -166,5 +166,6 @@
     "end_users": "最终用户"
   },
   "active": "活跃",
-  "quiet": "沉寂"
+  "quiet": "沉寂",
+  "fromReadme": "来自 readme"
 }

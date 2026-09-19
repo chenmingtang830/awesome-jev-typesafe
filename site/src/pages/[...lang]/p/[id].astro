@@ -16,13 +16,15 @@ const desc = describe(e, lang);
 const shot = image(e);
 // Anything Jev was at least a third sure about is worth showing with its number attached.
 const uses = useCasesOf(e, 0.35).slice(0, 5);
+const raw = (e.github as any)?.readmeExcerpt as string | undefined;
+const excerpt = raw ? raw.slice(0, 360).replace(/\s+\S*$/, "") + (raw.length > 360 ? " …" : "") : null;
 const jevHost = hostOfJev(e);
 // A five-level score answers 0 to 4, and a meter reads better with a lit segment at the bottom.
 const segments = (v: number | undefined) => (v == null ? 0 : Math.min(5, Math.max(1, Math.round(v) + 1)));
 const notes = [
   (e.jev?.hasNumbers ?? 0) >= 0.6 ? "reportsNumbers" : null,
   (e.jev?.looksTemplated ?? 0) >= 0.6 ? "looksTemplated" : null,
-  e.jev?.callsJevForReal != null && e.jev.callsJevForReal <= 0.4 ? "jevCallUnclear" : null,
+  e.jev?.callsJevForReal != null && e.jev.callsJevForReal <= 0.25 ? "jevCallUnclear" : null,
 ].filter((n): n is string => n !== null);
 const intents = Object.entries(e.jev?.intents ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
@@ -70,10 +72,10 @@ const jsonld = {
 
       {shot ? (
         <div class="shot"><img src={shot} alt={e.name} width="1200" height="750" loading="lazy" /></div>
-      ) : uses.length > 0 ? (
-        <div class="ticker no-shot" title="What Jev says this is good for">
-          <p class="ticker-head micro"><span class="pulse" aria-hidden="true"></span>{t(lang, "usefulFor")}</p>
-          <div class="no-shot-bars">{uses.slice(0, 4).map(([k, p]) => <Bar p={p} label={jevText(lang, "useCase", k)} />)}</div>
+      ) : excerpt ? (
+        <div class="ticker no-shot">
+          <p class="ticker-head micro">{t(lang, "fromReadme")}</p>
+          <p class="excerpt">{excerpt}</p>
         </div>
       ) : (
         <div class="ticker no-shot">

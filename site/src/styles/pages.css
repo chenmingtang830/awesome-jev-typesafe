@@ -206,3 +206,5 @@
 .chart .fill.warn { fill: var(--accent-2); }
 
 .radar.compact .dot-label { font-size: 15px; }
+
+.no-shot .excerpt { color: var(--text); line-height: 1.6; margin: 0; white-space: pre-line; }

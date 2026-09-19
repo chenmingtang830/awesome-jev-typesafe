@@ -38,6 +38,7 @@ export function radarSvg({
   labels = true,
   theme = "dark",
   href = () => null,
+  labelHref = () => null,
 } = {}) {
   const th = THEMES[theme] ?? THEMES.dark;
   const c = size / 2;
@@ -76,7 +77,9 @@ export function radarSvg({
           const pad = 10 * k;
           const x =
             anchor === "start" ? Math.min(x0, size - pad - w) : anchor === "end" ? Math.max(x0, pad + w) : x0;
-          return `<text x="${f(x)}" y="${f(y)}" fill="${th.label}" text-anchor="${anchor}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(11 * k)}">${esc(text)}</text>`;
+          const el = `<text x="${f(x)}" y="${f(y)}" fill="${th.label}" text-anchor="${anchor}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(11 * k)}">${esc(text)}</text>`;
+          const url = labelHref(name);
+          return url ? `<a href="${esc(url)}" class="sector">${el}</a>` : el;
         })
         .join("")
     : "";

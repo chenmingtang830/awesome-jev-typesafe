@@ -1,0 +1,65 @@
+/* Pages that sit beside the list itself: /radar/, /trending/, /submit/.
+   Tokens come from global.css; nothing here redefines a colour. */
+
+/* ---------- radar ---------- */
+
+.scope {
+  position: relative;
+  margin: 26px 0 8px;
+  padding: 22px 16px 18px;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  overflow: hidden;
+}
+.scope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(55% 55% at 50% 45%, var(--glow), transparent 70%);
+  opacity: .5;
+}
+.scope::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  opacity: .4;
+  pointer-events: none;
+}
+.scope > * { position: relative; }
+.scope-note { max-width: 62ch; text-align: center; text-transform: none; letter-spacing: 0; line-height: 1.7; }
+
+.radar { --radar-grey: #3A434D; margin: 0; width: 100%; display: grid; gap: 18px; justify-items: center; }
+:root[data-theme="light"] .radar { --radar-grey: #98A1AA; }
+.radar svg { display: block; width: 100%; height: auto; max-width: 820px; }
+/* Below this the sector type renders under 6px, so the rings carry the page and the
+   per-section bar chart underneath does the naming. */
+@media (max-width: 760px) {
+  .radar a.sector { display: none; }
+}
+.radar a { cursor: pointer; }
+.radar a .dot { transition: filter .15s; }
+.radar a:hover .dot { filter: brightness(1.35) drop-shadow(0 0 4px var(--accent)); }
+.radar a.sector:hover text { fill: var(--accent); }
+.radar a:focus-visible .dot { stroke: var(--accent-2); stroke-width: 2; }
+.radar figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 24px; }
+.radar-count { margin: 0; display: flex; align-items: baseline; gap: 8px; }
+.radar-count b { font-size: 1.3rem; font-weight: 500; letter-spacing: -.02em; }
+.radar-key { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; }
+.radar-key li { display: flex; align-items: center; gap: 7px; }
+.key-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.key-dot.dot { background: var(--accent); box-shadow: 0 0 8px var(--glow); }
+.key-dot.amber { background: var(--accent-2); }
+.key-dot.grey { background: var(--radar-grey); }
+.radar.compact { gap: 0; }
+.radar.compact svg { max-width: 320px; }
+
+/* SMIL keeps running through the global animation reset, so the sweep is hidden outright. */
+@media (prefers-reduced-motion: reduce) {
+  .radar [data-sweep] { display: none; }
+}
+
+.table-scroll { overflow-x: auto; }

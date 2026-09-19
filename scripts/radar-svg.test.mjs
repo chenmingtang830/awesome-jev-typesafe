@@ -35,9 +35,11 @@ test("every dot lands inside the viewBox", () => {
   }
 });
 
-test("every dot carries a ping delay inside one sweep period", () => {
-  for (const { delay } of readDots(radarSvg({ dots, sectors }))) {
-    assert.ok(delay >= 0 && delay <= 8, `${delay}s outside 0..8`);
+test("every dot carries a blip delay inside one sweep period", () => {
+  for (const period of [10, 12]) {
+    for (const { delay } of readDots(radarSvg({ dots, sectors, period }))) {
+      assert.ok(delay >= 0 && delay < period, `${delay}s outside 0..${period}`);
+    }
   }
 });
 
@@ -89,6 +91,46 @@ test("no sweep means no rotation and no pulse rings", () => {
   const off = radarSvg({ dots, sectors, sweep: false });
   assert.ok(!off.includes("<animateTransform"));
   assert.ok(!off.includes("data-pulse"));
+});
+
+test("smil builds its own clocks, css mode hands the beam to the page", () => {
+  const standalone = radarSvg({ dots, sectors, smil: true });
+  assert.ok(standalone.includes("<animateTransform"));
+  assert.ok(standalone.includes('data-sweep="fast"'));
+  assert.ok(standalone.includes("<style>"));
+  const hosted = radarSvg({ dots, sectors, smil: false });
+  assert.ok(hosted.includes('data-sweep="css"'));
+  assert.ok(!hosted.includes("<animateTransform"));
+  assert.ok(!hosted.includes("<animate "));
+  assert.ok(!hosted.includes("<style>"));
+});
+
+test("only the biggest repos get a smil blip, and never in css mode", () => {
+  const blips = (svg) => svg.split('data-blip="1"').length - 1;
+  assert.equal(blips(radarSvg({ dots, sectors, smil: true, smilBlips: 2 })), 2);
+  assert.equal(blips(radarSvg({ dots, sectors, smil: true, smilBlips: 99 })), dots.length);
+  assert.equal(blips(radarSvg({ dots, sectors, smil: false })), 0);
+  // Eve at 5265 is the loudest, so it is the one a single-blip banner finds.
+  const one = radarSvg({ dots, sectors, smil: true, smilBlips: 1 });
+  assert.ok(/<circle class="dot"[^>]*data-blip[^>]*>\s*<title>Eve/.test(one));
+});
+
+test("the period drives the sweep, the blips and the css variable together", () => {
+  const svg = radarSvg({ dots, sectors, period: 12, smil: true, dotLabels: 100 });
+  assert.ok(svg.includes('style="--period:12s"'));
+  assert.ok(svg.includes('dur="12s"'));
+  assert.ok(!svg.includes('dur="10s"'));
+});
+
+test("a halo rides every named dot and nothing else", () => {
+  const halos = (svg) => svg.split('<circle class="halo"').length - 1;
+  const labelled = (svg) => svg.split('<text class="dot-label"').length - 1;
+  for (const threshold of [0, 100, 1000]) {
+    const svg = radarSvg({ dots, sectors, dotLabels: threshold });
+    assert.equal(halos(svg), labelled(svg), `threshold ${threshold}`);
+  }
+  assert.equal(halos(radarSvg({ dots, sectors, dotLabels: 100 })), 2);
+  assert.equal(halos(radarSvg({ dots, sectors })), 0);
 });
 
 test("tones map to the four data-tone values", () => {

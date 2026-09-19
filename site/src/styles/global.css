@@ -31,6 +31,8 @@ body {
 }
 h1, h2, h3 { font-family: var(--display); letter-spacing: -0.02em; text-wrap: balance; margin: 0 0 .4em; }
 h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; }
+/* CJK has no spaces, so balanced wrapping splits words. Smaller display size keeps the line whole. */
+:lang(zh) h1, :lang(ja) h1, :lang(ko) h1 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.25; line-break: strict; }
 h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; }
 p { margin: 0 0 1em; }
 a { color: var(--accent); text-decoration: none; }
@@ -183,10 +185,11 @@ main.wrap { padding-bottom: 72px; }
 .strip a:hover { border-color: var(--accent-2); text-decoration: none; }
 .mosaic { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .mosaic a { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); grid-column: span 2; }
-.mosaic a:nth-child(1), .mosaic a:nth-child(2) { grid-column: span 3; }
+.mosaic a:nth-child(1), .mosaic a:nth-child(4) { grid-column: span 4; }
+.mosaic a:nth-child(5), .mosaic a:nth-child(6) { grid-column: span 3; }
 .mosaic img { display: block; width: 100%; height: auto; aspect-ratio: 1.8; object-fit: cover; transition: scale .3s; }
 .mosaic a:hover img { scale: 1.04; }
-@media (max-width: 760px) { .mosaic { grid-template-columns: repeat(2, 1fr); } .mosaic a, .mosaic a:nth-child(1), .mosaic a:nth-child(2) { grid-column: span 1; } }
+@media (max-width: 760px) { .mosaic { grid-template-columns: repeat(2, 1fr); } .mosaic a { grid-column: span 1 !important; } }
 
 /* project page */
 .crumbs { font-size: .82rem; color: var(--muted); margin: 26px 0 14px; display: flex; gap: 8px; flex-wrap: wrap; }

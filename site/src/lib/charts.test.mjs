@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { bars, histogram, line, isoWeek } from "./charts.ts";
+import { bars, histogram, line, isoWeek, fit } from "./charts.ts";
 
 test("bars draws one rect per datum", () => {
   const svg = bars([["a", 1], ["b", 2], ["c", 3]]);
@@ -23,4 +23,15 @@ test("line draws one dot per point", () => {
 
 test("iso week of a known date", () => {
   assert.equal(isoWeek("2026-09-19"), "2026-W38");
+});
+
+test("long labels are trimmed to the gutter", () => {
+  const svg = bars([["Benchmarks, evals and calibration", 3]]);
+  assert.ok(svg.includes("…"));
+  assert.ok(!svg.includes("calibration"));
+});
+
+test("cjk labels count double width", () => {
+  assert.equal(fit("基准、评测与校准", 6), "基准…");
+  assert.equal(fit("short", 20), "short");
 });

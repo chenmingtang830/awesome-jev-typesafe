@@ -26,7 +26,7 @@ test("iso week of a known date", () => {
 });
 
 test("long labels are trimmed to the gutter", () => {
-  const svg = bars([["Benchmarks, evals and calibration", 3]]);
+  const svg = bars([["Benchmarks, evals and calibration", 3]], { label: 180 });
   assert.ok(svg.includes("…"));
   assert.ok(!svg.includes("calibration"));
 });

@@ -8,8 +8,16 @@ const lang = langFromParams(Astro.params);
 const bullets = readmeBullets("Know before you build");
 const onScreen = readmeBullets("Jev on one screen");
 
+// readme.md and media/sources.md are hand-edited, so the markup characters go out as entities
+// before the two markdown rules add the only tags this helper is allowed to produce.
 const md = (s: string) =>
-  s.replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" rel="noopener">$1</a>');
+  s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" rel="noopener">$1</a>');
 const credits = repoText("media/sources.md")
   .split("\n")
   .filter((l) => l.startsWith("|") && !/^\|[\s|:-]+\|$/.test(l))

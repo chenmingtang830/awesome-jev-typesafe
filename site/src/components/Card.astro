@@ -25,10 +25,10 @@ const shot = image(e);
       {e.maintainer && <span class="tag warn">{t(lang, "maintainer")}</span>}
       {e.github?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
     </div>
-    {e.jev && top && top[1] >= 0.5 ? (
-      <Bar p={top[1]} label={top[0]} small />
-    ) : (
-      <div class="bar bar-rerank" hidden><span class="bar-track"><span class="bar-fill"></span></span></div>
-    )}
+    <div class="bar bar-rerank small" hidden>
+      <span class="bar-label">jev</span>
+      <span class="bar-track"><span class="bar-fill"></span></span>
+    </div>
+    {e.jev && top && top[1] >= 0.5 && <Bar p={top[1]} label={top[0]} small />}
   </div>
 </article>

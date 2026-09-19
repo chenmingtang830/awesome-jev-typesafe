@@ -71,9 +71,18 @@ const jsonld = {
       {stats.updated && <p class="figures-note micro">{t(lang, "updated")} {stats.updated} <span class="dot">·</span> {t(lang, "checkedWeekly")}</p>}
 
       <div class="hero-cta">
-        <button class="btn primary" type="button" id="hero-search">⌕ {t(lang, "search")}</button>
-        <a class="btn" href={localePath(lang, "/submit/")}>+ {t(lang, "submit")}</a>
-        <button class="btn" type="button" data-shuffle>⤮ Surprise me</button>
+        <button class="btn primary" type="button" id="hero-search">
+          <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6" /><path d="m10.6 10.6 3.4 3.4" /></svg>
+          {t(lang, "search")}
+        </button>
+        <a class="btn" href={localePath(lang, "/submit/")}>
+          <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg>
+          {t(lang, "submit")}
+        </a>
+        <button class="btn" type="button" data-shuffle>
+          <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 3.5h3l7 9h4M1 12.5h3l7-9h4" /><path d="M12.5 1.5 15 3.5l-2.5 2M12.5 10.5 15 12.5l-2.5 2" /></svg>
+          Surprise me
+        </button>
       </div>
     </div>
 

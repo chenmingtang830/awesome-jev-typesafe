@@ -7,7 +7,9 @@ const label = (key: string, v: string) =>
 ---
 <search class="searchbox" data-results={t(lang, "results")} data-no-results={t(lang, "noResults")}>
   <div class="search-row">
-    <span class="search-icon" aria-hidden="true">⌕</span>
+    <span class="search-icon" aria-hidden="true">
+      <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="7" r="4.6" /><path d="m10.6 10.6 3.4 3.4" /></svg>
+    </span>
     <input id="q" type="search" placeholder={t(lang, "search")} aria-label={t(lang, "search")} autocomplete="off" />
     <span class="muted hint"><kbd>/</kbd> {t(lang, "searchHint")}</span>
   </div>

@@ -1,7 +1,7 @@
 ---
 import Base from "../../../layouts/Base.astro";
 import Bar from "../../../components/Bar.astro";
-import { entries, byId, describe, image, hostOf, readmePath, slug } from "../../../lib/data";
+import { entries, byId, describe, image, hostOfJev, useCasesOf, jevText, readmePath, slug } from "../../../lib/data";
 import { t, sect, localePath, langFromParams, locales } from "../../../lib/i18n";
 
 export function getStaticPaths() {
@@ -13,12 +13,17 @@ const lang = langFromParams(Astro.params);
 const e = byId[Astro.params.id!];
 const g = e.github;
 const desc = describe(e, lang);
-const host = hostOf(e);
 const shot = image(e);
-const tags: [string, number][] = e.jev
-  ? [["router", e.jev.router], ["gate", e.jev.gate], ["compaction", e.jev.compaction], ["judge", e.jev.judge],
-     ["browser agent", e.jev.browserAgent], ["numbers", e.jev.hasNumbers], ["bulk scaffold", e.jev.riskBulkScaffold]]
-  : [];
+// Anything Jev was at least a third sure about is worth showing with its number attached.
+const uses = useCasesOf(e, 0.35).slice(0, 5);
+const jevHost = hostOfJev(e);
+// A five-level score answers 0 to 4, and a meter reads better with a lit segment at the bottom.
+const segments = (v: number | undefined) => (v == null ? 0 : Math.min(5, Math.max(1, Math.round(v) + 1)));
+const notes = [
+  (e.jev?.hasNumbers ?? 0) >= 0.6 ? "reportsNumbers" : null,
+  (e.jev?.looksTemplated ?? 0) >= 0.6 ? "looksTemplated" : null,
+  e.jev?.callsJevForReal != null && e.jev.callsJevForReal <= 0.4 ? "jevCallUnclear" : null,
+].filter((n): n is string => n !== null);
 const intents = Object.entries(e.jev?.intents ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
 const site = Astro.site!.origin;
@@ -65,10 +70,10 @@ const jsonld = {
 
       {shot ? (
         <div class="shot"><img src={shot} alt={e.name} width="1200" height="750" loading="lazy" /></div>
-      ) : tags.length > 0 ? (
-        <div class="ticker no-shot" title="Jev tags for this entry">
-          <p class="ticker-head micro"><span class="pulse" aria-hidden="true"></span>{t(lang, "jevSays")}</p>
-          <div class="no-shot-bars">{tags.slice(0, 4).map(([k, p]) => <Bar p={p} label={k} />)}</div>
+      ) : uses.length > 0 ? (
+        <div class="ticker no-shot" title="What Jev says this is good for">
+          <p class="ticker-head micro"><span class="pulse" aria-hidden="true"></span>{t(lang, "usefulFor")}</p>
+          <div class="no-shot-bars">{uses.slice(0, 4).map(([k, p]) => <Bar p={p} label={jevText(lang, "useCase", k)} />)}</div>
         </div>
       ) : (
         <div class="ticker no-shot">
@@ -100,7 +105,6 @@ const jsonld = {
         <dl class="facts">
           <dt>{t(lang, "section")}</dt>
           <dd><a href={localePath(lang, `/c/${slug(e.section)}/`)}>{sect(lang, e.section)}</a></dd>
-          {host && <><dt>{t(lang, "host")}</dt><dd>{sect(lang, host)}</dd></>}
           {e.owner && <><dt>owner</dt><dd><a href={`https://github.com/${e.owner}`} rel="noopener">{e.owner}</a></dd></>}
           {g && <><dt>{t(lang, "stars")}</dt><dd class="num">{g.stars.toLocaleString("en-US")}</dd></>}
           {g && <><dt>{t(lang, "forks")}</dt><dd class="num">{g.forks.toLocaleString("en-US")}</dd></>}
@@ -116,16 +120,44 @@ const jsonld = {
       </div>
 
       <div class="panel">
-        <h2>{t(lang, "jevSays")}</h2>
-        {tags.length === 0 && <p class="empty-note">{t(lang, "noJevYet")}</p>}
-        {tags.map(([k, p]) => <Bar p={p} label={k} />)}
+        <h2>{t(lang, "whatItIs")}</h2>
+        {!e.jev && <p class="empty-note">{t(lang, "noJevYet")}</p>}
         {e.jev && (
-          <dl class="facts">
-            <dt>{t(lang, "section")}</dt><dd>{e.jev.section} <span class="num muted">{e.jev.sectionP.toFixed(2)}</span></dd>
-            <dt>{t(lang, "host")}</dt><dd>{e.jev.hostAgent} <span class="num muted">{e.jev.hostAgentP.toFixed(2)}</span></dd>
-          </dl>
+          <>
+            <dl class="what-facts">
+              {e.jev.form && <><dt>{t(lang, "facets.form")}</dt><dd>{jevText(lang, "form", e.jev.form)}</dd></>}
+              {jevHost && <><dt>{t(lang, "facets.host")}</dt><dd>{jevText(lang, "host", jevHost)}</dd></>}
+              {e.jev.audience && <><dt>{t(lang, "facets.audience")}</dt><dd>{jevText(lang, "audience", e.jev.audience)}</dd></>}
+            </dl>
+            <div class="meter-row">
+              <span class="meter-label">{t(lang, "maturity")}</span>
+              <span class="meter" role="img" aria-label={`${t(lang, "maturity")} ${segments(e.jev.maturity)}/5`}>
+                {[1, 2, 3, 4, 5].map((i) => <span class:list={["seg", { on: i <= segments(e.jev!.maturity) }]}></span>)}
+              </span>
+            </div>
+            {e.jev.docsQuality != null && (
+              <div class="meter-row">
+                <span class="meter-label">{t(lang, "docsQuality")}</span>
+                <span class="meter" role="img" aria-label={`${t(lang, "docsQuality")} ${segments(e.jev.docsQuality)}/5`}>
+                  {[1, 2, 3, 4, 5].map((i) => <span class:list={["seg", { on: i <= segments(e.jev!.docsQuality) }]}></span>)}
+                </span>
+              </div>
+            )}
+            {notes.length > 0 && (
+              <div class="notes">
+                {notes.map((n) => <span class:list={["tag", { warn: n !== "reportsNumbers", accent: n === "reportsNumbers" }]}>{t(lang, n)}</span>)}
+              </div>
+            )}
+          </>
         )}
       </div>
+
+      {uses.length > 0 && (
+        <div class="panel">
+          <h2>{t(lang, "usefulFor")}</h2>
+          {uses.map(([k, p]) => <Bar p={p} label={jevText(lang, "useCase", k)} small />)}
+        </div>
+      )}
 
       {intents.length > 0 && (
         <div class="panel">

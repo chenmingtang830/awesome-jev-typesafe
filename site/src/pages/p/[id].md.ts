@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { entries, byId, firstSeen, hostOf } from "../../lib/data";
+import { entries, byId, firstSeen, hostOf, useCasesOf, formOf, jevMeta } from "../../lib/data";
 
 export const getStaticPaths = () => entries.map((e) => ({ params: { id: e.id } }));
 
@@ -9,9 +9,9 @@ const line = (s: string) => s.replace(/\s+/g, " ").trim();
 export const GET: APIRoute = ({ params, site }) => {
   const e = byId[params.id!];
   const g = e.github;
-  const tags = e.jev
-    ? `router ${e.jev.router}, gate ${e.jev.gate}, compaction ${e.jev.compaction}, judge ${e.jev.judge}, browser agent ${e.jev.browserAgent}`
-    : null;
+  const label = (k: string) => jevMeta.useCases?.[k] ?? k;
+  const uses = useCasesOf(e);
+  const form = formOf(e);
   const body = [
     `# ${line(e.name)}`,
     "",
@@ -29,7 +29,8 @@ export const GET: APIRoute = ({ params, site }) => {
     e.maintainer ? "- By this list's maintainer" : null,
     e.trustPhrase ? `- Claim in the entry: ${line(e.trustPhrase)}` : null,
     firstSeen[e.id] ? `- First seen: ${firstSeen[e.id]}` : null,
-    tags ? `- Jev tags: ${tags}` : null,
+    form ? `- Form: ${jevMeta.forms?.[form] ?? form}` : null,
+    uses.length ? `- Useful for: ${uses.map(([k, p]) => `${label(k)} (${p.toFixed(2)})`).join(", ")}` : null,
     "",
     `Page: ${site!.origin}/p/${e.id}/`,
     "",

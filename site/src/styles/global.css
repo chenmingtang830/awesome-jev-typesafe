@@ -259,6 +259,8 @@ main.wrap { padding-bottom: 80px; }
 .tag.accent { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); color: var(--accent); }
 .tag.danger { border-color: color-mix(in srgb, var(--danger) 55%, var(--line)); color: var(--danger); }
 .tag.warn { border-color: color-mix(in srgb, var(--accent-2) 55%, var(--line)); color: var(--accent-2); }
+.card-form { font-family: var(--mono); font-size: .72rem; letter-spacing: .02em; color: var(--muted); }
+.card-uses { display: flex; flex-wrap: wrap; gap: 6px; }
 .bar-rerank[hidden] { display: none; }
 .chip-empty { opacity: .45; }
 
@@ -269,6 +271,17 @@ main.wrap { padding-bottom: 80px; }
 .bar-fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 4px; transition: width .35s cubic-bezier(.2, .8, .2, 1); }
 .bar.small .bar-track { height: 6px; }
 .bar-num { color: var(--muted); }
+
+/* five-segment meters: maturity and docs quality */
+.meter { display: flex; gap: 4px; align-items: center; }
+.meter .seg { flex: 1; height: 8px; border-radius: 2px; background: var(--line); }
+.meter .seg.on { background: var(--accent); }
+.meter-row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 10px; align-items: center; margin-bottom: 8px; }
+.meter-row dt, .meter-label { color: var(--muted); font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.what-facts { display: grid; grid-template-columns: 7.5rem 1fr; gap: 6px 10px; margin: 0 0 14px; font-size: .9rem; }
+.what-facts dt { color: var(--muted); font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; align-self: center; }
+.what-facts dd { margin: 0; }
+.notes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 
 /* trending rail */
 .rail { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }

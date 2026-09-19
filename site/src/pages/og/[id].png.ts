@@ -1,12 +1,12 @@
 import type { APIRoute } from "astro";
-import { entries, byId, topTag } from "../../lib/data";
+import { entries, byId, useCasesOf } from "../../lib/data";
 import { card } from "../../lib/og";
 
 export const getStaticPaths = () => entries.map((e) => ({ params: { id: e.id } }));
 
 export const GET: APIRoute = async ({ params }) => {
   const e = byId[params.id!];
-  const top = topTag(e);
+  const top = useCasesOf(e)[0];
   const png = await card({
     title: e.name,
     subtitle: e.description,

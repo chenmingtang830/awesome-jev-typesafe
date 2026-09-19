@@ -11,7 +11,7 @@ export function fit(s: string, cols: number) {
   return s;
 }
 
-export function bars(data: [string, number][], { width = 720, row = 26, label = 180 } = {}) {
+export function bars(data: [string, number][], { width = 720, row = 26, label = 300 } = {}) {
   const max = Math.max(1, ...data.map((d) => d[1]));
   const h = data.length * row + 8;
   const rows = data.map(([k, v], i) => {

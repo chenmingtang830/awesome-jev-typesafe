@@ -19,9 +19,7 @@
   --text: #14181D; --muted: #5B6670; --accent: #0A6E8D; --accent-2: #96560A; --danger: #C43030;
   --accent-ink: #FFFFFF;
 }
-@media (prefers-color-scheme: light) { :root:not([data-theme]) { color-scheme: light;
-  --canvas: #F4F6F8; --surface: #FFFFFF; --raised: #FFFFFF; --line: #D9DEE3;
-  --text: #14181D; --muted: #5B6670; --accent: #0A6E8D; --accent-2: #96560A; --danger: #C43030; --accent-ink: #FFFFFF; } }
+/* dark is the brand default; light only by the toggle */
 
 * { box-sizing: border-box; }
 html { background: var(--canvas); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
@@ -40,6 +38,7 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; }
 button, input, select { font: inherit; color: inherit; }
 code, .mono, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+main.wrap { overflow-x: clip; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 main.wrap { padding-bottom: 72px; }
 .muted { color: var(--muted); }
@@ -180,7 +179,7 @@ main.wrap { padding-bottom: 72px; }
 .tile::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 10px; height: 2px; background: repeating-linear-gradient(90deg, var(--line) 0 2px, transparent 2px 8px); }
 
 /* strips and gallery */
-.strip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.strip { display: flex; gap: 10px; overflow-x: auto; min-width: 0; max-width: 100%; padding-bottom: 8px; scrollbar-width: thin; }
 .strip a { flex: 0 0 auto; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; background: var(--surface); color: var(--text); font-size: .85rem; }
 .strip a:hover { border-color: var(--accent-2); text-decoration: none; }
 .mosaic { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }

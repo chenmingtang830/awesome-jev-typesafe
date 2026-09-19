@@ -37,7 +37,7 @@ const nav = [
 <script>
   const root = document.documentElement;
   document.getElementById("theme")?.addEventListener("click", () => {
-    const now = root.dataset.theme ?? (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    const now = root.dataset.theme ?? "dark";
     const next = now === "light" ? "dark" : "light";
     root.dataset.theme = next;
     localStorage.setItem("theme", next);

@@ -59,7 +59,6 @@ export const entries: Entry[] = raw.entries.map((e) => ({
 }));
 
 export const projects = entries.filter((e) => e.type === "project");
-export const lists = entries.filter((e) => e.type === "list");
 export const byId: Record<string, Entry> = Object.fromEntries(entries.map((e) => [e.id, e]));
 export const bySection = (name: string) => entries.filter((e) => e.section === name);
 
@@ -70,6 +69,13 @@ export const sections = raw.sections.map((s) => ({
 }));
 export const prose = new Set(["Jev on one screen", "Know before you build"]);
 export const categories = sections.filter((s) => s.count > 0 && s.name !== "Other lists");
+
+/** Sections that hold shippable code. Prose and reading lists are not project categories. */
+export const notCategories = new Set([...prose, "Start here", "Articles and talks", "Other lists"]);
+export const projectSections = categories.filter(
+  (s) => !notCategories.has(s.name) && entries.some((e) => e.section === s.name && e.type === "project"),
+);
+export const resourceSections = categories.filter((s) => s.name === "Start here" || s.name === "Articles and talks");
 
 export const firstSeen: Record<string, string> = history.firstSeen;
 export const dataFetchedAt: string | null = optional("github.json").fetchedAt ?? null;
@@ -85,10 +91,10 @@ export const hostOf = (e: Entry) =>
     ? e.subsection
     : null;
 
-export const image = (e: Entry) =>
-  e.image ? `/media/${e.image.replace(/^media\//, "")}` : e.github?.ogImage ?? `/og/${e.id}.png`;
+/** Screenshots we host ourselves. GitHub's auto-generated social cards are white and unreadable here. */
+export const image = (e: Entry) => (e.image ? `/media/${e.image.replace(/^media\//, "")}` : null);
 
-export const hasOwnImage = (e: Entry) => !!(e.image || e.github?.ogImage);
+export const hasOwnImage = (e: Entry) => !!e.image;
 
 export const newSince = (days: number) => {
   const cut = new Date(Date.now() - days * 864e5).toISOString().slice(0, 10);
@@ -124,3 +130,46 @@ export const readmeBullets = (heading: string) => {
     .filter((l) => l.startsWith("- "))
     .map((l) => l.slice(2).replace(/`([^`]+)`/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"));
 };
+
+const stars = (e: Entry) => (Number.isFinite(e.github?.stars) ? e.github!.stars : 0);
+const repos = entries.filter((e) => e.owner && e.github);
+
+export const stats = {
+  entries: entries.filter((e) => e.type !== "list").length,
+  projects: projects.length,
+  repos: repos.length,
+  sections: projectSections.length,
+  stars: repos.reduce((n, e) => n + stars(e), 0),
+  updated: dataFetchedAt,
+};
+
+/** 12.4k, 1,234, 987. Tabular numerals make the k form line up with the plain one. */
+export const compact = (n: number) =>
+  n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 1 : 2).replace(/\.?0+$/, "")}k` : String(n);
+
+export const topStarred = (n: number) =>
+  projects.filter((e) => e.github).sort((a, b) => stars(b) - stars(a)).slice(0, n);
+
+export type Decision = { project: string; question: string; answer: string; p: number };
+
+/** Real projects, real questions taken from their one-liners. The probabilities are illustrative. */
+export const decisions: Decision[] = [
+  { project: "jev-belay", question: "Is the agent really done?", answer: "no", p: 0.18 },
+  { project: "pi-warden", question: "Is this tool call irreversible?", answer: "yes", p: 0.91 },
+  { project: "jev-router-gargpratyush", question: "Cheapest model that can handle this task?", answer: "haiku", p: 0.87 },
+  { project: "jev-ultrafast", question: "Which element completes the booking?", answer: "Search flights", p: 0.94 },
+  { project: "jevmeter", question: "Is this debate sentence a dodge?", answer: "yes", p: 0.72 },
+  { project: "jev-guard", question: "Allow, ask, or deny this command?", answer: "deny", p: 0.96 },
+  { project: "fast-jev-compaction", question: "Does this tool result still matter?", answer: "drop", p: 0.23 },
+];
+
+/** Star count for the header button. One call per build, and the header survives a miss. */
+let starCall: Promise<number | null> | null = null;
+export const repoStars = () =>
+  (starCall ??= fetch("https://api.github.com/repos/valentynkit/awesome-jev-typesafe", {
+    headers: { accept: "application/vnd.github+json" },
+    signal: AbortSignal.timeout(3000),
+  })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d: any) => (typeof d?.stargazers_count === "number" ? d.stargazers_count : null))
+    .catch(() => null));

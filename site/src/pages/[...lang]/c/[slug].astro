@@ -1,7 +1,7 @@
 ---
 import Base from "../../../layouts/Base.astro";
 import Card from "../../../components/Card.astro";
-import { categories, bySection, type Entry } from "../../../lib/data";
+import { categories, projectSections, bySection, projects, slug, type Entry } from "../../../lib/data";
 import { t, sect, localePath, langFromParams, locales } from "../../../lib/i18n";
 
 export function getStaticPaths() {
@@ -14,8 +14,11 @@ const { name, image, subs } = Astro.props as { name: string; image: string | nul
 const all = bySection(name);
 const loose = all.filter((e: Entry) => !e.subsection);
 const groups = subs.map((sub) => [sub, all.filter((e: Entry) => e.subsection === sub)] as const).filter(([, list]) => list.length);
+const share = Math.round((all.filter((e: Entry) => e.type === "project").length / projects.length) * 100);
+const others = projectSections.filter((s) => s.name !== name);
 const title = `${sect(lang, name)} · Awesome Jev`;
 const desc = t(lang, "entriesCount", { n: all.length }) + " · " + sect(lang, name);
+const repo = "https://github.com/valentynkit/awesome-jev-typesafe";
 
 const jsonld = {
   "@context": "https://schema.org",
@@ -27,17 +30,49 @@ const jsonld = {
 ---
 <Base title={title} description={desc} lang={lang} path={`/c/${Astro.params.slug}/`} jsonld={jsonld}>
   <p class="crumbs"><a href={localePath(lang, "/")}>{t(lang, "home")}</a> / <span>{sect(lang, name)}</span></p>
-  <h1>{sect(lang, name)}</h1>
-  <p class="muted num">{t(lang, "entriesCount", { n: all.length })}</p>
+
+  <section class="cat-hero">
+    <h1>{sect(lang, name)}</h1>
+    <p class="lede num">{t(lang, "entriesCount", { n: all.length })}</p>
+    {share > 0 && (
+      <span class="tile-bar wide" role="img" aria-label={`${share}%`}><span style={`width:${Math.max(share, 3)}%`}></span></span>
+    )}
+    {groups.length > 0 && (
+      <div class="anchors">
+        {groups.map(([sub, list]) => (
+          <a class="anchor-chip" href={`#${slug(sub)}`}>{sect(lang, sub)} <span class="num muted">{list.length}</span></a>
+        ))}
+      </div>
+    )}
+    {lang !== "en" && <p class="micro">{t(lang, "generated")}</p>}
+  </section>
+
   {image && <div class="detail-banner"><img src={`/media/${image.replace(/^media\//, "")}`} alt="" width="1200" height="600" loading="lazy" /></div>}
-  {lang !== "en" && <p class="micro">{t(lang, "generated")}</p>}
 
-  {loose.length > 0 && <div class="grid">{loose.map((e: Entry) => <Card e={e} lang={lang} />)}</div>}
+  <div class="cat-layout">
+    <div class="cat-main">
+      {loose.length > 0 && <div class="grid">{loose.map((e: Entry) => <Card e={e} lang={lang} />)}</div>}
+      {groups.map(([sub, list]) => (
+        <>
+          <div class="rule" id={slug(sub)}><h2>{sect(lang, sub)}</h2><span class="num muted">{list.length}</span></div>
+          <div class="grid">{list.map((e: Entry) => <Card e={e} lang={lang} />)}</div>
+        </>
+      ))}
+    </div>
 
-  {groups.map(([sub, list]) => (
-    <>
-      <div class="rule" id={sub.toLowerCase().replace(/[^a-z0-9]+/g, "-")}><h2>{sect(lang, sub)}</h2><span class="num muted">{list.length}</span></div>
-      <div class="grid">{list.map((e: Entry) => <Card e={e} lang={lang} />)}</div>
-    </>
-  ))}
+    <aside class="cat-side">
+      <div class="panel">
+        <h2>{t(lang, "categories")}</h2>
+        <ul class="side-list">
+          {others.map((s) => (
+            <li><a href={localePath(lang, `/c/${s.slug}/`)}>{sect(lang, s.name)}</a> <span class="num muted">{s.count}</span></li>
+          ))}
+        </ul>
+      </div>
+      <div class="panel side-cta">
+        <a class="btn primary" href={localePath(lang, "/submit/")}>+ {t(lang, "submit")}</a>
+        <a class="btn" href={repo} rel="noopener">★ {t(lang, "starRepo")}</a>
+      </div>
+    </aside>
+  </div>
 </Base>

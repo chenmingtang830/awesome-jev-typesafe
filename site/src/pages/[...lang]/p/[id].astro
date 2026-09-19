@@ -1,7 +1,7 @@
 ---
 import Base from "../../../layouts/Base.astro";
 import Bar from "../../../components/Bar.astro";
-import { entries, byId, describe, image, hostOf, hasOwnImage, readmePath, slug } from "../../../lib/data";
+import { entries, byId, describe, image, hostOf, readmePath, slug } from "../../../lib/data";
 import { t, sect, localePath, langFromParams, locales } from "../../../lib/i18n";
 
 export function getStaticPaths() {
@@ -14,11 +14,18 @@ const e = byId[Astro.params.id!];
 const g = e.github;
 const desc = describe(e, lang);
 const host = hostOf(e);
+const shot = image(e);
 const tags: [string, number][] = e.jev
   ? [["router", e.jev.router], ["gate", e.jev.gate], ["compaction", e.jev.compaction], ["judge", e.jev.judge],
      ["browser agent", e.jev.browserAgent], ["numbers", e.jev.hasNumbers], ["bulk scaffold", e.jev.riskBulkScaffold]]
   : [];
 const intents = Object.entries(e.jev?.intents ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+const site = Astro.site!.origin;
+const here = site + localePath(lang, `/p/${e.id}/`);
+const xShare = `https://x.com/intent/post?text=${encodeURIComponent(`${e.name} — ${e.description}`)}&url=${encodeURIComponent(here)}`;
+const badge = `[![Listed in Awesome Jev](${site}/badge.svg)](${here})`;
+const repo = "https://github.com/valentynkit/awesome-jev-typesafe";
 
 const pkg = (() => {
   const topics = g?.topics ?? [];
@@ -55,15 +62,36 @@ const jsonld = {
         <a class="btn primary" href={e.url} rel="noopener">{t(lang, "openOnGithub")}</a>
         <a class="btn" href={readmePath(e)} rel="noopener">{t(lang, "sourceLine", { n: e.line })}</a>
       </div>
-      {hasOwnImage(e) && (
-        <div class="shot"><img src={image(e)} alt={e.name} width="1200" height="630" loading="lazy" /></div>
+
+      {shot ? (
+        <div class="shot"><img src={shot} alt={e.name} width="1200" height="750" loading="lazy" /></div>
+      ) : tags.length > 0 ? (
+        <div class="ticker no-shot" title="Jev tags for this entry">
+          <p class="ticker-head micro"><span class="pulse" aria-hidden="true"></span>{t(lang, "jevSays")}</p>
+          <div class="no-shot-bars">{tags.slice(0, 4).map(([k, p]) => <Bar p={p} label={k} />)}</div>
+        </div>
+      ) : (
+        <div class="ticker no-shot">
+          <p class="ticker-head micro">{t(lang, "gallery")}</p>
+          <p class="empty-note">
+            No screenshot yet. <a href={localePath(lang, "/submit/")}>{t(lang, "submit")}</a> to add one.
+          </p>
+        </div>
       )}
+
       {pkg && (
         <div class="install">
           <code id="pkg">{pkg}</code>
           <button class="btn" type="button" id="copy" data-copied={t(lang, "copied")}>{t(lang, "copy")}</button>
         </div>
       )}
+
+      <div class="share">
+        <span class="micro">{t(lang, "share")}</span>
+        <button class="btn" type="button" data-copy={here} data-copied={t(lang, "copied")}>{t(lang, "copy")} link</button>
+        <a class="btn" href={xShare} rel="noopener">Post on X</a>
+        <button class="btn" type="button" data-copy={badge} data-copied={t(lang, "copied")}>{t(lang, "copyBadge")}</button>
+      </div>
     </div>
 
     <div class="side">
@@ -84,7 +112,7 @@ const jsonld = {
         </dl>
         <div class="card-meta">
           {g?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
-          {e.maintainer && <span class="tag accent">{t(lang, "maintainer")}</span>}
+          {e.maintainer && <span class="tag warn">{t(lang, "maintainer")}</span>}
         </div>
       </div>
 
@@ -106,6 +134,11 @@ const jsonld = {
           {intents.map(([k, p]) => <Bar p={p} label={k} small />)}
         </div>
       )}
+
+      <div class="panel side-cta">
+        <a class="btn primary" href={localePath(lang, "/submit/")}>+ {t(lang, "submit")}</a>
+        <a class="btn" href={repo} rel="noopener">★ {t(lang, "starRepo")}</a>
+      </div>
     </div>
   </div>
 </Base>
@@ -117,4 +150,12 @@ const jsonld = {
     btn.textContent = btn.dataset.copied ?? "Copied";
     setTimeout(() => (btn.textContent = was), 1500);
   });
+
+  for (const el of document.querySelectorAll<HTMLButtonElement>("[data-copy]"))
+    el.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(el.dataset.copy ?? "");
+      const was = el.textContent;
+      el.textContent = el.dataset.copied ?? "Copied";
+      setTimeout(() => (el.textContent = was), 1500);
+    });
 </script>

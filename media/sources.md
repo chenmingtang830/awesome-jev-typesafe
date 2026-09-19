@@ -1,6 +1,6 @@
 # Media sources
 
-Every file in this directory is copied from the project it illustrates, under that project's license, and links back to it from the readme. Animated GIFs are stored as a single still frame so they render everywhere. If you own one of these and want it removed or swapped, open an issue.
+Most files in this directory are copied from the project they illustrate, under that project's license, and link back to it from the readme. The rest were made for this list and are CC0. Animated GIFs are stored as a single still frame so they render everywhere. If you own one of these and want it removed or swapped, open an issue.
 
 | File | Project | License | Original path |
 | --- | --- | --- | --- |
@@ -22,6 +22,9 @@ Every file in this directory is copied from the project it illustrates, under th
 | `jevibe-check.png` | [sriganesh/jevibe-check](https://github.com/sriganesh/jevibe-check) | MIT | one frame of `docs/jevibecheck.gif` |
 | `jev-trades.png` | [zadescoxp/Jev-Trades](https://github.com/zadescoxp/Jev-Trades) | Apache-2.0 | one frame of `assets/Jev_making_trade.gif` |
 | `jev-axi.png` | [shiftynick/jev-axi](https://github.com/shiftynick/jev-axi) | MIT | one frame of `scripts/demo/safety.gif`, cropped to the terminal text |
+| `banner-dark.svg` | this list | CC0 | original work, no external source |
+| `banner-light.svg` | this list | CC0 | original work, no external source |
+| `social-preview.png` | this list | CC0 | original work, no external source |
 
 Copied 2026-09-18 and 2026-09-19, resized to 600 to 800 px wide.
 

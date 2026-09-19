@@ -10,7 +10,9 @@ export const GET: APIRoute = () => {
   const out: string[] = ["# Awesome Jev", ""];
   for (const s of sections) {
     if (prose.has(s.name) || s.count === 0) continue;
-    const list = bySection(s.name);
+    // Other awesome lists are not what this list is for, and the site no longer has a page for them.
+    const list = bySection(s.name).filter((e) => e.type !== "list");
+    if (!list.length) continue;
     out.push(`## ${s.name}`, "");
     let sub: string | null = null;
     for (const e of list) {

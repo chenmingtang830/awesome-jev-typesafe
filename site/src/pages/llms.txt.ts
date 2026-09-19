@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { sections, entries, projects } from "../lib/data";
+import { categories, entries, projects } from "../lib/data";
 import { t } from "../lib/i18n";
 
 // Brackets in a name break the link they sit in.
@@ -17,9 +17,7 @@ export const GET: APIRoute = ({ site }) => {
     "",
     "## Sections",
     "",
-    ...sections
-      .filter((s) => s.count > 0)
-      .map((s) => `- [${label(s.name)}](${origin}/c/${s.slug}.md): ${s.count} entries`),
+    ...categories.map((s) => `- [${label(s.name)}](${origin}/c/${s.slug}.md): ${s.count} entries`),
     "",
     "## Machine",
     "",

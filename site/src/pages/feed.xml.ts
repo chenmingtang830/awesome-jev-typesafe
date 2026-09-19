@@ -5,7 +5,9 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 
 export const GET: APIRoute = ({ site }) => {
   const origin = site!.origin;
-  const latest = [...entries]
+  // Other awesome lists are not additions to this list.
+  const latest = entries
+    .filter((e) => e.type !== "list")
     .sort((a, b) => (firstSeen[b.id] ?? "").localeCompare(firstSeen[a.id] ?? "") || b.order - a.order)
     .slice(0, 50);
   const updated = (firstSeen[latest[0]?.id] ?? new Date().toISOString().slice(0, 10)) + "T00:00:00Z";

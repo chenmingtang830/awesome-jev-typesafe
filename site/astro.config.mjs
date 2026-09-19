@@ -3,7 +3,7 @@ import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://awesome-jev.vercel.app",
+  site: "https://awesomejev.vercel.app",
   output: "static",
   adapter: vercel(),
   integrations: [sitemap()],

@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://awesome-jev.vercel.app/sitemap-index.xml
+Sitemap: https://awesomejev.vercel.app/sitemap-index.xml

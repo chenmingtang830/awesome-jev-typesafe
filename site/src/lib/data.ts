@@ -53,7 +53,7 @@ export const intents = jev.intents ?? [];
 
 export const entries: Entry[] = raw.entries.map((e) => ({
   ...e,
-  github: e.owner ? github[`${e.owner}/${e.repo}`] ?? null : null,
+  github: e.owner && !github[`${e.owner}/${e.repo}`]?.gone ? github[`${e.owner}/${e.repo}`] ?? null : null,
   jev: jev.entries?.[e.id] ?? null,
   slugSection: slug(e.section),
 }));

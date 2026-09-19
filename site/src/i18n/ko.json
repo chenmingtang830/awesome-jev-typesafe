@@ -71,5 +71,6 @@
   "sourceLine": "readme {n}번째 줄",
   "labelProjects": "프로젝트",
   "labelSections": "섹션",
-  "labelEntries": "항목"
+  "labelEntries": "항목",
+  "details": "상세"
 }

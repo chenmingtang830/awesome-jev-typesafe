@@ -71,5 +71,6 @@
   "sourceLine": "readme {n} 行目",
   "labelProjects": "プロジェクト",
   "labelSections": "セクション",
-  "labelEntries": "件"
+  "labelEntries": "件",
+  "details": "詳細"
 }

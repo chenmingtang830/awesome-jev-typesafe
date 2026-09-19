@@ -1,18 +1,29 @@
 ---
 import Bar from "./Bar.astro";
-import { describe, image, hostOf, topTag, type Entry } from "../lib/data";
+import { describe, image, hostOf, topTag, hasOwnImage, type Entry } from "../lib/data";
 import { localePath, t, sect } from "../lib/i18n";
 interface Props { e: Entry; lang: string }
 const { e, lang } = Astro.props;
 const top = topTag(e);
 const host = hostOf(e);
+const href = localePath(lang, `/p/${e.id}/`);
 ---
 <article class="card" data-id={e.id}>
-  <a class="card-img" href={localePath(lang, `/p/${e.id}/`)} tabindex="-1" aria-hidden="true">
-    <img src={image(e)} alt="" loading="lazy" width="640" height="336" />
+  <a class="card-img" href={href} tabindex="-1" aria-hidden="true">
+    {hasOwnImage(e) ? (
+      <img src={image(e)} alt="" loading="lazy" width="640" height="336" />
+    ) : (
+      <span class="plate">
+        <span class="micro">{sect(lang, e.subsection ?? e.section)}</span>
+        <svg viewBox="0 0 64 44" aria-hidden="true" class="plate-dial">
+          <path d="M17.86 38.14A20 20 0 1 1 46.14 38.14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+          <path d="M17.86 38.14A20 20 0 0 1 14.79 13.82" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </span>
+    )}
   </a>
   <div class="card-body">
-    <h3><a href={localePath(lang, `/p/${e.id}/`)}>{e.name}</a></h3>
+    <h3><a href={href}>{e.name}</a></h3>
     <p>{describe(e, lang)}</p>
     <div class="card-meta muted num">
       {e.github && <span>★ {e.github.stars.toLocaleString("en-US")}</span>}

@@ -71,5 +71,6 @@
   "sourceLine": "Entry {n} in the readme",
   "labelProjects": "projects",
   "labelSections": "sections",
-  "labelEntries": "entries"
+  "labelEntries": "entries",
+  "details": "Details"
 }

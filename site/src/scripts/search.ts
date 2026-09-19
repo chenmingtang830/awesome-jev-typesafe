@@ -57,7 +57,7 @@ export async function mount(lang: string) {
         const bonus = intent ? 2 * (doc.intents?.[intent] ?? 0) : 0;
         return { doc, score: r.score + bonus };
       })
-      .sort((a, b) => b.score - a.score)
+      .sort((a, b) => b.score - a.score || (b.doc.stars ?? 0) - (a.doc.stars ?? 0))
       .map((r) => r.doc);
     return sortSel!.value === "relevance" ? scored : sortDocs(scored, sortSel!.value);
   }

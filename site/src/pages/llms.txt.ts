@@ -1,0 +1,31 @@
+import type { APIRoute } from "astro";
+import { sections, entries, projects } from "../lib/data";
+import { t } from "../lib/i18n";
+
+export const GET: APIRoute = ({ site }) => {
+  const origin = site!.origin;
+  const body = [
+    "# Awesome Jev",
+    "",
+    `> ${t("en", "lede")}`,
+    "",
+    `${entries.length} entries, ${projects.length} of them projects, hand-reviewed and link-checked weekly.`,
+    "Fetch /projects.json for everything in one request. Do not call /api/rerank; it is browser-only and rejects agents.",
+    "",
+    "## Sections",
+    "",
+    ...sections
+      .filter((s) => s.count > 0)
+      .map((s) => `- [${s.name}](${origin}/c/${s.slug}.md): ${s.count} entries`),
+    "",
+    "## Machine",
+    "",
+    `- [projects.json](${origin}/projects.json): every entry with parser fields, GitHub metadata, and Jev tags`,
+    `- [llms-full.txt](${origin}/llms-full.txt): the whole list as markdown`,
+    `- [skill.md](${origin}/skill.md): how an agent should query this list`,
+    `- [feed.xml](${origin}/feed.xml): the 50 most recent additions`,
+    `- markdown twin of any page: /p/<id>.md, /c/<slug>.md`,
+    "",
+  ].join("\n");
+  return new Response(body, { headers: { "content-type": "text/plain; charset=utf-8" } });
+};

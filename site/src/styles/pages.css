@@ -93,6 +93,12 @@
   50% { opacity: .28; transform: scale(1); }
   100% { opacity: .06; transform: scale(1); }
 }
+@keyframes blip-soft {
+  0% { opacity: .06; }
+  .5% { opacity: 1; }
+  50% { opacity: .28; }
+  100% { opacity: .06; }
+}
 @keyframes blip-label {
   0% { opacity: 0; }
   .5% { opacity: 1; }
@@ -136,10 +142,11 @@
 /* global.css resets every animation to none !important. A slow turn is decoration worth
    keeping, so this one rule buys it back on specificity; the flaring is what has to stop. */
 @media (prefers-reduced-motion: reduce) {
-  .radar [data-sweep="css"] { animation: sweep 30s linear infinite !important; }
+  /* Same clock, no pops: the beam still finds each dot and it fades, but nothing scales or flares. */
+  .radar [data-sweep="css"] { animation: sweep var(--period) linear infinite !important; }
   .radar [data-pulse], .radar .halo { display: none; }
-  .radar .dot { opacity: .85; }
-  .radar .dot-label { opacity: 1; }
+  .radar .dot { animation: blip-soft var(--period) linear infinite var(--d) backwards !important; }
+  .radar .dot-label { animation: blip-label var(--period) linear infinite var(--d) backwards !important; }
 }
 
 .table-scroll { overflow-x: auto; }

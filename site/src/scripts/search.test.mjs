@@ -55,3 +55,11 @@ test("compaction also finds the repo that says pruning", () => {
   ]);
   assert.deepEqual(idx.search(expandQuery("compaction")).map((r) => r.id).sort(), ["a", "b"]);
 });
+
+test("subsection text is searchable", () => {
+  const idx = buildIndex([
+    { id: "a", name: "jev-thing", description: "Does a thing.", section: "Coding agents", subsection: "Sandboxing" },
+    { id: "b", name: "jev-other", description: "Does another thing.", section: "Coding agents", subsection: "Routing" },
+  ]);
+  assert.deepEqual(idx.search("sandboxing").map((r) => r.id), ["a"]);
+});

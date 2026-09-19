@@ -2,7 +2,7 @@ import MiniSearch from "minisearch";
 
 export function buildIndex(docs) {
   const ms = new MiniSearch({
-    fields: ["name", "description", "section", "host", "owner", "topics"],
+    fields: ["name", "description", "section", "subsection", "host", "owner", "topics"],
     storeFields: ["id"],
     searchOptions: { boost: { name: 3, description: 1.5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" },
   });

@@ -11,6 +11,7 @@ export const GET: APIRoute = ({ params }) => {
     name: e.name,
     description: describe(e, lang),
     section: e.section,
+    subsection: e.subsection ?? "",
     host: hostOf(e),
     owner: e.owner,
     topics: e.github?.topics?.join(" ") ?? "",

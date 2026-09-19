@@ -8,6 +8,11 @@ interface Props { title: string; description: string; lang: string; path: string
 const { title, description, lang, path, image = "/og/site.png", jsonld } = Astro.props;
 const site = Astro.site!.origin;
 const md = path === "/" ? "/llms.txt" : path.replace(/\/$/, "") + ".md";
+// A description carrying </script> would close the tag, so the three characters that can
+// start markup leave as JSON escapes instead.
+const ld = jsonld
+  ? JSON.stringify(jsonld).replace(/[<>&]/g, (c) => ({ "<": "\\u003c", ">": "\\u003e", "&": "\\u0026" })[c]!)
+  : null;
 ---
 <!doctype html>
 <html lang={htmlLang(lang)}>
@@ -30,7 +35,7 @@ const md = path === "/" ? "/llms.txt" : path.replace(/\/$/, "") + ".md";
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0B0E11" />
   <script is:inline>const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;</script>
-  {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  {ld && <script type="application/ld+json" set:html={ld} />}
 </head>
 <body>
   <a class="skip" href="#main">{t(lang, "skip")}</a>

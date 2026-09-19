@@ -100,5 +100,7 @@
   "heroLede": "{entries} entries across {repos} repos, sorted by what you would install. Checked weekly, refreshed daily.",
   "decisionTicker": "A decision from the list",
   "share": "Share",
-  "copyBadge": "Copy badge markdown"
+  "copyBadge": "Copy badge markdown",
+  "filters": "Filters",
+  "surpriseMe": "Surprise me"
 }

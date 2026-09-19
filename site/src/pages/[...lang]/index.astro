@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import Card from "../../components/Card.astro";
 import Ticker from "../../components/Ticker.astro";
+import Radar from "../../components/Radar.astro";
 import SearchBox from "../../components/SearchBox.astro";
 import {
   projects, projectSections, resourceSections, gallery, entries, bySection,
@@ -81,12 +82,12 @@ const jsonld = {
         </a>
         <button class="btn" type="button" data-shuffle>
           <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 3.5h3l7 9h4M1 12.5h3l7-9h4" /><path d="M12.5 1.5 15 3.5l-2.5 2M12.5 10.5 15 12.5l-2.5 2" /></svg>
-          Surprise me
+          {t(lang, "surpriseMe")}
         </button>
       </div>
     </div>
 
-    <div class="hero-visual" data-slot="radar"><Ticker lang={lang} /></div>
+    <div class="hero-visual" data-slot="radar"><Radar lang={lang} size={440} labels={false} compact /><Ticker lang={lang} /></div>
   </section>
 
   <div class="search-panel">

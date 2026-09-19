@@ -100,5 +100,7 @@
   "heroLede": "{repos} 個のリポジトリから {entries} 件を、実際に入れたくなる順に並べています。毎週チェック、毎日更新。",
   "decisionTicker": "リストから 1 つの判断",
   "share": "共有",
-  "copyBadge": "バッジの markdown をコピー"
+  "copyBadge": "バッジの markdown をコピー",
+  "filters": "絞り込み",
+  "surpriseMe": "おまかせ表示"
 }

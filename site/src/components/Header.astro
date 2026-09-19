@@ -32,7 +32,7 @@ const here = (href: string) => (path === href.replace(/^\/(zh|ja|ko)/, "") ? "pa
           <a href={repo} rel="noopener">GitHub</a>
         </nav>
         <div class="hdr-tools">
-          <button class="icon-btn" type="button" data-shuffle aria-label="Surprise me" title="Surprise me">
+          <button class="icon-btn" type="button" data-shuffle aria-label={t(lang, "surpriseMe")} title={t(lang, "surpriseMe")}>
             <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
               <path d="M1 3.5h3l7 9h4M1 12.5h3l7-9h4" /><path d="M12.5 1.5 15 3.5l-2.5 2M12.5 10.5 15 12.5l-2.5 2" />
             </svg>

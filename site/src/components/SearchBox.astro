@@ -33,7 +33,7 @@ const label = (key: string, v: string) =>
 </search>
 
 <details class="filters" open>
-  <summary><span class="funnel" aria-hidden="true"></span>Filters</summary>
+  <summary><span class="funnel" aria-hidden="true"></span>{t(lang, "filters")}</summary>
   <div class="facets">
     {Object.entries(facets).map(([key, vals]) => (
       <details class="facet" open={key === "section"}>

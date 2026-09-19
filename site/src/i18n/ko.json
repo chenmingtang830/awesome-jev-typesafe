@@ -100,5 +100,7 @@
   "heroLede": "저장소 {repos}개에 걸친 항목 {entries}개를, 실제로 설치할 만한 순서로 정렬했습니다. 매주 점검하고 매일 갱신합니다.",
   "decisionTicker": "목록에서 고른 판단 하나",
   "share": "공유",
-  "copyBadge": "배지 markdown 복사"
+  "copyBadge": "배지 markdown 복사",
+  "filters": "필터",
+  "surpriseMe": "무작위 보기"
 }

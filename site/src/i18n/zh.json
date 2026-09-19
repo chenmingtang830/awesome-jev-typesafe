@@ -100,5 +100,7 @@
   "heroLede": "{repos} 个仓库里的 {entries} 条，按你真会装哪个来排。每周检查，每天刷新。",
   "decisionTicker": "清单里的一条判断",
   "share": "分享",
-  "copyBadge": "复制徽章 markdown"
+  "copyBadge": "复制徽章 markdown",
+  "filters": "筛选",
+  "surpriseMe": "随机看看"
 }

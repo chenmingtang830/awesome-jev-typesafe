@@ -71,6 +71,14 @@ Jev does not write. You hand it some state and a list of typed questions, and it
 
 Copied from the vendor's pages on 2026-09-18; every page is linked under Start here.
 
+|               | Chat model                      | Jev                                                              |
+| ------------- | ------------------------------- | ---------------------------------------------------------------- |
+| Output        | Text you parse                  | A probability, a pick, or a scale position, per question         |
+| Latency       | Seconds                         | 70 to 500 ms, vendor reported                                    |
+| Price         | Dollars per million tokens      | $0.042 per million input tokens, output free                     |
+| Hallucination | Any string                      | Only values you defined; still confidently wrong at times        |
+| Fits          | Planning, writing, open answers | Routing, gating, ranking, judging, anything with a finite answer |
+
 - Endpoint: `POST https://api.typesafe.ai/v1/systemone` with a `model`, a `state`, and a map of `questions`.
 - Model alias: `jev-latest`, currently `jev-1.13.0`.
 - Questions: `Choice` picks one of up to 255 options you define, `Score` places the state on a scale you describe, `Noul` is a calibrated yes/no probability. All questions in a request are scored in parallel against the same state.

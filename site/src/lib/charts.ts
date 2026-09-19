@@ -11,13 +11,13 @@ export function fit(s: string, cols: number) {
   return s;
 }
 
-export function bars(data: [string, number][], { width = 720, row = 26, label = 300 } = {}) {
+export function bars(data: [string, number][], { width = 720, row = 26, label = 300, warn = [] as string[] } = {}) {
   const max = Math.max(1, ...data.map((d) => d[1]));
   const h = data.length * row + 8;
   const rows = data.map(([k, v], i) => {
     const w = Math.round(((width - label - 60) * v) / max);
     const y = i * row + 4;
-    return `<text x="${label - 8}" y="${y + 17}" text-anchor="end" class="lbl">${esc(fit(k, Math.floor((label - 12) / 7.2)))}</text><rect x="${label}" y="${y}" width="${w}" height="${row - 8}" rx="3" class="fill"/><text x="${label + w + 6}" y="${y + 17}" class="num">${v}</text>`;
+    return `<text x="${label - 8}" y="${y + 17}" text-anchor="end" class="lbl">${esc(fit(k, Math.floor((label - 12) / 7.2)))}</text><rect x="${label}" y="${y}" width="${w}" height="${row - 8}" rx="3" class="${warn.includes(k) ? "fill warn" : "fill"}"/><text x="${label + w + 6}" y="${y + 17}" class="num">${v}</text>`;
   });
   return `<svg viewBox="0 0 ${width} ${h}" width="100%" role="img" class="chart">${rows.join("")}</svg>`;
 }

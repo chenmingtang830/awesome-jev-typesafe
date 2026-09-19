@@ -42,7 +42,7 @@ const topPer = categories
 const charts: { title: string; note: string; svg: string | null }[] = [
   { title: "Entries per section", note: "Counted from the readme itself.", svg: bars(perSection) },
   { title: "Language mix", note: "Primary language reported by GitHub, top ten.", svg: langs.length ? bars(langs) : null },
-  { title: "Activity", note: "Time since the last push, buckets are exclusive.", svg: withGithub.length ? bars(recency) : null },
+  { title: "Activity", note: "Time since the last push, buckets are exclusive.", svg: withGithub.length ? bars(recency, { warn: recency.map((r) => r[0]).filter((k) => /stale|archived|90/i.test(k)) }) : null },
   { title: "Stars", note: "Every GitHub-hosted project, linear buckets.", svg: withGithub.length ? histogram(withGithub.map((e) => e.github!.stars), starEdges, starLabels) : null },
   { title: "Host agent", note: "From the subsection an entry sits under in Coding agents.", svg: hosts.length ? bars(hosts) : null },
   { title: "Additions per week", note: "First time each entry appeared in the readme.", svg: weeks.length > 1 ? line(weeks) : bars(weeks) },

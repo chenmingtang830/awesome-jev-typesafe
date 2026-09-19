@@ -31,11 +31,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - run: node scripts/build-readme-i18n.mjs
+      - run: node scripts/build-banner.mjs
       - name: Commit refreshed data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data README.zh-CN.md README.ja.md README.ko.md
+          git add data media/banner-dark.svg media/banner-light.svg README.zh-CN.md README.ja.md README.ko.md
           if ! git diff --cached --quiet; then
             git commit -m "data: daily refresh"
             git push origin HEAD:main

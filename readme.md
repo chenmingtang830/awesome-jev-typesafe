@@ -7,7 +7,7 @@
 
 [![Lint](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/lint.yml/badge.svg)](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/lint.yml)
 [![Links](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/links.yml/badge.svg)](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/links.yml)
-![Entries](https://img.shields.io/badge/entries-348-4CC9F0?style=flat-square&labelColor=0B0E11)
+![Entries](https://img.shields.io/badge/entries-323-4CC9F0?style=flat-square&labelColor=0B0E11)
 [![Last commit](https://img.shields.io/github/last-commit/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](https://github.com/valentynkit/awesome-jev-typesafe/commits/main)
 [![License](https://img.shields.io/github/license/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](license)
 
@@ -65,7 +65,6 @@ Jev does not write. You hand it some state and a list of typed questions, and it
   - [Launch coverage](#launch-coverage)
   - [Independent measurements](#independent-measurements)
   - [Essays and threads](#essays-and-threads)
-- [Other lists](#other-lists)
 
 ## Jev on one screen
 
@@ -529,37 +528,9 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [OpenJev on Hacker News](https://news.ycombinator.com/item?id=49752041) - Whether reading logits directly is new at all, argued at length.
 - [Open-sourced Jev architecture last year](https://news.ycombinator.com/item?id=49736660) - A prior-art claim for non-autoregressive typed decisions, and the counter that zero-shot generality is the actual difference.
 
-## Other lists
-
-Twenty-plus awesome-jev lists appeared in the first three days. Each has an angle; this one aims to be lint-clean, curated, and organized by what you would actually install.
-
-- [awesomejev.com](https://awesomejev.com/) - The firehose: about 490 entries, refreshed daily, backed by hellogumbo's list below.
-- [typesafeai.app](https://typesafeai.app/) - Independent directory where each record states what Jev was shown doing and carries an evidence level.
-- [awesome-jev-by-typesafe](https://github.com/Anil-matcha/awesome-jev-by-typesafe) - The most starred; a guide with patterns and starter code more than a list.
-- [awesome-typesafe](https://github.com/AbdelStark/awesome-typesafe) - Official and community split, well organized.
-- [awesome-jev by yibie](https://github.com/yibie/awesome-jev) - Strict inclusion rules and the clearest warning about bulk-scaffolded repos.
-- [awesome-jev by cobanov](https://github.com/cobanov/awesome-jev) - Source-backed and the closest to awesome-lint clean of the early lists.
-- [awesome-jev by fatwang2](https://github.com/fatwang2/awesome-jev) - Directory with a reusable Jev-only GitHub review workflow.
-- [awesome-jev by AnotiaWang](https://github.com/AnotiaWang/awesome-jev) - Broad coverage in a flat structure.
-- [awesome-jev by hellogumbo](https://github.com/hellogumbo/awesome-jev) - The repository behind awesomejev.com.
-- [awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) - Ecosystem radar with automatic GitHub discovery.
-- [awesome-jev by OmniJev](https://github.com/OmniJev/awesome-jev) - Papers, open reproductions, and independent evaluations.
-- [awesome-jev-usecases by anandi1989](https://github.com/anandi1989/awesome-jev-usecases) - Use cases grouped by decision pattern.
-- [awesome-jev-use-cases](https://github.com/SeeAPI/awesome-jev-use-cases) - Long-form write-up per use case.
-- [awesome-jev by MrJev](https://github.com/MrJev/awesome-jev) - Nineteen fine-grained categories.
-- [awesome-jev-zh](https://github.com/yzfly/awesome-jev-zh) - Chinese, with a sober section on what the evaluations do and do not show.
-- [anosomejev](https://github.com/majiayu000/anosomejev) - Must-include 30 with trust labels, plus a Chinese weekly radar.
-- [awesome-typesafe-jev by thevibeworks](https://github.com/thevibeworks/awesome-typesafe-jev) - A GIF and a "know before you use it" note per project.
-- [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live) - Evidence-graded index rebuilt every two hours.
-- [awesome-jev by kraayenjon](https://github.com/kraayenjon/awesome-jev) - Featured builds with real numbers and an FAQ.
-- [awesome-jev by rhc98](https://github.com/rhc98/awesome-jev) - Curated by Jev itself.
-- [awesome-jev by sontakey](https://github.com/sontakey/awesome-jev) - Organized by what the projects do rather than what they are.
-- [awesome-jev by daftAI2026](https://github.com/daftAI2026/awesome-jev) - GitHub projects and posts around typed decisions.
-- [awesome-jev by JohnDotOwl](https://github.com/JohnDotOwl/awesome-jev) - Mirror of the awesomejev.com categories.
-- [awesome-jev by oxwen11](https://github.com/oxwen11/awesome-jev) - Short, grouped by scenario.
-- [awesome-jev-usecases by aliaihub](https://github.com/aliaihub/awesome-jev-usecases) - The sixty-second version and a use-case catalogue.
-
 ## Contributing
+
+[![Star history](https://api.star-history.com/svg?repos=valentynkit/awesome-jev-typesafe&type=Date)](https://star-history.com/#valentynkit/awesome-jev-typesafe&Date)
 
 Read [contributing.md](contributing.md) first. Removal is as welcome as addition.
 

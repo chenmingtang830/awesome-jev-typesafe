@@ -1,0 +1,26 @@
+---
+import Bar from "./Bar.astro";
+import { describe, image, hostOf, topTag, type Entry } from "../lib/data";
+import { localePath, t, sect } from "../lib/i18n";
+interface Props { e: Entry; lang: string }
+const { e, lang } = Astro.props;
+const top = topTag(e);
+const host = hostOf(e);
+---
+<article class="card reveal" data-id={e.id}>
+  <a class="card-img" href={localePath(lang, `/p/${e.id}/`)} tabindex="-1" aria-hidden="true">
+    <img src={image(e)} alt="" loading="lazy" width="640" height="336" />
+  </a>
+  <div class="card-body">
+    <h3><a href={localePath(lang, `/p/${e.id}/`)}>{e.name}</a></h3>
+    <p>{describe(e, lang)}</p>
+    <div class="card-meta muted num">
+      {e.github && <span>★ {e.github.stars.toLocaleString("en-US")}</span>}
+      {e.github?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
+      {host && <span class="tag">{sect(lang, host)}</span>}
+      {e.maintainer && <span class="tag accent">{t(lang, "maintainer")}</span>}
+      {e.github?.language && <span>{e.github.language}</span>}
+    </div>
+    {top && top[1] >= 0.5 && <Bar p={top[1]} label={top[0]} small />}
+  </div>
+</article>

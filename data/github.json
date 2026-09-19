@@ -9,20 +9,20 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1b6f0e24ce2150abd48d12e9e84e7f6385a752dd2df4a9164ec9ccd76130d1aa/typesafe-ai/typesafe-sdk-js",
+   "ogImage": "https://opengraph.githubassets.com/c960d93c13db45570f5c6161156b271dc394061016a80620856055bd7abab203/typesafe-ai/typesafe-sdk-js",
    "topics": [],
    "description": "The official TypeScript/JavaScript library for the TypeSafe API",
    "homepage": null
   },
   "typesafe-ai/typesafe-sdk-python": {
-   "stars": 113,
+   "stars": 114,
    "forks": 11,
    "pushedAt": "2026-09-18T09:11:54Z",
    "createdAt": "2026-09-04T21:01:31Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/fa693b8e3264590dc03696e47ed045f39b62a17f9a0ecfe66ea835b6b900d260/typesafe-ai/typesafe-sdk-python",
+   "ogImage": "https://opengraph.githubassets.com/3d1ab734391be58c46238737101baba37881f8680a8da825697f9ef97eb883a3/typesafe-ai/typesafe-sdk-python",
    "topics": [],
    "description": "The official Python library for the TypeSafe API",
    "homepage": "https://docs.typesafe.ai/sdk/python"
@@ -35,33 +35,33 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3838c9c3ee5ff143c7a2b26b644988a1fea0a61754037a911580ff05f0af7a33/typesafe-ai/system-one-adapter-python",
+   "ogImage": "https://opengraph.githubassets.com/2870bff92692f3b46cd480534f17bbbb42d2f4b05bd067b6cccf07880e40d54f/typesafe-ai/system-one-adapter-python",
    "topics": [],
    "description": "Drop-in TypeSafeClient replacement backed by LLM APIs",
    "homepage": null
   },
   "typesafe-ai/skills": {
-   "stars": 448,
+   "stars": 455,
    "forks": 26,
    "pushedAt": "2026-09-12T05:42:06Z",
    "createdAt": "2026-08-24T23:58:39Z",
    "language": null,
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/dfd321ee4e556baddea721282d25f709912dba3c6681fad334faa4a5c82983fa/typesafe-ai/skills",
+   "ogImage": "https://opengraph.githubassets.com/d1bcd6955635615d4cec20b83107af1afd30aa8a61d2da1471001bd35545d88d/typesafe-ai/skills",
    "topics": [],
    "description": "Agent skills for building with TypeSafe's System One API",
    "homepage": "https://typesafe.ai"
   },
   "vercel/eve": {
-   "stars": 5265,
+   "stars": 5266,
    "forks": 569,
-   "pushedAt": "2026-09-19T16:34:11Z",
+   "pushedAt": "2026-09-19T17:14:09Z",
    "createdAt": "2026-06-16T10:51:20Z",
    "language": "TypeScript",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3ed38e6321704197d51809a20972389826168d5eee931952cce7bda4257d9718/vercel/eve",
+   "ogImage": "https://opengraph.githubassets.com/00479f2f681ce1192ebdc7fbad1e60730b9946ce2dcba8961fa49f665cc8a74e/vercel/eve",
    "topics": [
     "agent",
     "framework",
@@ -79,38 +79,38 @@
   "vercel-labs/ai-cli": {
    "stars": 805,
    "forks": 63,
-   "pushedAt": "2026-09-17T15:29:14Z",
+   "pushedAt": "2026-09-19T17:34:38Z",
    "createdAt": "2025-07-28T12:49:12Z",
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9f9ece85a31b91825cfb55931dd7ac529176f7dfe2f3387595fe1ad821a5771e/vercel-labs/ai-cli",
+   "ogImage": "https://opengraph.githubassets.com/9d1cc0653fab0ec850990622652b2ed5d58c5602804259188493e29e71ff68d9/vercel-labs/ai-cli",
    "topics": [],
    "description": "Generate anything from your terminal",
    "homepage": "https://ai-cli.dev"
   },
   "tamaratran/fast-jev-compaction": {
-   "stars": 3991,
-   "forks": 210,
+   "stars": 4017,
+   "forks": 212,
    "pushedAt": "2026-09-18T04:45:31Z",
    "createdAt": "2026-09-17T05:57:20Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/56c5689e8376c6b4d63b57624afb425522158623079a15559f58f8ecbbdc56c0/tamaratran/fast-jev-compaction",
+   "ogImage": "https://opengraph.githubassets.com/6aa76323ddee85a85fd2069dfdb5e08bbc6c7aa6d74983c0cc621621f6889951/tamaratran/fast-jev-compaction",
    "topics": [],
    "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
    "homepage": null
   },
   "gargpratyush/jev-router": {
-   "stars": 190,
+   "stars": 191,
    "forks": 14,
    "pushedAt": "2026-09-19T10:28:26Z",
    "createdAt": "2026-09-16T20:39:22Z",
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d61cd8088a90ea50912ae5d10fb951d6b367d8c7e55c543f3ba2bf486133f78a/gargpratyush/jev-router",
+   "ogImage": "https://opengraph.githubassets.com/cd1cf9a23fb76b55aee35d64a0db002b4621e2e5c40a0f2ddf413c7a0cdcbcf2/gargpratyush/jev-router",
    "topics": [],
    "description": "Route to the cheapest model in claude code for your task using jev-router",
    "homepage": null
@@ -123,7 +123,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f92431fc4477ad8550f3538b4588cd5623dd1124b2273be3a89206086895886e/GhalebDweikat/winnow",
+   "ogImage": "https://opengraph.githubassets.com/ef5fc769406ec79fe43eade0f6bb60801510f6a957004c477cbcb0ef82d56303/GhalebDweikat/winnow",
    "topics": [
     "claude-code",
     "claude-code-plugin",
@@ -143,7 +143,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5f2c0afb7a9f8576e70b5b1b82ef798d4e4b292c62cff2b3517cdd35fda5350c/compozy/yoshi",
+   "ogImage": "https://opengraph.githubassets.com/95d74f6fd6032f1a070541b3cde02c0b6687fb52f5f0e56d98c606627855dd44/compozy/yoshi",
    "topics": [
     "bun",
     "claude-code",
@@ -157,14 +157,14 @@
    "homepage": null
   },
   "Dicklesworthstone/skillranker": {
-   "stars": 56,
+   "stars": 58,
    "forks": 5,
    "pushedAt": "2026-09-19T16:22:32Z",
    "createdAt": "2026-09-17T06:58:19Z",
    "language": "Rust",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/97a52ae166a7a0c705cea5d7194ee0f868a2b574922e1961112f2ddfceafbec5/Dicklesworthstone/skillranker",
+   "ogImage": "https://opengraph.githubassets.com/cf23dd2e35447d37489589237af58fe6362ecb87078c19e3bfcc3340f55b2b42/Dicklesworthstone/skillranker",
    "topics": [
     "agent-skills",
     "ai-agents",
@@ -188,7 +188,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/7da6c95ebe670a5372df9602b3f595735f3b628e19535ef1f8072b4bde5da217/adarshmishra07/jcm-router",
+   "ogImage": "https://opengraph.githubassets.com/b60aae464be2fdcf7834422f91ba66bf243dd8acc548c1d1501597de902ce5b9/adarshmishra07/jcm-router",
    "topics": [],
    "description": "Local proxy that picks the Claude model and effort per message using TypeSafe Jev. Routes subagents, leaves your cached main chat alone.",
    "homepage": null
@@ -201,7 +201,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/04680cb1fb46826b5acbca5ffd100d3676e5c9eccd5c4ca3e39a82bdb7700641/bestagentkits/jev-skillful",
+   "ogImage": "https://opengraph.githubassets.com/0ad6e5311e9b173c90cdbc1115c82e0f9d3fccb0054780e59d1b4576f27f4867/bestagentkits/jev-skillful",
    "topics": [
     "agent-tooling",
     "ai-agents",
@@ -223,7 +223,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/183c4fa42477667d5ff676c0baf88f117c030ca941b2cf1d5cdfe7b798c1146a/noplan-inc/limpet",
+   "ogImage": "https://opengraph.githubassets.com/64922599477cf9e03086ad78414283f8832957294e21d71dab14d1cbaa1997c9/noplan-inc/limpet",
    "topics": [
     "ai-agents",
     "claude-code",
@@ -242,20 +242,20 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2764dc3cbab6acef1e179ac72d38ea5a935e08e2ae70c9f232732fd4608b844c/Brainwires/jevwire",
+   "ogImage": "https://opengraph.githubassets.com/5711e396f1c6e2e9ef7b282c60f9ce175e33d6fc8a84bcdf3c95a3060ce9081e/Brainwires/jevwire",
    "topics": [],
    "description": "Jev decision layer for agents: MCP server, embeddable DecisionModel library, and an escalate-only Claude Code plugin (TypeSafe AI's Jev)",
    "homepage": null
   },
   "devagrawal09/jev-code": {
-   "stars": 17,
+   "stars": 20,
    "forks": 2,
    "pushedAt": "2026-09-19T15:08:53Z",
    "createdAt": "2026-09-17T15:15:24Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/17388cddc15e787691a1d22d37c6c125ddec3dbafd98c3ba799c30fd9d74a12e/devagrawal09/stanley-code",
+   "ogImage": "https://opengraph.githubassets.com/e031cc49e2d673711b1ebaa9b2b423cbb133e11ae81c096eff3dbc039492c643/devagrawal09/stanley-code",
    "topics": [],
    "description": "Bounded TypeSafe Jev workflows for coding agents.",
    "homepage": null
@@ -268,7 +268,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0f0db67663e825c5beed56fe94317ca71a8d21dee5a05a910c62a48586f2ba5b/notque/vexjoy-agent",
+   "ogImage": "https://opengraph.githubassets.com/644d2b5b4449fc5cc3615eaa0e146d24f692b9bca55e2eea40e20fdfb3a6236b/notque/vexjoy-agent",
    "topics": [
     "ai",
     "ai-agents",
@@ -286,26 +286,26 @@
   },
   "IAmUnbounded/save-token-jev-clean": {
    "stars": 48,
-   "forks": 9,
+   "forks": 10,
    "pushedAt": "2026-09-18T06:08:12Z",
    "createdAt": "2026-09-18T05:58:07Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a2efcb3a4b19be2968507f82ee4a8f0eb9d7bec58b4b9e6a8d1d1ea6bba3682d/IAmUnbounded/save-token-jev-clean",
+   "ogImage": "https://opengraph.githubassets.com/e74ee828c033fb38c7e8e859426ede646a0330a0377a91d9861fe76a5641f7bd/IAmUnbounded/save-token-jev-clean",
    "topics": [],
    "description": null,
    "homepage": null
   },
   "tamaratran/jev-pruner": {
-   "stars": 68,
+   "stars": 73,
    "forks": 5,
    "pushedAt": "2026-09-19T10:18:30Z",
    "createdAt": "2026-09-18T03:00:58Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/186fab024e92a7b3f82408008fb385e03428769ada4c4495b7cb8ff8b62878d9/tamaratran/jev-pruner",
+   "ogImage": "https://opengraph.githubassets.com/78cd1d6e2e7f2849677e84a28335e130c225414465ee2929fd617326d32d665f/tamaratran/jev-pruner",
    "topics": [],
    "description": "Claude Code plugin: trim long Bash output with TypeSafe Jev before the model sees it",
    "homepage": null
@@ -318,7 +318,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/464222597161b8171b51717a9d86ea4cffd513c355a14a278bd8249f8a7c08ff/EliaAlberti/jev-rules",
+   "ogImage": "https://opengraph.githubassets.com/719cfcbdb3e89bb093105a6210228ba3eed2ee3e6c2ec4f9392b31cbe0e451e1/EliaAlberti/jev-rules",
    "topics": [],
    "description": "Jev picks which of your rules apply to each prompt, so Claude only sees the ones that matter.",
    "homepage": null
@@ -331,20 +331,20 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4edd98c244e4a9dc50fa8ddda57447863d63e9a11157ed77f937817ca9067b4d/valentynkit/jev-belay",
+   "ogImage": "https://opengraph.githubassets.com/16165f154529b900d32645dd2ccb75e9031df91d8096cc2c9d59c5e3f2545fcd/valentynkit/jev-belay",
    "topics": [],
    "description": "Claude Code Stop hook that blocks an unverified done: reads the transcript for evidence, asks Jev once, fails open on everything else",
    "homepage": null
   },
   "0xNatoshi/jev-codex-router": {
-   "stars": 68,
+   "stars": 69,
    "forks": 6,
    "pushedAt": "2026-09-17T17:08:07Z",
    "createdAt": "2026-09-17T04:14:19Z",
    "language": "Python",
    "license": "MIT",
    "archived": true,
-   "ogImage": "https://opengraph.githubassets.com/1ae2e2038cb992341213cffd3affa2353329314188c70c05183a8bc11ac6c03d/0xNatoshi/jev-codex-router",
+   "ogImage": "https://opengraph.githubassets.com/345e87062b56891a6a17415484da4fe7355c29c8e6e5d9aa6342cdcaad1b2eb1/0xNatoshi/jev-codex-router",
    "topics": [
     "ai",
     "codex",
@@ -365,7 +365,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/98d1a4b1aaa7a62df48dfa4ceda58dd5dff824e1fcaefb6b0ea1d8f0c9ad1ee9/y0usaf/pi-jev",
+   "ogImage": "https://opengraph.githubassets.com/2dbde51f1e27713d4a91d9cf29bf7717615979c5c1482f6dde530c9ab4f84acc/y0usaf/pi-jev",
    "topics": [
     "guardrails",
     "jev",
@@ -377,14 +377,14 @@
    "homepage": null
   },
   "DevMortimer/pi-warden": {
-   "stars": 86,
+   "stars": 90,
    "forks": 8,
    "pushedAt": "2026-09-19T16:38:56Z",
    "createdAt": "2026-09-16T03:58:46Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/65a5ba5cb2ccc0029b1e49acf9126e9f2a9644866b1d85f3740351d0e39b9d4c/DevMortimer/pi-warden",
+   "ogImage": "https://opengraph.githubassets.com/66b9faa7733953b76c567e9ec0de3fa737b8eb957d6e5a688eee915f8b120f71/DevMortimer/pi-warden",
    "topics": [
     "guardrails",
     "pi-extension",
@@ -402,7 +402,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/18a8c00807a3e5ea8242b3a1c4dd0255159ffcc5f90df0bd26559911431575e1/jomatsu/pi-jev-auto-mode",
+   "ogImage": "https://opengraph.githubassets.com/9a004e06dc946d39f120812dc4a55241f15a89d1dbccb0ec6b2167c9aa3937a7/jomatsu/pi-jev-auto-mode",
    "topics": [
     "auto-mode",
     "coding-agent",
@@ -425,7 +425,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4102e3d4477097c910270ccd21ef4bb8a469b2d4a018d36980d37d78bace3630/TheoOliveira/pi-jev",
+   "ogImage": "https://opengraph.githubassets.com/aff250a6d4040f4b0a8710cddeeb1eeff0fdde850b14d989aa63b75de0397531/TheoOliveira/pi-jev",
    "topics": [
     "jev",
     "pi-coding-agent",
@@ -446,7 +446,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/519ce8617211754a58b9dfb9414eb6cf8b7d423d3a516e6ea639f03a6ca3aab1/mejiasd3v/pi-jev-router",
+   "ogImage": "https://opengraph.githubassets.com/b6be5e189716b3de5ded745dbc46b2bb8dd7379c7d9e9fd22110da1039fc21d6/mejiasd3v/pi-jev-router",
    "topics": [],
    "description": "Automatic model routing for Pi using TypeSafe's Jev through Vercel AI Gateway",
    "homepage": null
@@ -459,7 +459,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/278cbd4ea163546f90a5beb665e11130e662f4452980d7d9abcaaac229822495/joelhooks/pi-fast-jev-compaction",
+   "ogImage": "https://opengraph.githubassets.com/92c8e1b43792bff3888c4648001d5118b05bf37dac62cb4572d58283f5300657/joelhooks/pi-fast-jev-compaction",
    "topics": [],
    "description": "Pi extension: verbatim context compaction with TypeSafe Jev decisions",
    "homepage": null
@@ -472,7 +472,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/aa8e4441229d4e0a067632f00fe28d170376596e11e4d4214b495ff01f821495/AbdelStark/bicameral",
+   "ogImage": "https://opengraph.githubassets.com/490d9aab6ad3d709409f422d9d1f49e14df81cd208b6c0b41632da242fb73648/AbdelStark/bicameral",
    "topics": [
     "harness-engineering",
     "hybrid-machine-learning",
@@ -489,7 +489,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2ca60833a0c700870363ac0dd7ec50a9e82534755f3ab0eb96a493d33ddaa323/HyunjunJeon/pi-quiet-ask",
+   "ogImage": "https://opengraph.githubassets.com/51c66cd0ec23b884ce31f059da709d0608b0a8b67b2cbb2535334e04c934472a/HyunjunJeon/pi-quiet-ask",
    "topics": [],
    "description": "TypeSafe Jev as the pi coding agent's quiet decision layer",
    "homepage": null
@@ -502,20 +502,20 @@
    "language": "TypeScript",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/10151ea059ab2e5f85ceb33e001fd3bda30389ccee22ac5d5ed9ce4bcb7c4412/legacybridge-tech/pi-typesafe-jev",
+   "ogImage": "https://opengraph.githubassets.com/981e4b31b26dae00451c906677a1d818dd95c55330e12e2844b9a536da10687f/legacybridge-tech/pi-typesafe-jev",
    "topics": [],
    "description": "A pi extension that exposes TypeSafe (Jev, System One) judgments as five pi tools, so a model can make narrow semantic judgments while your code and your users keep control of thresholds, weights, and actions.",
    "homepage": null
   },
   "DevMortimer/pi-typesafe": {
-   "stars": 15,
+   "stars": 16,
    "forks": 1,
    "pushedAt": "2026-09-19T05:54:14Z",
    "createdAt": "2026-09-16T01:35:23Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/62f7d96d8e10b5b244f9eb3480cdb044b090d3fabc0d00e925d63f3ca926eab4/DevMortimer/pi-typesafe",
+   "ogImage": "https://opengraph.githubassets.com/d300ac1e05aa0df725099224cb2eb3ea3bab776626daa398589967153b08d788/DevMortimer/pi-typesafe",
    "topics": [],
    "description": "TypeSafe decisions for Pi: batched evaluation tool, terminal playground, and typed API for extension authors",
    "homepage": null
@@ -549,7 +549,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5e191f23dfad3f5b6f18098ff8e7b1dd7e7d70e1b04dda44143c4fbf5049034f/DECRUX9812/typesafe-skill-router",
+   "ogImage": "https://opengraph.githubassets.com/04ebaf0f18293f2264a5008b7c43eb75c8e22f1e1c2207dd3569842ea491275c/DECRUX9812/typesafe-skill-router",
    "topics": [
     "ai-agents",
     "hermes-agent",
@@ -587,14 +587,14 @@
    "homepage": null
   },
   "keeltrace/hermes-jev": {
-   "stars": 5,
+   "stars": 6,
    "forks": 0,
-   "pushedAt": "2026-09-18T20:07:18Z",
+   "pushedAt": "2026-09-19T17:28:46Z",
    "createdAt": "2026-09-18T02:10:22Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/38e7d314ad359015ebb4cbec27d3b634c5094f6fb73dccd89ccb2f195a6243c3/keeltrace/hermes-jev",
+   "ogImage": "https://opengraph.githubassets.com/8c65eb272533e6b1d8313e46632cbf588bfd91822e35c20b60c5c7a680a22533/keeltrace/hermes-jev",
    "topics": [],
    "description": "Typed System One decisions, ranking, verification, and an opt-in Hermes tool gate using TypeSafe Jev.",
    "homepage": null
@@ -607,7 +607,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/35a9bccf4e753cea150c20c7769329ecc62b6f8c3677b27f2cff1643dfa6b883/shantanugoel/ask-jev-skill",
+   "ogImage": "https://opengraph.githubassets.com/5a830a60791ca2b94299a34558882e5df849605994a799f9286a3c49e4df389c/shantanugoel/ask-jev-skill",
    "topics": [],
    "description": "Skill for Hermes, and other agents, to ask typesafe's jev",
    "homepage": null
@@ -620,46 +620,46 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cd5b6a5f45c83f49640d7ea20a95a1bfcc2c109f02fbee2778d7dba137fad032/3clyp50/a0-typesafe-ai",
+   "ogImage": "https://opengraph.githubassets.com/6517b86577a862fde89c2a98da1c65089ef1def0ac1e0c2f4214047e7015b622/3clyp50/a0-typesafe-ai",
    "topics": [],
    "description": "TypeSafe AI Jev judgments for Agent Zero, with typed tools and probability cards.",
    "homepage": null
   },
   "kitze/skillbox": {
-   "stars": 185,
+   "stars": 186,
    "forks": 14,
    "pushedAt": "2026-09-19T11:59:41Z",
    "createdAt": "2026-09-17T17:23:37Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/212c799103512517a666f795b273f1c2373e3117bab2244051fc5474795328ad/kitze/skillbox",
+   "ogImage": "https://opengraph.githubassets.com/53f3853e8f3d27a2a2f761e87cada8c579d1dca2eebd1e88d6a28d88e8967bdb/kitze/skillbox",
    "topics": [],
    "description": "Self-hosted, versioned skills library for AI agents. MCP, scoped clients, and optional Jev recommendations.",
    "homepage": null
   },
   "jkudish/jev-mcp": {
-   "stars": 90,
-   "forks": 11,
+   "stars": 91,
+   "forks": 12,
    "pushedAt": "2026-09-19T07:33:18Z",
    "createdAt": "2026-09-17T02:25:38Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/306afc811f6ed072aeaf82a736d02106a085fd7fd689cba983ed6ac29161ef0c/jkudish/jev-mcp",
+   "ogImage": "https://opengraph.githubassets.com/f42289e7f0a0b1bf6bb94d6ccf5c561254f4baab42a6d89c0c1bb142de765d4f/jkudish/jev-mcp",
    "topics": [],
    "description": "Fast, cheap, typed judgments from TypeSafe's Jev model, as MCP tools.",
    "homepage": null
   },
   "itsmostafa/typesafe-mcp": {
-   "stars": 96,
+   "stars": 97,
    "forks": 11,
    "pushedAt": "2026-09-18T16:33:34Z",
    "createdAt": "2026-09-17T05:23:34Z",
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a553bddf84ea576b79d77cdd87458b7fcd3fe517aadd1fb1aa1f536b4b22e845/itsmostafa/typesafe-mcp",
+   "ogImage": "https://opengraph.githubassets.com/a828c56d4e18fe4d2550af760258bf009bb77e7dedb706eaf0272f8e667688cd/itsmostafa/typesafe-mcp",
    "topics": [
     "mcp",
     "mcp-tools"
@@ -668,27 +668,27 @@
    "homepage": null
   },
   "blakestone-x/jev-mcp": {
-   "stars": 9,
+   "stars": 10,
    "forks": 0,
    "pushedAt": "2026-09-16T20:49:12Z",
    "createdAt": "2026-09-16T17:24:16Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4dcedb347c536163b5fc07f192485366c6ab3857f64294a6e70fe1d8b8c4fb05/blakestone-x/jev-mcp",
+   "ogImage": "https://opengraph.githubassets.com/392fe44e3832356e995fcc84a22bcff682ae64f7d137dfe213cd513b44b7c69f/blakestone-x/jev-mcp",
    "topics": [],
    "description": "MCP server for TypeSafe Jev: typed classify, score, check, match and screen for any agent, with confidence on every answer",
    "homepage": null
   },
   "tacticocc/Jevbridge": {
-   "stars": 22,
+   "stars": 23,
    "forks": 0,
    "pushedAt": "2026-09-18T07:10:36Z",
    "createdAt": "2026-09-18T02:36:01Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1b3a187a268e5666ad934a44c211d7337f213f6da0ba8c495e87428b337fc2d9/tacticocc/Jevbridge",
+   "ogImage": "https://opengraph.githubassets.com/22e4f0ea4e66da262de0fa877c371da8b3953867c2f33569453ec3f4f7fcccdc/tacticocc/Jevbridge",
    "topics": [
     "acp",
     "agent",
@@ -711,7 +711,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9aefa8eaad5791ab4a0ad35cdcadb4e07cdc4fc8b443026eb6f912c614b0c621/BYK/jev-mcp",
+   "ogImage": "https://opengraph.githubassets.com/11e32f503af5139a2d6177e12ab1d22dfcf7526b9f5ca35a8817a531e3fad5cf/BYK/jev-mcp",
    "topics": [],
    "description": "An eval-first MCP server for TypeSafe's Jev, a System One model that returns typed judgments (noul, choice, score) with probabilities instead of generated text.",
    "homepage": null
@@ -724,7 +724,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/685e72ae3708c745520d4f67fc866c36c8ac6eb3e8eb11daa095632585db2c40/kubet/azdaja",
+   "ogImage": "https://opengraph.githubassets.com/4913bdeb02e67ff43f42b05a66b717c27e3a21b34203d38a834d918d20ddcd22/kubet/azdaja",
    "topics": [
     "agent-skills",
     "jcode",
@@ -748,7 +748,7 @@
    "language": null,
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/84a0dbc2f0c520c361e6127f2ef51b4e79bad797f249b136c790b056ce34df84/dbreunig/building-with-jev-skill",
+   "ogImage": "https://opengraph.githubassets.com/dbb4513e8d7eac110d38249d6c284114db87bd4256d5142e181aa888cd25556f/dbreunig/building-with-jev-skill",
    "topics": [],
    "description": "A skill for writing and improving programs that call Jev, TypeSafe's System One model",
    "homepage": null
@@ -761,7 +761,7 @@
    "language": null,
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4a68693f8b1fca60ec44fee10bece42f40a63e37c272c1327fe9f18fda068dd4/samtay32/jev-system-architect",
+   "ogImage": "https://opengraph.githubassets.com/c424fd7ee31e2498b88f3444195c53ad8170e667e39d5e4763923c1bcf7390ad/samtay32/jev-system-architect",
    "topics": [],
    "description": "System-architecture skill for TypeSafe AI Jev/System One — find fuzzy semantic judgment and turn it into small Choice/Score/Noul primitives.",
    "homepage": null
@@ -774,7 +774,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/47f8f038f6a66d56bc1b6a881a138486583ca48bc87a4e24914e622e5790a685/HyunjunJeon/jev-judgment",
+   "ogImage": "https://opengraph.githubassets.com/b5ea00de36a4e56274f1ffbfabf1ef0b8f4910fab074c1643f805d203de5cecd/HyunjunJeon/jev-judgment",
    "topics": [],
    "description": "Agent Skill: send closed coding-agent judgments to TypeSafe Jev",
    "homepage": null
@@ -806,12 +806,12 @@
   "24601/Augustus": {
    "stars": 0,
    "forks": 0,
-   "pushedAt": "2026-09-19T16:35:06Z",
+   "pushedAt": "2026-09-19T17:38:28Z",
    "createdAt": "2026-09-18T05:02:27Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/de5a84fe810aa82174e621a7283dc90aa16e62ab5b6dd3eef954782d8f5dbc8e/24601/Augustus",
+   "ogImage": "https://opengraph.githubassets.com/35b190fa33fe4f9ba490b8c5d05e57e5b16e9ae55556ea0ba2ac87a6d69ae5c1/24601/Augustus",
    "topics": [
     "agent-skills",
     "agent-workflows",
@@ -828,27 +828,27 @@
    "homepage": "https://github.com/24601/Augustus/blob/main/docs/ecosystem.md"
   },
   "browser-use/jev-ultrafast": {
-   "stars": 7605,
-   "forks": 483,
+   "stars": 7702,
+   "forks": 485,
    "pushedAt": "2026-09-18T16:28:35Z",
    "createdAt": "2026-09-16T21:30:12Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4aa0266d43a3ba42d1ee4ab0b9f8ec861390920c0fae5a1fb815c30fbcc43b98/browser-use/jev-ultrafast",
+   "ogImage": "https://opengraph.githubassets.com/8c5d39df1d8b3173496947e972a71edfc00e72e102eef1d641a8faca194985d5/browser-use/jev-ultrafast",
    "topics": [],
    "description": "i. am. speed.",
    "homepage": "https://browser-use.com"
   },
   "awlevin/typesafe-computer-use": {
-   "stars": 441,
+   "stars": 447,
    "forks": 25,
    "pushedAt": "2026-09-18T23:33:50Z",
    "createdAt": "2026-09-16T17:48:45Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/221f61ca4a4fae45c20c8e3b577cce539b9ff07ce8032afe0a7af07e646b58cd/awlevin/typesafe-computer-use",
+   "ogImage": "https://opengraph.githubassets.com/af45f5a2dd8481e524527f0165374fdf86fde6d2304b55cdb4ee16d5297c10b5/awlevin/typesafe-computer-use",
    "topics": [
     "ai-agents",
     "automation",
@@ -861,14 +861,14 @@
    "homepage": null
   },
   "droidrun/mobile-jev": {
-   "stars": 205,
+   "stars": 206,
    "forks": 27,
    "pushedAt": "2026-09-17T12:55:20Z",
    "createdAt": "2026-09-17T10:41:01Z",
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5327ba8a8d142a0ff5cba89d1356a7092636a912e74c51f906615b4a53d65ca6/droidrun/mobile-jev",
+   "ogImage": "https://opengraph.githubassets.com/c4e0d44ac3d43f09d1b50f15a3100c8980fbaf2c0281e8729ca28d2eca660bdf/droidrun/mobile-jev",
    "topics": [],
    "description": null,
    "homepage": null
@@ -881,20 +881,20 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1beec956f667215878e123ae3c238edc98a26704d6ed24c0e29c6b6ffecb838b/jkudish/jev-browser",
+   "ogImage": "https://opengraph.githubassets.com/e8d7684180cdd48dab5e86e4f5e5621779d3869a3f63aa13c66f6b743696743b/jkudish/jev-browser",
    "topics": [],
    "description": "Browser use using Typesafe's Jev model",
    "homepage": null
   },
   "moritzkremb/jev-voice-browser": {
-   "stars": 105,
-   "forks": 12,
+   "stars": 107,
+   "forks": 13,
    "pushedAt": "2026-09-17T22:40:26Z",
    "createdAt": "2026-09-17T22:40:19Z",
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/613a581e660ddab09547f9acd9fb1b465e7e217d15aa51489a1c819d3dbb495a/moritzkremb/jev-voice-browser",
+   "ogImage": "https://opengraph.githubassets.com/2956ad7c1342d08ae532d4bc8f00947af249d124de79ae1378b1deca39c83d6f/moritzkremb/jev-voice-browser",
    "topics": [],
    "description": "Control a real browser by voice. Jev (TypeSafe System One) decides intent + target in ~300 ms per spoken word; Playwright acts — often before you finish the sentence.",
    "homepage": null
@@ -907,7 +907,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/b6d9926647e3c3aa167de9d3bd16f91254e3533c4388df4e4f8ab649340d5285/Ying-Kai-Liao/jev-browser",
+   "ogImage": "https://opengraph.githubassets.com/d6b5e16734131e3ad369b036d39ee4c67755d452f4d6abddd9259aa9f8c3ed9d/Ying-Kai-Liao/jev-browser",
    "topics": [
     "browser-automation",
     "llm-agents",
@@ -926,7 +926,7 @@
    "language": "JavaScript",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c591d17f3b61436c635cfbb48e40bd02e667077c399bb4ddbe5731f2b983044b/tontoko/jev-browser",
+   "ogImage": "https://opengraph.githubassets.com/026c6ef6050c427ae7e29781fa0be4c20f22a4ac84466bc232641b34b57ce12f/tontoko/jev-browser",
    "topics": [
     "browser-automation",
     "cli",
@@ -946,7 +946,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/7620317f7ad3136098098143747cf4bc712bf75f2e0b1bcf7fc4469bf7b86113/Friedjof/jev-mobile",
+   "ogImage": "https://opengraph.githubassets.com/a2ae2c1a4b01f9fdc570a8746cb4b8d2e8cb1ee0a5ba3d4e4448359b9816e520/Friedjof/jev-mobile",
    "topics": [
     "agents",
     "android",
@@ -968,7 +968,7 @@
    "language": "TypeScript",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a0b1e4587a44d1533e0fa430728d6ec76ba2d19b9c2a3af83273be766a49ccab/romaluev/jev-ego",
+   "ogImage": "https://opengraph.githubassets.com/371c0f35f9438eb6b91ab5ce3ae49438c23a78b66365629446be9ce4b00371b1/romaluev/jev-ego",
    "topics": [
     "ai-agent",
     "browser-agent",
@@ -985,27 +985,27 @@
    "homepage": null
   },
   "wy-coliney/jev-browser-use": {
-   "stars": 174,
+   "stars": 175,
    "forks": 8,
    "pushedAt": "2026-09-19T02:15:01Z",
    "createdAt": "2026-09-18T06:58:34Z",
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f8108a78ca9c536a99520fdc030a9899f98ca77b765cf4f053ffb1b955cb98ce/wy-coliney/jev-browser-use",
+   "ogImage": "https://opengraph.githubassets.com/e2e00f285cf44b89735881664522d047e4a6ac2317527d146ae50ef797738b8d/wy-coliney/jev-browser-use",
    "topics": [],
    "description": "5–10x faster browser operations: Jev clicks, Codex thinks and verifies. Built at EZCollegeApp.",
    "homepage": null
   },
   "Sac-Y/Jev-cu": {
-   "stars": 230,
-   "forks": 19,
+   "stars": 235,
+   "forks": 21,
    "pushedAt": "2026-09-18T17:01:44Z",
    "createdAt": "2026-09-18T16:56:08Z",
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cc0fb4ae43aad13e80f6393a01f6ce74bd50f479a96d543b1ae557809c11b803/Sac-Y/Jev-cu",
+   "ogImage": "https://opengraph.githubassets.com/ee246eea67e6c2bd0c899382a24a9b1dcf11f66cd6a43a7c7f3febae2ff51c2e/Sac-Y/Jev-cu",
    "topics": [],
    "description": null,
    "homepage": null
@@ -1018,59 +1018,59 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/28be2ada20884bd0fbeaa684b67ff6a5c5eddcb87e5252b60c46507782e6fb55/hqman/JevScout",
+   "ogImage": "https://opengraph.githubassets.com/627d3c4548686703c3a764704a62bd0e8c2ccb846cd998421d59d69f905e4467/hqman/JevScout",
    "topics": [],
    "description": null,
    "homepage": null
   },
   "TheoLeeCJ/SemIf": {
-   "stars": 1812,
+   "stars": 1827,
    "forks": 117,
    "pushedAt": "2026-09-19T04:46:36Z",
    "createdAt": "2026-09-16T03:51:21Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2c149e1052c87e97d7ee657d35ab4c1e16a8a0c022882bd7fa5838f62736c496/TheoLeeCJ/SemIf",
+   "ogImage": "https://opengraph.githubassets.com/652e7cc42cb52cf0465afb7109a02c3e00227fa09620ace431c6f41860887660/TheoLeeCJ/SemIf",
    "topics": [],
    "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
    "homepage": "openjev.com"
   },
   "vinnylarouge/jevlike": {
-   "stars": 958,
+   "stars": 959,
    "forks": 80,
    "pushedAt": "2026-09-16T18:12:53Z",
    "createdAt": "2026-09-16T10:26:01Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/10b76dbc194069984eb581b6488d1913a60a8f3bb45845335f39b15b3b6ee63d/vinnylarouge/jevlike",
+   "ogImage": "https://opengraph.githubassets.com/90a77c5926a1b0e013a4b7ee63c0ca833201618463c8e6aa7b6e3d2ecc4cab20/vinnylarouge/jevlike",
    "topics": [],
    "description": null,
    "homepage": null
   },
   "TianyuCodings/NanoJev": {
-   "stars": 800,
-   "forks": 105,
+   "stars": 810,
+   "forks": 108,
    "pushedAt": "2026-09-17T23:24:13Z",
    "createdAt": "2026-09-17T16:08:30Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/84ef34de4e88507d23c03927426668bcf77c4ca38387c388e02f0d8327039aba/TianyuCodings/NanoJev",
+   "ogImage": "https://opengraph.githubassets.com/692644dc5b59d9dc09c76e305ac7a3996260158c0d5548584f858d0b17284092/TianyuCodings/NanoJev",
    "topics": [],
    "description": "A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
    "homepage": null
   },
   "ekzhang/openjev-sglang": {
-   "stars": 185,
-   "forks": 16,
+   "stars": 186,
+   "forks": 17,
    "pushedAt": "2026-09-18T15:46:43Z",
    "createdAt": "2026-09-17T18:11:49Z",
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8e4c49aab9542cd184f02558608da6b3652b5a44df3bf8204a24a439cdb96dba/ekzhang/openjev-sglang",
+   "ogImage": "https://opengraph.githubassets.com/0bf64b6ff112e674539bd5965789e2db3f0dd8b65668dc5d5b7c77bf6d9e0589/ekzhang/openjev-sglang",
    "topics": [
     "jev",
     "llm",
@@ -1081,14 +1081,14 @@
    "homepage": "https://ekzhang--openjev-sglang-openjev.us-west.modal.direct"
   },
   "hr98w/jev-visual": {
-   "stars": 137,
-   "forks": 19,
+   "stars": 138,
+   "forks": 20,
    "pushedAt": "2026-09-18T08:53:11Z",
    "createdAt": "2026-09-17T17:45:56Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/b1c8eb79496b06e8406259c24426889506b55bef2a9c38972c423dc8caa82776/hr98w/jev-visual",
+   "ogImage": "https://opengraph.githubassets.com/3c10d558b58080305ffec5cef6cf940553c429c6ffe38f1cea7be292d9e9b6eb/hr98w/jev-visual",
    "topics": [],
    "description": "An educational Jev-like visual inference experiment on Apple Silicon: shared context, direct candidate scoring, and local visual demos.",
    "homepage": null
@@ -1096,12 +1096,12 @@
   "kshetrajna12/reflex": {
    "stars": 74,
    "forks": 4,
-   "pushedAt": "2026-09-19T04:19:15Z",
+   "pushedAt": "2026-09-19T17:12:00Z",
    "createdAt": "2026-09-17T23:03:08Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1e7d612932483752fa0bb8dbad9746720ef8e343ae170e8fcb844217f809113c/kshetrajna12/reflex",
+   "ogImage": "https://opengraph.githubassets.com/b06df313a71a3aa8de5fb7336691ba3f87bf0c0b1817db7e8b7793862bf31f05/kshetrajna12/reflex",
    "topics": [],
    "description": "A small open decision model: state + typed questions -> calibrated probabilities. A Jev / System One re-creation on Qwen3.5.",
    "homepage": null
@@ -1114,7 +1114,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/575f2e1f26667b6716b6e855a46b69308b9cbb74545aed627d8c07f4644e3843/Mapika/decider",
+   "ogImage": "https://opengraph.githubassets.com/b717596fa068ce8f495f66f820b724cd3389d99b232f55039bc1fec9cf47ea89/Mapika/decider",
    "topics": [],
    "description": "One-pass typed decisions with calibrated probabilities (System One style model), fine-tuned from Qwen3.5-2B",
    "homepage": null
@@ -1122,12 +1122,12 @@
   "bnsd55/jevmlx": {
    "stars": 33,
    "forks": 4,
-   "pushedAt": "2026-09-19T14:59:54Z",
+   "pushedAt": "2026-09-19T17:33:20Z",
    "createdAt": "2026-09-17T10:20:12Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5322898a596ffed5998dd45236b5211c0e5a97a1aa974bedd6d5589b3ce2e590/bnsd55/jevmlx",
+   "ogImage": "https://opengraph.githubassets.com/3ebc89117bc28139a75e109ca5b06c214639cf02caba27d7c8308e7348393a31/bnsd55/jevmlx",
    "topics": [
     "apple-silicon",
     "jev",
@@ -1146,7 +1146,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f4b3e7b0697da317cebc93625f8955eda8787e8c0ac5662a471f50ab0f893519/r-ms/mini-jev",
+   "ogImage": "https://opengraph.githubassets.com/aa9ec784b15e7106e16c8f39a0c8886c1b779cd9ac8b577a1526e37ca0245ca2/r-ms/mini-jev",
    "topics": [],
    "description": "mini-Jev: what a Jev-style typed-decision interface looks like on a frozen Qwen3-4B — read the option letter's logits instead of generating JSON. Preregistered experiment, results, teaching bench.",
    "homepage": null
@@ -1159,20 +1159,20 @@
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/ebfdefcb11bad07dc924d56d35d9616bb2c4d046c3fee46d0d77d623593d6302/mithalouni/system-one-open",
+   "ogImage": "https://opengraph.githubassets.com/1dd740b45aa163f9850866e79b28189ebd8936030128b4f2db8838ca8e2df9df/mithalouni/system-one-open",
    "topics": [],
    "description": "Open replica of TypeSafe's Jev: typed calibrated decisions in one forward pass, on Gemma 4 E2B / Gemma 3 270M (Modal)",
    "homepage": null
   },
   "Heman10x-NGU/Verdict-open-jev": {
-   "stars": 20,
+   "stars": 21,
    "forks": 3,
    "pushedAt": "2026-09-18T23:42:06Z",
    "createdAt": "2026-09-17T18:01:41Z",
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2376053ddde33e4a3fbf4c009c63129dc37d54fcc9bab5c03a576f23bae47ed6/Heman10x-NGU/Verdict-open-jev",
+   "ogImage": "https://opengraph.githubassets.com/043d438ea3425f5fb9754df86ae4050f7824003abbaec80de65f441b97be873f/Heman10x-NGU/Verdict-open-jev",
    "topics": [
     "brier-score",
     "calibration",
@@ -1196,7 +1196,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/fffa7f9921088d1d6013cd308a1c547ab540b20bbcba8bd722bbee49f249cb1d/kikoncuo/jevfire",
+   "ogImage": "https://opengraph.githubassets.com/cfef49485586841ed732a49222aba392fec387bc923ecd8639be09d561c694bd/kikoncuo/jevfire",
    "topics": [
     "cuda",
     "game-ai",
@@ -1218,7 +1218,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cdd2014800ccb0799b053f9122133057963d6498aa1dc34d862af3deeb755bbd/olanotolu/jevbetter",
+   "ogImage": "https://opengraph.githubassets.com/97aa75d3d85e7ecce65426efbf5aa62bd2cd56c6e24d411a0f52e88cf49da5a2/olanotolu/jevbetter",
    "topics": [],
    "description": "A stronger one-pass scorer over a variable list of text options. Hashed n-gram encoder, rival-aware attention, gated head, temperature scaling — with a head-to-head benchmark vs the jevlike starter design.",
    "homepage": null
@@ -1231,7 +1231,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/327a139758089df3cf9f5d47a57260ecfe086bd245c24485f9d8296ab5cef454/ikermoel/open-alternative-jev",
+   "ogImage": "https://opengraph.githubassets.com/d84a3eb9a55ab11411f819408afec6d7cfd4d075f3364d944400d230a304d25f/ikermoel/open-alternative-jev",
    "topics": [
     "calibration",
     "classification",
@@ -1255,20 +1255,20 @@
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/76618fa6720054ff2ead86b895420b12346c15f717919509f86733224a68df33/zhihz/openjev",
+   "ogImage": "https://opengraph.githubassets.com/ab2cd834f8769a4b8cdb50e7e05c240e88c7258cd0fe2df4eb9edbab252dab5c/zhihz/openjev",
    "topics": [],
    "description": "Local bilingual probability decisions from context, questions, and candidate answers. Independent research preview inspired by TypeSafe Jev.",
    "homepage": null
   },
   "rorshopping/jev-on-a-laptop": {
-   "stars": 15,
+   "stars": 16,
    "forks": 1,
    "pushedAt": "2026-09-17T10:11:53Z",
    "createdAt": "2026-09-16T09:21:53Z",
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6637c960f8906f3bd8691230d5db189788543e0f7ab862fc0ade4717dada168d/rorshopping/jev-on-a-laptop",
+   "ogImage": "https://opengraph.githubassets.com/34567fe08f6e88217faae93346fb08defee0a0c02269ed7a3998c760c3d4863a/rorshopping/jev-on-a-laptop",
    "topics": [],
    "description": "Unofficial study: Jev-style parallel typed decisions on stock 1.5B-8B models on an Apple Silicon laptop. Benchmarks, research notes, and a Hugging Face Space demo.",
    "homepage": null
@@ -1281,7 +1281,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/058a5c4a739616c8dc11b9f507d0e5a7e1753b4ef29e7da04140bfe9916a991f/iammrduncan/typesafe-ai-benchmark",
+   "ogImage": "https://opengraph.githubassets.com/9b7a6ef7d3f7ebb1e9aad066155b3bfb491070e60d7f4411a5ed3944df33e98c/iammrduncan/typesafe-ai-benchmark",
    "topics": [],
    "description": "This is a LLM Gateway that mimics typesafe ai structured output. Like an imposter Jev.",
    "homepage": "https://hackersintheloop.org/"
@@ -1289,12 +1289,12 @@
   "genai-craft/openvons": {
    "stars": 9,
    "forks": 0,
-   "pushedAt": "2026-09-19T16:54:43Z",
+   "pushedAt": "2026-09-19T17:27:28Z",
    "createdAt": "2026-09-17T09:13:00Z",
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/783db72cdc822b1407a654c171cb2a0cb83ca521dc1781ccc1ed7075e2b4a401/genai-craft/openvons",
+   "ogImage": "https://opengraph.githubassets.com/bd11a08b69809658c82c046ed3177f6845d95f6a9f59769a01547d3aa7f1a116/genai-craft/openvons",
    "topics": [
     "calibration",
     "decision-model",
@@ -1307,14 +1307,14 @@
    "homepage": "https://genai-craft.com"
   },
   "wfzyx/von": {
-   "stars": 13,
-   "forks": 1,
+   "stars": 20,
+   "forks": 3,
    "pushedAt": "2026-09-19T15:53:53Z",
    "createdAt": "2026-09-18T05:03:47Z",
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1f61e62dbe1b6543d2faf9af432a6f31381c6e0384db3d722441858b28f4ff1d/wfzyx/von",
+   "ogImage": "https://opengraph.githubassets.com/2b2d7998c7a0e0b2e8008a6120301646b27c8889b8509e2c2bdaa8f751314617/wfzyx/von",
    "topics": [
     "decision-model",
     "jev",
@@ -1328,14 +1328,14 @@
    "homepage": null
   },
   "zhengxuyu/litjev": {
-   "stars": 17,
+   "stars": 18,
    "forks": 2,
    "pushedAt": "2026-09-18T13:58:08Z",
    "createdAt": "2026-09-17T17:19:25Z",
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/26375b4ba839a112906b1791cb686463226b13e54817756829bdbf8f5f7b3edc/zhengxuyu/litjev",
+   "ogImage": "https://opengraph.githubassets.com/6dee4ccbb591ffd12e43fd07dcd6b9db333ef8bb8abd06f7b4086d861556e83c/zhengxuyu/litjev",
    "topics": [],
    "description": "Turn any off-the-shelf LLM into a Jev -like decision layer",
    "homepage": null
@@ -1348,46 +1348,46 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/66d40f10a8bbd342e7d265b143b5668c73eb1a6e445b5818b9dcca57c0e235fb/JoshuaSP/open-jev",
+   "ogImage": "https://opengraph.githubassets.com/d3bdbf373aa515a88445fc310f4fa02f0297c6ce537c7ef8a95f0404228a21e2/JoshuaSP/open-jev",
    "topics": [],
    "description": "Typed JSON inference with DiffusionGemma, with Every and Jev benchmark results",
    "homepage": null
   },
   "jaredpalmer/kev": {
-   "stars": 407,
+   "stars": 415,
    "forks": 25,
    "pushedAt": "2026-09-19T16:23:52Z",
    "createdAt": "2026-09-17T20:49:39Z",
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/abc951dc07613f731e6c0e5595e47532cf8c393657b56757506c50f8aab5f983/jaredpalmer/kev",
+   "ogImage": "https://opengraph.githubassets.com/09e3d67ebeac790ce28e5e995a9b03895bd0f09be03c3f255341b8d518e6e46a/jaredpalmer/kev",
    "topics": [],
    "description": "tiny Jev-like model built on top of Qwen2.5-0.5B you can train and run on your MacBook",
    "homepage": null
   },
   "featherless-ai/simple-jev": {
-   "stars": 218,
-   "forks": 21,
+   "stars": 225,
+   "forks": 22,
    "pushedAt": "2026-09-18T19:47:32Z",
    "createdAt": "2026-09-18T09:52:15Z",
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/526c9fba16ce3ba59621879529163f40905f7d75ec07f5c50a328dc8cee12edf/featherless-ai/simple-jev",
+   "ogImage": "https://opengraph.githubassets.com/8500a7366e534e2443ed884ad2b58af120bb1c2167d8d97005b8c7af6439c7b3/featherless-ai/simple-jev",
    "topics": [],
    "description": "Turn any open model into a classifier/jev endpoint",
    "homepage": null
   },
   "razorback16/openjev": {
-   "stars": 105,
+   "stars": 109,
    "forks": 10,
    "pushedAt": "2026-09-18T19:55:31Z",
    "createdAt": "2026-09-18T09:15:33Z",
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0c54ba08a8390b311232684b9e28142f12b5cc95b6ff19828005dd85c1a0654d/razorback16/openjev",
+   "ogImage": "https://opengraph.githubassets.com/a79ca3aa263d5079d85e7434066f8947994bac31a32abdbf2388c419fc0f2599/razorback16/openjev",
    "topics": [],
    "description": "Open, Jev-compatible System One decision server on DiffusionGemma",
    "homepage": "https://codiv.ai"
@@ -1400,20 +1400,20 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/eac26654ff72fd91ad04a0957be0069f49b27d67cb53a6a03ebcbc31082b59a4/daseinlabs/open-jev",
+   "ogImage": "https://opengraph.githubassets.com/106c4662a95b1feb95ecdbcfcf23173bd0e64498b062d3abca8c9bfe1edd697e/daseinlabs/open-jev",
    "topics": [],
    "description": null,
    "homepage": null
   },
   "logan-markewich/jeff": {
-   "stars": 82,
+   "stars": 84,
    "forks": 4,
    "pushedAt": "2026-09-19T04:38:31Z",
    "createdAt": "2026-09-19T02:17:25Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/7c86402187dc372a952dc3aa05174300a7e7aa08389147e979e59df8c1e0a975/logan-markewich/jeff",
+   "ogImage": "https://opengraph.githubassets.com/bde54b5d3750ef0f614604e255a02e94af4b9f77c01b9edb3bf0fbc9cdbfc50f/logan-markewich/jeff",
    "topics": [
     "classification",
     "encoder",
@@ -1425,14 +1425,14 @@
    "homepage": null
   },
   "devagrawal09/jev-review": {
-   "stars": 320,
-   "forks": 18,
+   "stars": 325,
+   "forks": 19,
    "pushedAt": "2026-09-17T00:29:25Z",
    "createdAt": "2026-09-16T21:45:36Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d69cd57ea2b7c358267c4065085e7378dfd3aea9152ef2107ff38c0e741c2604/devagrawal09/jev-review",
+   "ogImage": "https://opengraph.githubassets.com/78cd1d6e2e7f2849677e84a28335e130c225414465ee2929fd617326d32d665f/devagrawal09/jev-review",
    "topics": [
     "ai",
     "code-review",
@@ -1451,7 +1451,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0a83e5e536cd9565543956ec9de4a8f9fede3c499eaf15b18c541a137b718962/NiazMorshed2007/jev-review",
+   "ogImage": "https://opengraph.githubassets.com/c87b21f59527acb25ca6cc7bcab13965a9ede7f945a351153886aa736eb194a4/NiazMorshed2007/jev-review",
    "topics": [
     "agent-plugin",
     "ai-agents",
@@ -1468,14 +1468,14 @@
    "homepage": null
   },
   "thruwire/foreman": {
-   "stars": 346,
+   "stars": 351,
    "forks": 24,
    "pushedAt": "2026-09-19T16:08:32Z",
    "createdAt": "2026-09-17T11:46:13Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5b54733d0fc9220299f62b3c180e60991515afba975add8cf053eeb0a5e9af2b/thruwire/foreman",
+   "ogImage": "https://opengraph.githubassets.com/38d33347c5708c0e4250a1f4bc19957589eb8e181e38913aa4ec24df1b590f58/thruwire/foreman",
    "topics": [],
    "description": "Software factory foreman based on TypeSafe's Jev model",
    "homepage": "https://thruwire.ai"
@@ -1508,7 +1508,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/bf3b9963c3b397ca54298ac6fd5f0bde975b566585858c05ae47c8dd8f4a5d97/raihankhan-rk/diffjury",
+   "ogImage": "https://opengraph.githubassets.com/7d41d6609581ddda431b5e14c4ecc940d17b783cfd0cd71950e5cc501ee6fcdd/raihankhan-rk/diffjury",
    "topics": [],
    "description": "DiffJury — TypeSafe Jev PR risk router + code review coach",
    "homepage": null
@@ -1521,7 +1521,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f106df9e212a43ac166ea8313b166d367ca117b76221d961ace023d884d51a47/frostney/clean-code-review",
+   "ogImage": "https://opengraph.githubassets.com/60c13ffc0f6edd1e99d4e0619671a72e7be6b9c5869cecdf6f513c0e48f02f18/frostney/clean-code-review",
    "topics": [
     "agents",
     "ai",
@@ -1545,7 +1545,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/06ca05f33ae64997b13697e32d2a5d38b160cd63d11b73cf6800a98efb41ead8/huntedman/JevLint",
+   "ogImage": "https://opengraph.githubassets.com/9d8ba57f624e5b913b3ec48b28df94ffa01e62bd067bc9f7757d7734f7064bff/huntedman/JevLint",
    "topics": [],
    "description": "Configurable semantic linting powered by Jev, with file-level NOUL judgments and a magic-strings plugin.",
    "homepage": null
@@ -1558,7 +1558,7 @@
    "language": "Rust",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/246fac23e3286ec3ab047cc54158003095fcfe3dac8a4bdbbd4cbfe4fad18c74/devanshbatham/commit-miner",
+   "ogImage": "https://opengraph.githubassets.com/96c8031476810f65a36b94f764d51ed422e59a5fb4eb452953a1db9e7e7f1191/devanshbatham/commit-miner",
    "topics": [],
    "description": "Classify Git commit diffs and messages with Jev. Bug fixes, security fixes/CWEs, and change types.",
    "homepage": null
@@ -1571,7 +1571,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/507320c7e7ddb7a7f24a8b18750de8667893a780445248355f866a843beebdb8/fatwang2/jev-review-action",
+   "ogImage": "https://opengraph.githubassets.com/121bbc1c1212055d9f30e80c5dfe08aae605b0cae83f2c0ab572eada6440a803/fatwang2/jev-review-action",
    "topics": [
     "automation",
     "awesome-list",
@@ -1592,13 +1592,13 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0842ec01dd81ff9f103bc0d9fcce4aa154699e0d28f1faa46cece348010aee85/cephalization/jev-triage",
+   "ogImage": "https://opengraph.githubassets.com/be1ff328a8c839021ac6bf74db3b6925ee46d8cd13360a4410708b0574947997/cephalization/jev-triage",
    "topics": [],
    "description": "Uses typeful jev, zero sync to pull and sync large repositories for issue triage",
    "homepage": null
   },
   "lakeday-org/perch": {
-   "stars": 152,
+   "stars": 153,
    "forks": 9,
    "pushedAt": "2026-09-19T01:42:06Z",
    "createdAt": "2026-09-16T04:55:38Z",
@@ -1620,14 +1620,14 @@
    "homepage": "https://perchscan.com"
   },
   "Alurith/jeff": {
-   "stars": 28,
+   "stars": 29,
    "forks": 0,
    "pushedAt": "2026-09-19T05:49:47Z",
    "createdAt": "2026-09-18T14:13:58Z",
    "language": "Go",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/14ac10b6f6d87e05342c7726b76b7a72f2616babdb067d21fa4b989b89ee1fc9/Alurith/jeff",
+   "ogImage": "https://opengraph.githubassets.com/d154d6359029ff7e3fb8ffca50cc65c3b4021d71a5e0614e2b48448c43d8dacd/Alurith/jeff",
    "topics": [
     "golang",
     "jev"
@@ -1643,7 +1643,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5609e7c901dd606848c0ebd4727be5038e92f1d63d9f077d1d4bd47720bc4a87/doeixd/jev-pref",
+   "ogImage": "https://opengraph.githubassets.com/700e334500c07cd8131f672c1ac94eae2890b923f4efd61aeae475b5dc19609d/doeixd/jev-pref",
    "topics": [
     "agent-skills",
     "claude-code",
@@ -1663,7 +1663,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/49f2032066bf5c9d850aafe54169b55fb605bf77579d97a6d29b5f7b4f65320a/valentynkit/jev-commit",
+   "ogImage": "https://opengraph.githubassets.com/8e0fbb5ef9c3201380a2fe3a3d6a32ef1a1a31d8a74d61f66510c9b70eb24816/valentynkit/jev-commit",
    "topics": [],
    "description": "pre-commit hook: one Jev call judges whether your commit message matches the diff, plus debug leftovers, scope creep, and a secret belt",
    "homepage": null
@@ -1676,7 +1676,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/4ca6431c21623c20bd5b74f3ed05d27e68ce7435e18ca7a85ca315dfe9d0ffda/iamvatsalpatel/tiershift",
+   "ogImage": "https://opengraph.githubassets.com/3fdd58b7ace83d00d67f25cb81a705d8fc503ac3b4fe9093446bb50449234606/iamvatsalpatel/tiershift",
    "topics": [
     "agents",
     "cost-optimization",
@@ -1700,20 +1700,20 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/95c7b9d790e7627480f804e0cf27210801030bd3cb10e1aa63a0da4d128db180/prismhq/jev-router",
+   "ogImage": "https://opengraph.githubassets.com/e8f3df9c4e86ac13a95d6b99e76a674a882a6802b969036f4e8c288d44ce509f/prismhq/jev-router",
    "topics": [],
    "description": "Open-source LLM router that uses TypeSafe's Jev to pick a model, on top of LiteLLM",
    "homepage": null
   },
   "nidhi-singh02/agent-router": {
    "stars": 39,
-   "forks": 2,
+   "forks": 3,
    "pushedAt": "2026-09-19T09:53:15Z",
    "createdAt": "2026-09-17T09:55:56Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3cc20c1adcccc2e8617ca21906def60fc05766fd02e75661d5e688d5fa18897b/nidhi-singh02/agent-router",
+   "ogImage": "https://opengraph.githubassets.com/9474468e419628ef2cca4e45867e94cb9b62997e0bc67e9856747c4b1613cf72/nidhi-singh02/agent-router",
    "topics": [
     "agents",
     "ai",
@@ -1737,7 +1737,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/eecd64e5424e2cba033afdd346344ce517f508fbb83742ff4f3a2e2fc6432b4f/FirasSX914/Janus",
+   "ogImage": "https://opengraph.githubassets.com/0871a1e8c6a4069b57807e0d8fda02ed8950cafe28a3021eabc7369c9d99b726/FirasSX914/Janus",
    "topics": [
     "benchmark",
     "calibration",
@@ -1752,46 +1752,46 @@
    "homepage": null
   },
   "yusukebe/hono-jev-router": {
-   "stars": 32,
+   "stars": 33,
    "forks": 1,
    "pushedAt": "2026-09-18T08:59:04Z",
    "createdAt": "2026-09-18T07:42:20Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3945e006bdff6f62c9219e08d7bfb0c17a01c40f50a11c8dd58b97e075a5ed86/yusukebe/hono-jev-router",
+   "ogImage": "https://opengraph.githubassets.com/6c4292b8bd698d2cd651b2c08a6ad4e9bdfc112d6654d2184125236626970686/yusukebe/hono-jev-router",
    "topics": [],
    "description": "Route HTTP requests by meaning. A semantic router for Hono powered by Jev.",
    "homepage": null
   },
   "BillionsBobby/JevRouter": {
-   "stars": 77,
+   "stars": 80,
    "forks": 6,
-   "pushedAt": "2026-09-19T16:49:24Z",
+   "pushedAt": "2026-09-19T17:26:47Z",
    "createdAt": "2026-09-18T09:17:30Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c255b7f799ffcd224cce5b69b844f434bf501b4e1df49c3e89bed9c8d3f4b29f/BillionsBobby/JevRouter",
+   "ogImage": "https://opengraph.githubassets.com/c9a5334386a9bf02b969c71e85e0d01d5fe81eefa70e8e1612773a9c69c62879/BillionsBobby/JevRouter",
    "topics": [],
    "description": "A lightweight Jev-powered router for models, tools, and subagents",
    "homepage": null
   },
   "vinilana/jev-gateway": {
-   "stars": 46,
+   "stars": 48,
    "forks": 2,
    "pushedAt": "2026-09-19T11:17:03Z",
    "createdAt": "2026-09-18T18:30:56Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/fb0d8aa75c1772903e5fdff7e345d8ed353af54496dad59ee756a795f56d23a5/vinilana/jev-gateway",
+   "ogImage": "https://opengraph.githubassets.com/27fe15fa460f2850dc6ca752ba534987404c87b7d6088c524ee9fb6d9e4de90c/vinilana/jev-gateway",
    "topics": [],
    "description": null,
    "homepage": null
   },
   "superagents-lab/jev-search": {
-   "stars": 192,
+   "stars": 195,
    "forks": 25,
    "pushedAt": "2026-09-19T15:05:09Z",
    "createdAt": "2026-09-17T18:05:10Z",
@@ -1811,7 +1811,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/dafce324700aaba6737fe762d42dbe90c8054bd5d81546fc54fde60bd1ff8ca7/ellipsis-dev/blink",
+   "ogImage": "https://opengraph.githubassets.com/c5c576652c4776efec932135e41d524f2878a7913bdec086fa62088b39ea9bbb/ellipsis-dev/blink",
    "topics": [],
    "description": "Codebase search powered by Jev from @typesafe-ai",
    "homepage": null
@@ -1824,7 +1824,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6ced6816848a5d132408c455d90cc759bb4af067ead188e393fdb4141cec3ea4/hev/reranker",
+   "ogImage": "https://opengraph.githubassets.com/b6c8dd482eaf74a68f116600f8cbde479f1cb0670b831fd0705f9c6dd30e437d/hev/reranker",
    "topics": [],
    "description": "Use Jev (TypeSafe's System One model) as a calibrated reranker: one call, up to 30 documents, a probability per document. Apache-2.0.",
    "homepage": null
@@ -1837,7 +1837,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1f96ce073aedeaa068c8bc05587c3e3c74498b39aebd3081bf592a6028ec036b/WiktorB2004/llama-index-jev",
+   "ogImage": "https://opengraph.githubassets.com/0e0e4fda7e9b184c51fffab7645a03d3b65d9c7e539a6b34ce368ed7746821ed/WiktorB2004/llama-index-jev",
    "topics": [
     "llamaindex",
     "rag",
@@ -1859,7 +1859,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c39222204304bc5a36a01c241e4558be5f5628d9d62e9935756066232524a0f0/reachjalil/jev-tree",
+   "ogImage": "https://opengraph.githubassets.com/8b8bbf2207ca2f60ee3b2a89aabcb6f4676794e9321a496ef41f47191339eb98/reachjalil/jev-tree",
    "topics": [
     "classification",
     "jev",
@@ -1878,20 +1878,20 @@
    "language": "Jupyter Notebook",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/b65417421659e52bc5d081b9d6eac38d263994d6acc0508afeb21c6c832ade77/jexp/neo4jev",
+   "ogImage": "https://opengraph.githubassets.com/d6866415c56765f898fe2a0650d4c32f2abe60495cd8e87bdaec8160c2c34b59/jexp/neo4jev",
    "topics": [],
    "description": "Typesafe.ai System One Model Jev navigating a Neo4j graph by using a classifier over neighbouring relationships",
    "homepage": null
   },
   "kbhuw/jev-sift": {
-   "stars": 41,
+   "stars": 42,
    "forks": 0,
    "pushedAt": "2026-09-18T20:05:53Z",
    "createdAt": "2026-09-18T00:13:31Z",
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d049cfd2ed21cdc670f74968f67d4a9bdd09cfa89d4faa377994f4620eea73df/kbhuw/jev-sift",
+   "ogImage": "https://opengraph.githubassets.com/d28332f63085e436240c8a319e0ac301d5d931fc09e0df30c096d088d14e2476/kbhuw/jev-sift",
    "topics": [],
    "description": "Classify first. Read selectively. A portable agent plugin and MCP tool for batch text classification.",
    "homepage": null
@@ -1904,7 +1904,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2a4f54437c364f46c676e9081c7271d80ee9e566abff25daa403cad023496689/AkashPriyadarshii/jev-scout",
+   "ogImage": "https://opengraph.githubassets.com/f7d3775d9fe3eb1010ede7826386ea06400fae962022b8046c443dc212a7112b/AkashPriyadarshii/jev-scout",
    "topics": [
     "ai-agents",
     "claude-code",
@@ -1921,14 +1921,14 @@
    "homepage": "https://github.com/AkashPriyadarshii/jev-scout"
   },
   "realZachi/pg-jev": {
-   "stars": 203,
+   "stars": 204,
    "forks": 11,
    "pushedAt": "2026-09-18T19:23:51Z",
    "createdAt": "2026-09-17T20:04:00Z",
    "language": "Shell",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6b042180e94ea7acaac6a3f8a03eb2505884ea1dab657df90055825d7176faca/realZachi/pg-jev",
+   "ogImage": "https://opengraph.githubassets.com/17c55fd331eeb80d049d5780ba839ab958599eea8362b2134e3c010d8349eb3a/realZachi/pg-jev",
    "topics": [],
    "description": "Ask your Postgres tables questions in plain language. A PostgreSQL extension powered by TypeSafe's Jev.",
    "homepage": "https://pgjev.com"
@@ -1941,7 +1941,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5d271ab8ecc8186599f2854c7625d26df583db8b023e666f91b5c3fe973d44fd/Query-farm/vgi-typesafe",
+   "ogImage": "https://opengraph.githubassets.com/9d250b8d1667c99cd0ee48bd2d6934d4d85440a808c229c755a1109c32cdcd66/Query-farm/vgi-typesafe",
    "topics": [
     "ai",
     "apache-arrow",
@@ -1965,7 +1965,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8b26a7ef7a1598b5e4916194340803d549f27fb706b14092cd02b6f9d30ff0a6/EugeneBoondock/jevsql",
+   "ogImage": "https://opengraph.githubassets.com/5f26d426bd88c614a508a0297c3d48996a4da9fc3df3ed9069e352332b0fbe57/EugeneBoondock/jevsql",
    "topics": [
     "ai",
     "jev",
@@ -1986,7 +1986,7 @@
    "language": "C",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e1c675bc26d9acbf1a4aaa0eb3e809d8785a03363aa49a5c8fbff8f5074ebf58/mgaitan/sqlite-jev",
+   "ogImage": "https://opengraph.githubassets.com/dff869c73272c772256a7815a6ee83ac2ed9c8e91815cbf266cabcac494f6a17/mgaitan/sqlite-jev",
    "topics": [],
    "description": "Batched natural-language judgments for SQLite, powered by TypeSafe Jev",
    "homepage": null
@@ -1999,7 +1999,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/79b0913b0d62762e8aad7cb90333d8da7fafb0fdad6717d8b9121e6598a30b6e/reachjalil/jevlogs",
+   "ogImage": "https://opengraph.githubassets.com/36376720f6ce74547a648e68d22715fcffb41c1038eea35550952624c054bc59/reachjalil/jevlogs",
    "topics": [],
    "description": "Open-source Jev log triage for OpenTelemetry. Score the signal before expensive LLM analysis.",
    "homepage": null
@@ -2012,7 +2012,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0415ee799c16814499741d4944ddb1933e021e5a2dc2b857e8cb8ab24adb05f3/AkashPriyadarshii/jev-curate",
+   "ogImage": "https://opengraph.githubassets.com/d5e8c15e33675c5d84340e584bb0e209e9402228553f03cd4008c8813078628d/AkashPriyadarshii/jev-curate",
    "topics": [
     "arrow",
     "cli",
@@ -2060,7 +2060,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/607dc9aadb2691810d994addc5fe592f5e6df96cc17ca0cd4dc6bccca5e9b2e3/opaielsheikh/typesafe-migration-guard",
+   "ogImage": "https://opengraph.githubassets.com/fa07ad0bc15e86413600d44828fe268683058db0fe3d4c7beee7218ea1d9fea1/opaielsheikh/typesafe-migration-guard",
    "topics": [],
    "description": "Automated database migration safety reviewer powered by TypeSafe AI (Jev System One model)",
    "homepage": null
@@ -2073,7 +2073,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/14ab5b7cbf95304af0589e4f4a13606ac066a0c1c14aa40890699b9ec1065df2/Foadsf/jev-for-engineers",
+   "ogImage": "https://opengraph.githubassets.com/3bed3f992dbf5a2cae7853b0d7f07ce7e0223395f37652b480c2fed9a0c7a37f/Foadsf/jev-for-engineers",
    "topics": [
     "cad",
     "cae",
@@ -2095,7 +2095,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/def7fb1b81741da555838ec073f1a35e6e244ed7df3fee5143b201845153eddd/keltokhy/jlink",
+   "ogImage": "https://opengraph.githubassets.com/86a709bd92242d6a8a32ca281b350af4e5b9d331b93266f0a41af152c626c59b/keltokhy/jlink",
    "topics": [
     "economics",
     "entity-resolution",
@@ -2115,7 +2115,7 @@
    "language": "C",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8a8214637925eb34fb70f10f95966bc6b45923d64abe5bb21f466e556262f745/giuliosmall/pg_typesafe",
+   "ogImage": "https://opengraph.githubassets.com/fc5407982e1cbc23aaf0a3268156e10710841d89bafd01f3a913815a763c6e0c/giuliosmall/pg_typesafe",
    "topics": [],
    "description": "Pre-alpha PostgreSQL extension for TypeSafe AI (Jev) categorical classification",
    "homepage": null
@@ -2128,7 +2128,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f5f1ae3ce9f48b1b02cc7d5e3213616b38ca584564afae01ad51fe4ad899176f/ddfeyes/jev-mode",
+   "ogImage": "https://opengraph.githubassets.com/4a07cd11cf937ea6791789f2aa001f06671658e013014e09f6d33d65b0aa70b4/ddfeyes/jev-mode",
    "topics": [
     "agents",
     "ai",
@@ -2146,13 +2146,13 @@
   },
   "choxos/jev-reviewer": {
    "stars": 14,
-   "forks": 3,
+   "forks": 4,
    "pushedAt": "2026-09-19T14:28:03Z",
    "createdAt": "2026-09-18T14:47:00Z",
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1783c0c3cb6d1159180e1ebc5e93fdf8a081d3326f7ef356a64ae9921776eed8/choxos/jev-reviewer",
+   "ogImage": "https://opengraph.githubassets.com/f3ac7da24a2a8db9a00d4c1e65ac73503aa6b93472011f1b1a0dd8e4b28914cc/choxos/jev-reviewer",
    "topics": [
     "clinical-trials",
     "data-extraction",
@@ -2169,14 +2169,14 @@
    "homepage": "https://jevreviewer.xera.ac"
   },
   "kyotofin/tax-doc-classifier": {
-   "stars": 227,
+   "stars": 230,
    "forks": 21,
    "pushedAt": "2026-09-18T15:55:27Z",
    "createdAt": "2026-09-18T14:40:45Z",
    "language": "TypeScript",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5aede1d4a271f35b6a2775ce270ea6abe02a3f7afbdfba06ec31f9b4c4ab5573/kyotofin/tax-doc-classifier",
+   "ogImage": "https://opengraph.githubassets.com/ce36a6d77ac2b18130c177846e32bb323836b51047422fb1f337a43f29ce56d2/kyotofin/tax-doc-classifier",
    "topics": [],
    "description": "Tax document page classifier built on Jev decisions. 100% strict accuracy across 261 IRS forms, ~$0.001 per page.",
    "homepage": null
@@ -2189,7 +2189,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/87bb9e2f2fe269029b27f8757f91c6babbedc54f61822b8398e9e987b870b942/kylemclaren/jevql",
+   "ogImage": "https://opengraph.githubassets.com/506cefa606b1cebaed404de40dae3df03041adec1e2b64bf48226b751ec4bcaa/kylemclaren/jevql",
    "topics": [
     "jev",
     "postgres"
@@ -2205,7 +2205,7 @@
    "language": "C++",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/34c3c591e81cc629d5228fc2bdcd81ede1529bdca29f9cf6d5d2d1e2465ee1b1/colliber/duckdb-jev",
+   "ogImage": "https://opengraph.githubassets.com/9a4e95a168577d5830d916bd722b464bdb0e60d39ffe1dccfc0c61b0a962164a/colliber/duckdb-jev",
    "topics": [],
    "description": "DuckDB extension: typed Jev answers as real SQL types",
    "homepage": null
@@ -2213,12 +2213,12 @@
   "chopratejas/invalidate": {
    "stars": 9,
    "forks": 0,
-   "pushedAt": "2026-09-19T16:50:24Z",
+   "pushedAt": "2026-09-19T17:33:17Z",
    "createdAt": "2026-09-19T04:26:59Z",
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f39a9dd2bf57bb0fbacde1f0dd58af954b1431220dfcdd1beb7ddfc412490cf9/chopratejas/invalidate",
+   "ogImage": "https://opengraph.githubassets.com/3b1420b6a1b1bd952c0d98db080e9d7cfb7d9c8d62645e7d9072d1a14871b2f7/chopratejas/invalidate",
    "topics": [],
    "description": "The invalidation layer for AI memory. Every fact gets a lease; new evidence ends it. Built on TypeSafe Jev.",
    "homepage": null
@@ -2231,7 +2231,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/77d23c660ac4dabf0a163ecbb3c8c8d5a82b77a837f696f31103e0c5a8caf453/caiovicentino/jev-shield",
+   "ogImage": "https://opengraph.githubassets.com/1def9cb6f55ea216d4080a8d8500a5a43da4069d9cc88c17edf12b8bdc88d504/caiovicentino/jev-shield",
    "topics": [
     "ai-safety",
     "mcp",
@@ -2250,7 +2250,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2bac9c7e477c6ce304ab97244b00e0c0ee44620ecda870971f6f1d334d7c0e8b/leepokai/jev-guard",
+   "ogImage": "https://opengraph.githubassets.com/180b983f2823bdf74638fef79a79e1c321162dd672b5400a4689a3ad91318e81/leepokai/jev-guard",
    "topics": [
     "ai-agents",
     "claude-code",
@@ -2274,7 +2274,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8d0212786acf905b0f0f68cdeb961b9235876e50b6dc65c4db27da2b91323821/brainstormity/Jev-Moderation-Bot",
+   "ogImage": "https://opengraph.githubassets.com/630282d82494712af042e6591c5a39e387c08bf29d45f08ef8138d4ba14f2436/brainstormity/Jev-Moderation-Bot",
    "topics": [],
    "description": null,
    "homepage": null
@@ -2287,7 +2287,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/127ae8e040fbd7f385b62fe9b5d010cde9c7a47c0a185b082875409e80d01bf5/MarissaFamularo/citation-verifier",
+   "ogImage": "https://opengraph.githubassets.com/b419903adcf702b60215aee9587b6f80c59eb653c93dc5b2df3da9b1d7b99b9d/MarissaFamularo/citation-verifier",
    "topics": [
     "citation-verification",
     "claude",
@@ -2305,7 +2305,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d048bd1cc4ac90500219abfd72a6fae03bdd2d170a8e0313de714146f7321a98/asfarsadewa/human-compiler",
+   "ogImage": "https://opengraph.githubassets.com/ab44a1d1fcbe4a7e1aa1ff401e30ff3fefc4da34be246708c99ef877a6856d19/asfarsadewa/human-compiler",
    "topics": [],
    "description": "A compiler for human language. Paste text, get diagnostics. Measured by TypeSafe Jev.",
    "homepage": "https://human-compiler.asfarlab.fun"
@@ -2318,7 +2318,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/82e9ac010b735ad8326c226d8a80742f743f1aeee602736a8b67a38862ffa9ce/DanRWilloughby/snifftest",
+   "ogImage": "https://opengraph.githubassets.com/3da9bb4f1f8a884ad819c649ac4f62d62b74c69cf56a945c9c00ca27389d8bb7/DanRWilloughby/snifftest",
    "topics": [
     "ai-writing",
     "claude-code",
@@ -2342,7 +2342,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/68e591f69ad5ee42440a60e49ccb9179bad99eb1445e41336a676921793611e1/scale-venture-partners/riff",
+   "ogImage": "https://opengraph.githubassets.com/47c89672dfefbc74ca6349e2a28bca0c8b066a9c6272ab359878dc45c502aeb5/scale-venture-partners/riff",
    "topics": [],
    "description": "A small, fast prose linter: ruff-style rule codes for writing, backed by TypeSafe's Jev model",
    "homepage": null
@@ -2355,7 +2355,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2010fb6353e44bb7923c6b212668d3bf12b7b38eef9a6a62512de577bbf84c45/teyhouse/jev-secret-detection",
+   "ogImage": "https://opengraph.githubassets.com/4888250d468a284abab092eb0c72321ee29e6b7ac4f6254d5aac872c00237463/teyhouse/jev-secret-detection",
    "topics": [],
    "description": "Measures how well TypeSafe's RLCD-Jev model spots real secret credentials in file snippets",
    "homepage": null
@@ -2368,20 +2368,20 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5bf76ca8f89c9ebeabb6951f32ed385e034ff81f85c0fe529d0743ad887faa97/santos-sanz/jev-audio-beeper",
+   "ogImage": "https://opengraph.githubassets.com/b3aac6cac74c82f3b2f388fb162ef09e8296ade07ea0e57fbeacc0201a90d442/santos-sanz/jev-audio-beeper",
    "topics": [],
    "description": "Low-latency audio censorship POC using Jev typed decisions and ffmpeg.",
    "homepage": null
   },
   "luantak/is-malicious": {
-   "stars": 9,
+   "stars": 10,
    "forks": 0,
    "pushedAt": "2026-09-18T18:54:21Z",
    "createdAt": "2026-09-18T11:40:17Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f028dc29577828f84ed1a32a7cedc88424a5fc773cff8a9bc777b268de741d7b/luantak/is-malicious",
+   "ogImage": "https://opengraph.githubassets.com/7e2b7b87c24d733d8a9c3d17f4a997232efc407745caa4bb22f6354c3cc4dbeb/luantak/is-malicious",
    "topics": [
     "jev",
     "security-scanner",
@@ -2398,7 +2398,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0ba9dcf2c251c7491bd51ea8cd92bde4afd6bf53297a869cfc5a437710073f59/noelzappy/tripwire",
+   "ogImage": "https://opengraph.githubassets.com/30a7d401ab687cfcf24c614bf8c56c0a0b399660a4808bfbc07382afb181a85f/noelzappy/tripwire",
    "topics": [
     "ai-sdk",
     "guardrails",
@@ -2410,14 +2410,14 @@
    "homepage": "https://www.npmjs.com/package/@noelzappy/tripwire"
   },
   "kitze/unclutter": {
-   "stars": 125,
+   "stars": 128,
    "forks": 7,
    "pushedAt": "2026-09-18T08:12:00Z",
    "createdAt": "2026-09-17T11:58:56Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d946351c2948d7e59349726d3bde3ba8ccdad205de9a28c0be29bf122b4a58d4/kitze/unclutter",
+   "ogImage": "https://opengraph.githubassets.com/dac97edb326749c0256f54b200f8bc263e4a1e3868fa06369d13934b2a2bd909/kitze/unclutter",
    "topics": [],
    "description": "WXT browser extension: Jev-powered page clutter removal with reusable template rules.",
    "homepage": null
@@ -2430,7 +2430,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/093dad9602f98fc29c79a83722257f652fac5096ae61dddd177e2b5f5bad04a7/realZachi/typesafe-adblock",
+   "ogImage": "https://opengraph.githubassets.com/997b0744f602df31862397d6d8a89368c58907b1dec6cedc2e0d52bbc75833b3/realZachi/typesafe-adblock",
    "topics": [],
    "description": "🧹 Fun project: a Chrome extension that asks a tiny AI decision model (TypeSafe Jev) \"is this DOM element an ad?\" and pops it off the page. BYOK, no backend, not a real ad blocker.",
    "homepage": null
@@ -2443,7 +2443,7 @@
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f43ec1662de56c44787efb20525f10ff4919db9e67b0719ec285a78fed0c35bd/RafalWilinski/vibecheck",
+   "ogImage": "https://opengraph.githubassets.com/2790f5eb0936eda6eadd7908b8625745f9828c9b3352da4b3cb0c185c92976bb/RafalWilinski/vibecheck",
    "topics": [],
    "description": "Chrome extension: vibe-check your X posts with TypeSafe's Jev before you hit Post",
    "homepage": null
@@ -2456,7 +2456,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/04625829fc32ee521637c1cb5c32cceca83258a095c2595a21767b50cd463b38/manifoldor/xtags",
+   "ogImage": "https://opengraph.githubassets.com/b27194bbbdadc94a8302bb64f0f818cdffb366b63e2f274d9b61e7d950c4c6e0/manifoldor/xtags",
    "topics": [
     "ai",
     "chrome-extension",
@@ -2476,7 +2476,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/839036c30af0b6b5627f80692cb70f1532d836163f2892fa6f6fdea27d93752c/sriganesh/jevibe-check",
+   "ogImage": "https://opengraph.githubassets.com/6b296d0bd65be24ba99e378970d98a8fc8a136d9e76ea52f31096350be8e2715/sriganesh/jevibe-check",
    "topics": [
     "jev",
     "typesafe",
@@ -2494,7 +2494,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2bc06b3171a94cb7fde5987ef704dcc19a0cb19d7340accdaa79f8606bedd38d/ChetasLua/jevmeter",
+   "ogImage": "https://opengraph.githubassets.com/c89afc610b9d808eaf4c5f9b286d73fc6afa76c96a9090f6c9dbaaf93c26e0ec/ChetasLua/jevmeter",
    "topics": [
     "debate",
     "jev",
@@ -2513,7 +2513,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f8f3fc59e52f2c02814ab8cff844da8c192a6c967789c55b6d79cf5d2842d8e7/monteduro/killmyidea",
+   "ogImage": "https://opengraph.githubassets.com/a0c6e251657b9aea5e448c54bd9170bb5d77bf9feb33595f4de4af2a569754ee/monteduro/killmyidea",
    "topics": [],
    "description": "Describe your startup idea. Jev decides: kill it, fix it or ship it.",
    "homepage": "https://killmyidea.stemonte.io"
@@ -2526,7 +2526,7 @@
    "language": "TypeScript",
    "license": "AGPL-3.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a97481f3870bec97b30cb617e8168a8be1dc6b79c0af9d18e7d21abdce1493d4/usenotra/notra",
+   "ogImage": "https://opengraph.githubassets.com/6b6a09f7c5582f412dc7103893e14333f80c93ff3a97b738536c7934fef04d50/usenotra/notra",
    "topics": [],
    "description": "Turn Your Work Into Content",
    "homepage": "https://www.usenotra.com/"
@@ -2539,7 +2539,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/79d30ad56550dac760306f26b9f8c574fc31c61dd512cb356731fa836db8bacd/harshil1712/slidepilot",
+   "ogImage": "https://opengraph.githubassets.com/3898069d227958614b779df3d4c0cb05d9194d859dd440867bc1b41d6dbd3d83/harshil1712/slidepilot",
    "topics": [
     "cloudflare-workers",
     "jev",
@@ -2560,7 +2560,7 @@
    "language": "JavaScript",
    "license": "CC0-1.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8120311041208fcd9f02d1c497c5a36b14ba9b65d74849b04e38f9420dfb7cf8/hellogumbo/should-ai-kill-us-all",
+   "ogImage": "https://opengraph.githubassets.com/e7a5e0aaf7cdbf176a3b42c89128fd740c680a48145691436240bd43867dc44f/hellogumbo/should-ai-kill-us-all",
    "topics": [],
    "description": "We ask Jev, TypeSafe AI's System One model, whether AI should kill us all. Every ten minutes. Using the actual headlines.",
    "homepage": "https://shouldaikillusall.com"
@@ -2573,7 +2573,7 @@
    "language": "JavaScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d1361890d9e7665a46ef0fb9584fbfe985c08a7a98f3d6b99fcaa150c3b21d3a/thenewpotato/privacy-facts",
+   "ogImage": "https://opengraph.githubassets.com/d9570bcae0381d85a398dd0f63453b4297598afc1d9c555aed53b5f51720358a/thenewpotato/privacy-facts",
    "topics": [
     "ai",
     "jev",
@@ -2590,7 +2590,7 @@
    "language": "Swift",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e56a74fe55ceef511c42d74db153de442666b032fd2084f18fedd7bc07ff56a4/chris-wozniczek/jev-voice-control",
+   "ogImage": "https://opengraph.githubassets.com/28eb4d88ecbe14eb22e210d0b63a111a48c8903a9bcac9719639d78af0e9e6e1/chris-wozniczek/jev-voice-control",
    "topics": [],
    "description": "Control your Mac by voice. Speech → Jev (TypeSafe AI System One model) typed decisions → macOS actions. Menu-bar Swift app.",
    "homepage": null
@@ -2603,7 +2603,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9ba49f76d6afd055e94ff51162144e8ad60b943f79afea12897f83f470a5f56d/phureewat29/jev-got",
+   "ogImage": "https://opengraph.githubassets.com/ac149d30f58a62eea61b57eaa28359f3dabf7b5337ac7cc7c20669ccf53bf342/phureewat29/jev-got",
    "topics": [],
    "description": "Jev (TypeSafe AI) PoC through Game of Thrones",
    "homepage": "https://jev.phureewat.com"
@@ -2616,7 +2616,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/db2bdadcfd8adb664fe1047278638d3e2fa30f5bdc077bd8830651209b6b9278/gtaras7/typesafe-jev",
+   "ogImage": "https://opengraph.githubassets.com/ef0ec1b207a459848ced85f6ef9520a795d06036543e3fc0cee26a4987368f32/gtaras7/typesafe-jev",
    "topics": [],
    "description": "Screen a folder of CVs with the TypeSafe Jev decision model: typed judgments, an editable policy, free re-scoring.",
    "homepage": null
@@ -2629,7 +2629,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e223bf9aab6e99e490b63fd029289af94453e64a98576cb1360bb8fe3a665520/Kevthetech143/super-jev",
+   "ogImage": "https://opengraph.githubassets.com/68e0c4dea9461cfae639f9a790c3abb4a7188aaa9ce1e79be80e6d62922fbee8/Kevthetech143/super-jev",
    "topics": [],
    "description": "A small, extensible decision-to-action harness for TypeSafe Jev",
    "homepage": null
@@ -2642,33 +2642,33 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e94c2f017445edd8e8edd906096ff9effc8d75d2288303469ad1c1f338b0b7a7/andrelandgraf/safer-with-jev",
+   "ogImage": "https://opengraph.githubassets.com/391352d35246ee79df10b7b743145fc123982c7ac84df87ed8b193060e1aaca5/andrelandgraf/safer-with-jev",
    "topics": [],
    "description": "Neon Function proxy for the Neon AI Gateway with TypeSafe Jev routing.",
    "homepage": null
   },
   "trungdq88/youtube-sponsor-detection": {
    "stars": 66,
-   "forks": 8,
+   "forks": 9,
    "pushedAt": "2026-09-18T03:38:10Z",
    "createdAt": "2026-09-17T23:46:01Z",
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6c1198e36bb7db207b110985783a9f35f5cd44374961658d6be721e68754aa83/trungdq88/youtube-sponsor-detection",
+   "ogImage": "https://opengraph.githubassets.com/56706cd38b4085187fced517affb77218993b660a95e637feaa6cc774ae12397/trungdq88/youtube-sponsor-detection",
    "topics": [],
    "description": "Detect youtube sponsor segment with live audio and transcript powered by Jev",
    "homepage": null
   },
   "AkashPriyadarshii/jev-seo": {
-   "stars": 9,
+   "stars": 10,
    "forks": 0,
    "pushedAt": "2026-09-18T13:32:15Z",
    "createdAt": "2026-09-18T13:02:32Z",
    "language": "Rust",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e31e30a14684f764ed6bbbec4d92c44b585c52b38eded5ccafba2a1623cff43d/AkashPriyadarshii/jev-seo",
+   "ogImage": "https://opengraph.githubassets.com/4a387a15da7c9e74264e60acb878f389d64bccfdda7d996172b1b78b06eab639/AkashPriyadarshii/jev-seo",
    "topics": [
     "ahrefs-alternative",
     "claude-code",
@@ -2692,7 +2692,7 @@
    "language": "Lua",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9ef8c9c6bd10fb62090619686df17e1bf64091d8f4a79d2e653260251b21c6f3/valentynkit/jev.nvim",
+   "ogImage": "https://opengraph.githubassets.com/b648db924b326b8bd927f1836070958b4466fccbc8e169271d39aa2e815301a0/valentynkit/jev.nvim",
    "topics": [],
    "description": "Neovim: ask the buffer a question, get a quickfix list. Treesitter splits functions, Jev scores each one, probabilities land as virtual text",
    "homepage": null
@@ -2705,20 +2705,20 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3f04abe9eb50bad043e00d41dfe30e01d81c6f87af9b890347c2248193f75bb7/valentynkit/jev-skip",
+   "ogImage": "https://opengraph.githubassets.com/f9fa7b4d31dd36392d59c9834eceb1a289b7918a7ef8c32bd5d85e1fe0d41550/valentynkit/jev-skip",
    "topics": [],
    "description": "YouTube sponsor skipper that reads the captions and decides at watch time: a probability heatmap on the seek bar, no crowd database",
    "homepage": null
   },
   "fhshaik/typesafe-mario": {
-   "stars": 277,
+   "stars": 278,
    "forks": 27,
    "pushedAt": "2026-09-16T04:59:33Z",
    "createdAt": "2026-09-16T04:57:42Z",
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/639c0616ec3844bd45b447fbcd07f3bd3cc421123206780673d11491b8294bbe/fhshaik/typesafe-mario",
+   "ogImage": "https://opengraph.githubassets.com/88bed9b9334fb31310bfa3ceafacdd89538325b201d8316dda6087aa642f37e8/fhshaik/typesafe-mario",
    "topics": [],
    "description": "A TypeSafe/Jev agent that plays Super Mario Bros. from structured emulator state.",
    "homepage": null
@@ -2731,7 +2731,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5053ac35bd63acc277726e16c711d95f420831b91cb5ec9d2bb088912a932c83/RomanSlack/jev-drone",
+   "ogImage": "https://opengraph.githubassets.com/cfb4f54c430868df9c920f3e2e8cb9bf071cd746a682c3f2dfe9ed3ce9aef1b1/RomanSlack/jev-drone",
    "topics": [
     "autonomous-agents",
     "drone",
@@ -2750,7 +2750,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5d18bf6e67ccf304492c511d77897d2d9f9f3ae7f60909c79a572dfa553ab8ac/phyous/tsai-sc",
+   "ogImage": "https://opengraph.githubassets.com/51704130e7359dd0b0f6d6f3896d7fec17359189895c00ac389da96579f20717/phyous/tsai-sc",
    "topics": [],
    "description": "TypeSafe Jev controls original StarCraft shareware through keyboard and mouse with recorded action probabilities.",
    "homepage": null
@@ -2763,7 +2763,7 @@
    "language": "Python",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/770c522ceed046d123824b44f17e0450bcad36603cfe2a024812fd38aa452b50/phyous/tsai-civ2",
+   "ogImage": "https://opengraph.githubassets.com/8c1cd48584e409172e218f404f5b69a63b24b159b7bf5490778f6dc4e107f11f/phyous/tsai-civ2",
    "topics": [],
    "description": "TypeSafe Jev plays original Civilization II in a browser, with live action probabilities. Experimental full-game harness.",
    "homepage": null
@@ -2776,7 +2776,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/dea93f9fc2b33bb79bcae35a1c2e6a9320cf8e7f69b583d802a61b2012b89cc8/AbdelStark/heist-one",
+   "ogImage": "https://opengraph.githubassets.com/f39796be5843c9e9840796d327c5554df747e3b58e0299c932ae5c9ed26f5b5f/AbdelStark/heist-one",
    "topics": [
     "ai-game",
     "jev",
@@ -2799,7 +2799,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/ba464b1cb19b82b52e635971f0011e9e205275b8283873ca0a6d9d72bac673e1/sorrycc/typesafe-snake",
+   "ogImage": "https://opengraph.githubassets.com/65f0a4798ab255d58b19958abec612eeee16a0631b93cba08fe8f59dafc6c17e/sorrycc/typesafe-snake",
    "topics": [],
    "description": "Snake auto-played by TypeSafe's Jev model: one System One choice per tick, legal moves and facts generated in code",
    "homepage": null
@@ -2812,7 +2812,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8708fdfb386aa0129621f66aa4e1bef2420dd3f4e5db8dc0495a03f1da4d64e2/lukaske/jev-doom-agent",
+   "ogImage": "https://opengraph.githubassets.com/34c8c9755c765ac274c37ede5745915e1646620e201939ee341f75350ecab025/lukaske/jev-doom-agent",
    "topics": [],
    "description": "A browser-native Doom agent experiment with structured spatial state, composable AI controls, live decision telemetry, and a Chocolate Doom WebAssembly runtime.",
    "homepage": null
@@ -2825,7 +2825,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/78464460f34c2a16cdf1d4cd3d94552c3cf936f5d319da554b33d3ea459c88c9/emrickgarrett/OneVOneJev",
+   "ogImage": "https://opengraph.githubassets.com/17611f2f4a3970039c656dc2d9ad0ce2aa5aa32b029d30bc1e3b99e9938b7a79/emrickgarrett/OneVOneJev",
    "topics": [],
    "description": "1v1 Jev quickscope arena — Three.js + TypeSafe System One",
    "homepage": null
@@ -2838,7 +2838,7 @@
    "language": "HTML",
    "license": "GPL-3.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e2f302dd5e679016f8c3bd3da28a37b6fbd7da12cd54362b3ba6266d6c8a3c4d/anxkhn/JevPlaysPokemon",
+   "ogImage": "https://opengraph.githubassets.com/13868b86182925d891d48f7b0ead2c7f864110b14df893cba402d0b3a20f297d/anxkhn/JevPlaysPokemon",
    "topics": [
     "firered",
     "mgba",
@@ -2857,7 +2857,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5570a3ee90e17b6dd8320cca903d9923ea9e82fd56fafc4ee1208b1145e305be/TarunTomar122/jev-askable-arm",
+   "ogImage": "https://opengraph.githubassets.com/478e91d773e8642d15a81c92b30a71f26c68905b3f8eaec78bf5c57eb7070c1d/TarunTomar122/jev-askable-arm",
    "topics": [],
    "description": "Zero-shot English goals on a sim Franka. Jev chains hardcoded primitives.",
    "homepage": null
@@ -2870,7 +2870,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c7eac7303f02fa8c4feeb4cadef5ae2e4949dece3786151cb8a93377e8c8cbbe/rokbenko/quackd",
+   "ogImage": "https://opengraph.githubassets.com/eb9e57d944fdfdfdc26270aadfa215e21b43a7517e83c89f3846cb6371f9519f/rokbenko/quackd",
    "topics": [
     "embodied-ai",
     "mcp",
@@ -2894,20 +2894,20 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/1fcd7f0ecab5f9f579fe1c45088b6bc773ebea375ff4d757a1cb4ee9135b26de/siroccomask/snake-jev",
+   "ogImage": "https://opengraph.githubassets.com/92104bd24597d385b9f22fbdaf0db3be3a158c9cdda4eeab503ef08ad3d3c90e/siroccomask/snake-jev",
    "topics": [],
    "description": "Snake controlled by parallel Jev assessments, with one API call per game tick.",
    "homepage": null
   },
   "standardagents/jevpilot": {
-   "stars": 88,
+   "stars": 89,
    "forks": 12,
    "pushedAt": "2026-09-17T21:22:33Z",
    "createdAt": "2026-09-17T15:47:59Z",
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/743fd8d1629f2e1e164775cbd2c06b726ac4268fca7b0dd190959f3c1341e43f/standardagents/jevpilot",
+   "ogImage": "https://opengraph.githubassets.com/2a9b83390a8fb669b1ddef660ed72c72bac70504482ae34ee3ac5e95993a1fea/standardagents/jevpilot",
    "topics": [],
    "description": "A playable Three.js driving simulator with Jev-powered autopilot",
    "homepage": null
@@ -2920,7 +2920,7 @@
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/304134a2efeaa1218f72b3cbfea088e9d99bdf07236ff4494bb81eda9eb84bb4/vinilana/live-jev",
+   "ogImage": "https://opengraph.githubassets.com/1771f732ccffbce4a7a6cf3461b902a46f4818e504791306908349eca3eb5540/vinilana/live-jev",
    "topics": [],
    "description": "2D autonomous car simulation in the browser, driven by TypeSafe's Jev decision model",
    "homepage": null
@@ -2933,20 +2933,20 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/79e3fd4160a4ce062888adceafe31115145ee11151e554fb961790c054c66d65/valentynkit/jev-plays-pokemon-red",
+   "ogImage": "https://opengraph.githubassets.com/93f987e8f9a39b5348f01a7d97c3ba0308462a2abab33aa1cb831d605c55a8c7/valentynkit/jev-plays-pokemon-red",
    "topics": [],
    "description": "Pokemon Red on PyBoy: code owns the route and the arithmetic, Jev picks at branches in about 100 ms, calibration measured instead of assumed",
    "homepage": null
   },
   "jarrodwatts/jev-trader": {
-   "stars": 1163,
-   "forks": 226,
+   "stars": 1173,
+   "forks": 227,
    "pushedAt": "2026-09-17T02:48:22Z",
    "createdAt": "2026-09-16T21:36:20Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cfb8b332696e6ca0f5bd823aff06e759a6257acd6a01474de1f039de41b5aad0/jarrodwatts/jev-trader",
+   "ogImage": "https://opengraph.githubassets.com/8c65eb272533e6b1d8313e46632cbf588bfd91822e35c20b60c5c7a680a22533/jarrodwatts/jev-trader",
    "topics": [],
    "description": "One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
    "homepage": null
@@ -2959,7 +2959,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/040c20098e16af9ec822b261884ea0b688bd8ec9799e445913ea92a06cd6fb48/justinhe16/trade-jev",
+   "ogImage": "https://opengraph.githubassets.com/ae3b0337e548d09fe24957c123a36071d624ebb0538358c9cc2ce8f758f83fe0/justinhe16/trade-jev",
    "topics": [],
    "description": "Backtest Jev (TypeSafe) as a BUY/SELL/HOLD trader on NQ L10 order-book data",
    "homepage": null
@@ -2972,7 +2972,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/aca2b5d4aff6a0a0434a1df761dfe4c882bf6f32deb89c70a5d3b43e8d1b927f/zadescoxp/Jev-Trades",
+   "ogImage": "https://opengraph.githubassets.com/9c895613854f17fe66847dab954dbffc2d5be92c602953a37ba310c41bec5a22/zadescoxp/Jev-Trades",
    "topics": [
     "automated-testing",
     "backtesting",
@@ -2983,14 +2983,14 @@
    "homepage": "https://jevtrades.zadescoxp.com"
   },
   "aowang-ai/jev-trade": {
-   "stars": 22,
+   "stars": 24,
    "forks": 9,
    "pushedAt": "2026-09-19T09:34:33Z",
    "createdAt": "2026-09-17T16:33:05Z",
    "language": "TypeScript",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/dab26519eadc4120f0e755c3f0fe77771553aab1faaca844cce2b6480d3537d4/aowang-ai/jev-trade",
+   "ogImage": "https://opengraph.githubassets.com/e2fdcda8a65183280875f2f5609c4a2ed7025bccaaf38b5c16412aeeff89ebd1/aowang-ai/jev-trade",
    "topics": [
     "hyperliquid",
     "jev",
@@ -3008,7 +3008,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/954a05b9150250eddfdb6a4d9317bf28511c78339cf4cc47ea00bd2f15baa681/AbdelStark/jev-benchmarks",
+   "ogImage": "https://opengraph.githubassets.com/212e0386185f4090a8f9dfeb5f2b7b7c534c7e70fe6b5d2767594a6398173558/AbdelStark/jev-benchmarks",
    "topics": [
     "benchmarking",
     "calibration",
@@ -3029,7 +3029,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c031e008fdb9f640677db815bc2c89f429eb0e7bb3f6ee6ed0f6dd3b308a835c/abhixhek/jevcal",
+   "ogImage": "https://opengraph.githubassets.com/302dc7f350d3aa27ed47a3bb5450da53504d326abc4ee900267ff7c70cf3bf8f/abhixhek/jevcal",
    "topics": [
     "calibration",
     "jev",
@@ -3049,7 +3049,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/fdd1846cac81d998cf0d2e50392639c2564aab451c9d857dd71d2ba810625305/AntonioCoppe/jev-harness",
+   "ogImage": "https://opengraph.githubassets.com/21a923e8e14d0d792699200489cb679100248269c040d4c5c1b106ac917d6dfe/AntonioCoppe/jev-harness",
    "topics": [
     "agents",
     "confidence",
@@ -3073,7 +3073,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/772aceb4190f558b9ec6a223d17d4281b4e65379859b5583808de3c935f70484/anessbelbati/jev-rerank-bench",
+   "ogImage": "https://opengraph.githubassets.com/e1363039dd687f34c279c7db88daf50142ad538d1fdbbe9e8201a302c338be30/anessbelbati/jev-rerank-bench",
    "topics": [],
    "description": "Can a decision model beat dedicated rerankers? TypeSafe Jev vs Cohere Rerank 4 vs ZeroEntropy zerank-2 vs a chat-model baseline: 14 datasets, every raw API response, bootstrap ranges on every gap.",
    "homepage": null
@@ -3086,7 +3086,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/fd073a65968e95049f735d43cfa236f768e8b8572ebea979c910f8852f82863d/zhuyansen/jev-search-rerank-eval",
+   "ogImage": "https://opengraph.githubassets.com/31410e7b990434f12601f346e77af2fb94e3c3d32a249a8e4d5650fc6f4b5aed/zhuyansen/jev-search-rerank-eval",
    "topics": [
     "bge-m3",
     "evaluation",
@@ -3106,7 +3106,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/832e9ede404cd3566f37cbb0ce915f958f9c80f2469839fa4e4872d7bcf8c646/Gaurav-Gosain/jev-sec-bench",
+   "ogImage": "https://opengraph.githubassets.com/b684a4423f1d8dae94417f00047d8fcfde22235a447b945621f4507d62afd6fb/Gaurav-Gosain/jev-sec-bench",
    "topics": [],
    "description": "Blind security benchmarks for Jev, TypeSafe's System One model: prompt injection and vulnerable code detection, built on jev-go",
    "homepage": null
@@ -3114,12 +3114,12 @@
   "anisselbd/jev-phishing-bench": {
    "stars": 1,
    "forks": 0,
-   "pushedAt": "2026-09-17T14:16:43Z",
+   "pushedAt": "2026-09-19T17:34:05Z",
    "createdAt": "2026-09-16T22:42:44Z",
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c9392dbc73c382c55814b3a69bec69ae5d601e3d9909baa1bef14fa2251fd209/anisselbd/jev-phishing-bench",
+   "ogImage": "https://opengraph.githubassets.com/91fbba5720ee310f13547f90c6eda29c9336770e2f12d10aaaf657defd9408bf/anisselbd/jev-phishing-bench",
    "topics": [],
    "description": "Jev (TypeSafe) vs Claude Haiku 4.5 on 2 000 phishing emails: accuracy, calibration, latency, cost. Reproducible benchmark.",
    "homepage": null
@@ -3132,7 +3132,7 @@
    "language": "Jupyter Notebook",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8b23e7522643f1ad22d9c81fac71eb20218f8d2a1430820dcbd4b17d23ad48e7/bitnovus/jev-spam-eval",
+   "ogImage": "https://opengraph.githubassets.com/f91c543f7c5899a4a54bfb84acef9ee05a1d59201388c8e9bd61cbfd25a746bc/bitnovus/jev-spam-eval",
    "topics": [],
    "description": "Zero-shot spam filtering with TypeSafe Jev Noul questions, compared with TF-IDF baselines",
    "homepage": null
@@ -3145,7 +3145,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d5b7d2d60da089a2ec42fd6f780ae025029aa750e83fa9c7cbee2b5b68235fe0/TokenTrim/jev-agent-failure-benchmark",
+   "ogImage": "https://opengraph.githubassets.com/562817b284f30a1cad17c4278dad3eccdf2a974d14193cb778ba3cb8850d6c6f/TokenTrim/jev-agent-failure-benchmark",
    "topics": [],
    "description": "Benchmarking Jev (Typesafe.ai) against a strong LLM on the Who&When Pro agent-failure-attribution benchmark (text subset).",
    "homepage": null
@@ -3158,7 +3158,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3bf27be208a568e2d77637da921aef4a556d1d6673d8eb5e613ff993adbd709b/mahlernim/jev-korean-benchmark",
+   "ogImage": "https://opengraph.githubassets.com/f750b5004d04cd7087178ef387b1f9b92517d60e429370d1b6270f4093aea9ba/mahlernim/jev-korean-benchmark",
    "topics": [],
    "description": "Reproducible early-access evaluation of Jev on Korean understanding and medical text, with runtime and cost evidence",
    "homepage": "https://ahn-lab.org/jev-korean-benchmark/"
@@ -3171,7 +3171,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e31724b457fa780db34888b22b99dab49c7222933cf866507e39abacbc221857/RINNECODER/jev-behavior-study",
+   "ogImage": "https://opengraph.githubassets.com/17692b47303c6fcca8aa0ec46ac0923f71d108c5c06950654250b6367fa3a977/RINNECODER/jev-behavior-study",
    "topics": [],
    "description": "Independent Jev 1.13.0 behavior study: report, controlled prompt experiments, raw results, and offline verification.",
    "homepage": null
@@ -3184,7 +3184,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/3534410b4c812b698bd604f2d2a7673a64a188a1af4171e59bfd2bef262d1681/HackSing/jev-report",
+   "ogImage": "https://opengraph.githubassets.com/59a116c9418344ab240a3243e413955ee0cf7a1529e0bfcf75205f7a1b61d907/HackSing/jev-report",
    "topics": [
     "ai-research",
     "chinese",
@@ -3203,7 +3203,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/01b6b477308303bdc7205c4bffbad0b4c5185a310ed837e20fe3350b5cb78226/wondertwins/jev-benchmark",
+   "ogImage": "https://opengraph.githubassets.com/820fc9b870ff87cfadaaa6d875e0213c65afe0650481444390db2ab0f8f13cd9/wondertwins/jev-benchmark",
    "topics": [],
    "description": "Benchmarks and a playground for TypeSafe's Jev (System One) model: chess, and who-is-the-player-talking-to for speech-to-text game NPCs",
    "homepage": null
@@ -3216,7 +3216,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6cf8da1f9553fab9fe67557a7fd663f412da755320376c40f53b9fce97d1c562/jmanhype/jev-dspy-lab",
+   "ogImage": "https://opengraph.githubassets.com/7bd81c0bce8c9bbfe1480bf901fcbf0f4e368bf6f38113fb75ff6f5d1a6cbae6/jmanhype/jev-dspy-lab",
    "topics": [],
    "description": "Reproducible calibration and selective-risk benchmarks for Jev/TypeSafe decisions in DSPy workflows",
    "homepage": null
@@ -3229,7 +3229,7 @@
    "language": "HTML",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/0e1db5d87b579e32b3e8b90391ada894510e7835689fd8e6530fbc4afc0021d7/vinilana/jev-eval-agent",
+   "ogImage": "https://opengraph.githubassets.com/0e0b5c600ba8175d951a248c586914046982bbec85c889cae9d2eb9af95525a9/vinilana/jev-eval-agent",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3242,7 +3242,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/17c17f4566a0ff10f5081e6cd8ffdbde92e1ed17f86412a9bddebc1099faadfb/PistachioAIHQ/jev-synergy-screening",
+   "ogImage": "https://opengraph.githubassets.com/e9621dccb2ee770a73a7c701e5ca83fc95711d99499bd017d7012fe365368813/PistachioAIHQ/jev-synergy-screening",
    "topics": [],
    "description": "Jev (TypeSafe System One) × ASReview SYNERGY abstract screening demo — Choice/Noul vs gold labels",
    "homepage": null
@@ -3255,7 +3255,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f67f9a6e920a1cc82e835720dfe6b2da6e6545fe9d906fe2c6c29075c03a9f84/yodablocks/jev-orderby-bench",
+   "ogImage": "https://opengraph.githubassets.com/574956f1cb8efd6927e4f25f79f433b47e7a40aff45e0ba87993ddc211e53cb2/yodablocks/jev-orderby-bench",
    "topics": [
     "benchmark",
     "calibration",
@@ -3279,7 +3279,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/11f4236f1a03071556e3c3de814030606859252aa9cdd62fdd8c855806a0568c/pinecone-io/cultivar",
+   "ogImage": "https://opengraph.githubassets.com/6af9bea4b231e9b49efeaa35ee808415feae3ad3633719d36e81a371307722f8/pinecone-io/cultivar",
    "topics": [
     "agent",
     "agent-skills",
@@ -3303,7 +3303,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/57911ecba016646a9d35decb61b6c9927e3768bc19d27cfbdc03aa9d788f9e2e/4esv/jev-eval",
+   "ogImage": "https://opengraph.githubassets.com/c35cc85f9ab954cdd68d0d76d58d5da857536d9e8dee49c66249fcf4d84453e0/4esv/jev-eval",
    "topics": [],
    "description": "Independent eval of TypeSafe Jev vs GPT-5.6 Terra: accuracy, calibration, latency, cost",
    "homepage": null
@@ -3316,7 +3316,7 @@
    "language": "Python",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/65e7d57ab056e3ce5cc6ba220b584017aed04d6e8bf0701a7086d6280e98abe2/themsquared/jev-benchmark",
+   "ogImage": "https://opengraph.githubassets.com/5d48387ee481d54bdb84808d44b487231886fde0c06f7880fa7ada26f19da61a/themsquared/jev-benchmark",
    "topics": [
     "agentgateway",
     "ai-agents",
@@ -3336,7 +3336,7 @@
    "language": "HTML",
    "license": "NOASSERTION",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8fcfa2481f0caf244e7672bfd33cc622970bad527275b02b150032745b7699d9/jgridifier/jev-research-eval",
+   "ogImage": "https://opengraph.githubassets.com/45b0a3a00375debe96d33ed0e0185d7849ab72ca88d23c5eeeff1cfd59ee8af3/jgridifier/jev-research-eval",
    "topics": [],
    "description": "Reproducible Jev Ultrafast research-browser eval harness + field note (QC’d cases, suite runner, report generator). Not investment advice.",
    "homepage": null
@@ -3349,7 +3349,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8b1b78b0823dc4b4858f5a12c2181fda90d03625824a79afd620f856182b7aee/hegargarcia/jev-playground",
+   "ogImage": "https://opengraph.githubassets.com/d578337955f54ad21c6f0f632e0547fe635db37cc1f558f50e09e2b36db56741/hegargarcia/jev-playground",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3362,7 +3362,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5c3c56c85e2879753e679561df8faa4dd89d08aa29fa7fb89fa715e6e07dfad4/TypeSafeAI/typesafe-playground",
+   "ogImage": "https://opengraph.githubassets.com/df6527e008191104f3b6274144cc36e567e079c40ea7f548b22ace50b05e20de/TypeSafeAI/typesafe-playground",
    "topics": [],
    "description": "Community TypeSafe AI playground: 110 use cases, games, dilemmas and model challenges, with editable prompts, A/B comparisons and a mobile-friendly UI.",
    "homepage": "https://jev.works"
@@ -3375,7 +3375,7 @@
    "language": "JavaScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a94585cec738f6e17cda85a5febaf4927b875ac1980d1dde68ef19032e122bd5/kavehmz/typesafe-playground",
+   "ogImage": "https://opengraph.githubassets.com/d760b41f8ffb3d173566fd8fc6f5176afa54424e10840ca6da2a5facf5d85109/kavehmz/typesafe-playground",
    "topics": [],
    "description": "Interactive experiments with TypeSafe Jev, from support routing to 3D driving simulations with real AI decisions and visible sensor inputs.",
    "homepage": null
@@ -3388,7 +3388,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d44b67c33a4823b0edde730de011f40061f38d8d5b57407a2a571f29b334853c/dabit3/jev-experiments",
+   "ogImage": "https://opengraph.githubassets.com/05e68d4cd9fa42e8a3c5a29e4bec2de38fb4c1d746970ecc4c0ff4a738aea186/dabit3/jev-experiments",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3401,7 +3401,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/bdb0f4202bb38f776831ee5a6f1efac4d3d2c024d8c7e9c1bbf74b3cbfc35c23/willprout/magic-8-ball",
+   "ogImage": "https://opengraph.githubassets.com/5ead71f4727cb9337d3377aa76c745aa04f56b91a3f3dbf74a4ea0b1abe85e01/willprout/magic-8-ball",
    "topics": [],
    "description": "A beautifully minimal Magic 8 Ball powered by Jev from TypeSafe. Twenty classic answers, one fast AI judgment.",
    "homepage": null
@@ -3414,7 +3414,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5e39b238c781cd33e713aa66986fe90c00b875a82362a1a9a9d1738af4e0e7f8/markjaquith/typesafe-ai-playground",
+   "ogImage": "https://opengraph.githubassets.com/3b22399c8ef3736d787a35785218dea88a6266aa305feda36442bee5641bcdec/markjaquith/typesafe-ai-playground",
    "topics": [],
    "description": "A playground for experiments around Jev, TypeSafe's System One model.",
    "homepage": null
@@ -3427,7 +3427,7 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f8dc7377936cbd8102ccccf815f7b9f47b63a6cdfcce89c2020d4dc9ea3cb3ee/wustep/jev-playground",
+   "ogImage": "https://opengraph.githubassets.com/9ca61fc4ded5a90418c404173149c340be74ccac1773bf5465b18f87059141c0/wustep/jev-playground",
    "topics": [],
    "description": "Can a System One model steer music? Jev picks the plan (enums only); code renders sheet, audio and MIDI.",
    "homepage": "https://jev-playground.vercel.app"
@@ -3440,7 +3440,7 @@
    "language": "Python",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cad0210cf40dc574980b8712b6af2db887b6b839d78823e66b929efe4272a502/GiesN/typesafe-jev-workflow",
+   "ogImage": "https://opengraph.githubassets.com/08b2e74d92d67ec71617064eb714c65cfa13edaeb885ba8eaab91cd33138524f/GiesN/typesafe-jev-workflow",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3453,7 +3453,7 @@
    "language": "HTML",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6715471c3ca1cd18d731131c6004a22c11acbb46f27fcd38f324035c97022e57/lbotinelly/jev-little-airways",
+   "ogImage": "https://opengraph.githubassets.com/dd503a8d997cab8283e572d5b6d53c9aa258e63668e166003c865afda91ff66b/lbotinelly/jev-little-airways",
    "topics": [],
    "description": "A show-and-tell capability study for Jev, TypeSafe's System One decision model.",
    "homepage": null
@@ -3466,7 +3466,7 @@
    "language": "Dart",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8a247738579916134e6ef9aff52a949bc3fd447ba0fb5517db801a06a3580e0e/Bud-ro/jev-demos",
+   "ogImage": "https://opengraph.githubassets.com/7d55f38c6bd49b4f7e62c707d9c230e0d713517e6a6e2c676777e711338edc4e/Bud-ro/jev-demos",
    "topics": [],
    "description": "Demos to test the effectiveness of TypeSafe's \"Jev\" System One Model",
    "homepage": null
@@ -3479,7 +3479,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f538826a815e3d2595d7a5f0b7a5ad7f6fdc2440283ea03d66a38b8ed9f54d9c/haseeb-heaven/jev-system-one",
+   "ogImage": "https://opengraph.githubassets.com/9c331288cea821c9e549edf9e20ee91dc1272f7cc3827926ea3426ebdc8a5820/haseeb-heaven/jev-system-one",
    "topics": [],
    "description": "A polished OpenAI + TypeSafe Jev terminal interface for answers with transparent decision reports",
    "homepage": null
@@ -3492,7 +3492,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/2f3922574de8120a0436dc74b4bc34632da7510e25dfa74c147316275a463d80/shiftynick/jev-axi",
+   "ogImage": "https://opengraph.githubassets.com/c7ddb8a04ca69daf47d7c7cc178fbf5ee0e86c07ccdfebeadbddf9f25a6f012b/shiftynick/jev-axi",
    "topics": [
     "ai-agents",
     "axi",
@@ -3516,7 +3516,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/bb62770bb01068d0fd75f8074afa030b7214831a974577b3b74764dd25c72c49/sharziki/semdecide",
+   "ogImage": "https://opengraph.githubassets.com/c4ab219650538c4e0bf120afe3162966a1904582db3508764b42886dcc2586c3/sharziki/semdecide",
    "topics": [
     "ai",
     "ci",
@@ -3529,14 +3529,14 @@
    "homepage": null
   },
   "sufianetaouil/every": {
-   "stars": 2,
+   "stars": 3,
    "forks": 0,
    "pushedAt": "2026-09-17T06:07:39Z",
    "createdAt": "2026-09-17T05:38:34Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/ab2f880bcd3c996d9d298df68c8dcbe252d267bf328e521b967e95f5aaada07c/sufianetaouil/every",
+   "ogImage": "https://opengraph.githubassets.com/cfd2a627fadb16851071cbf89b4eea0449c1819bf1d695f8844f4fcb02eabcf0/sufianetaouil/every",
    "topics": [],
    "description": "Ask a yes/no question of every function in a codebase. Ranked answers in seconds, for cents. Grep whose pattern is a question, powered by TypeSafe Jev.",
    "homepage": null
@@ -3549,7 +3549,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f143d6d9c1546c75d4aa54f6fab6aff647141affcb1e0e30b0fdec620a1c02b7/y0usaf/typesafe-cli",
+   "ogImage": "https://opengraph.githubassets.com/e8c1478031a344b66658729521e1b58d03261023f58ac67d80a49fccee1417c8/y0usaf/typesafe-cli",
    "topics": [],
    "description": "Ask Jev typed questions from the shell: noul, choice, and score answers as numbers, not prose",
    "homepage": null
@@ -3562,20 +3562,20 @@
    "language": "TypeScript",
    "license": null,
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/70dd2a0abce47f2c7e07d3b758c1985a9104c046c43c5d47dcc85b69e3dbc89f/mrnugget/jev-shell-history",
+   "ogImage": "https://opengraph.githubassets.com/5efd4948b0fce919cd45cc9438e13207ff32f9e057d3b202eedfd5f45489cd7c/mrnugget/jev-shell-history",
    "topics": [],
    "description": "Fish-style zsh history autosuggestions ranked by Jev (TypeSafe)",
    "homepage": null
   },
   "keltokhy/jgrep": {
-   "stars": 11,
+   "stars": 12,
    "forks": 1,
    "pushedAt": "2026-09-18T22:02:26Z",
    "createdAt": "2026-09-18T11:11:25Z",
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/290d33ac431fcc89c08474c6f771fe2943fe4a7581dbdf0a1d141bd51d463704/keltokhy/jgrep",
+   "ogImage": "https://opengraph.githubassets.com/87e10d02a29ac4d178f5aa10e58676ab6c2df88078c889d8ccaee325e8c3df3a/keltokhy/jgrep",
    "topics": [
     "cli",
     "grep",
@@ -3595,7 +3595,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/7ca55e4c99c86e0c0a5f19781f3ffa586b45097385317960383f604356b40f89/jtsang4/jev-cli",
+   "ogImage": "https://opengraph.githubassets.com/775159fdc39e6a282100424d61abd9c93d6408f42c1e71c78db68d6d2e0fbee3/jtsang4/jev-cli",
    "topics": [
     "cli",
     "jev",
@@ -3613,7 +3613,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/862ddd59c810ac0b6308145d87715114ff8ca0fdd9b3db896cdc8fe3931e5361/tumf/jev-cli",
+   "ogImage": "https://opengraph.githubassets.com/0fb32106f565d46ffa5d97335ec21676f1c72e8fcd158db750f57c2b73618b43/tumf/jev-cli",
    "topics": [
     "ai",
     "cli",
@@ -3627,12 +3627,12 @@
   "Nasrallah-AL/jev-cli": {
    "stars": 8,
    "forks": 0,
-   "pushedAt": "2026-09-19T13:09:19Z",
+   "pushedAt": "2026-09-19T17:21:42Z",
    "createdAt": "2026-09-18T08:16:41Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/8a1e2bce466f0a550c4acae53c53df082ccacded6b9848a7202d4ce402fa5adf/Nasrallah-AL/jev-cli",
+   "ogImage": "https://opengraph.githubassets.com/e6d781742f554cb122b0ac6c463db102fbe55c3722dd7e32ebd81e9df03e9218/Nasrallah-AL/jev-cli",
    "topics": [
     "ai",
     "cli",
@@ -3656,7 +3656,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/f2225a367c312f54b0e621e6aaaa2cb69fde966e38e6ae992de7e86070a8c917/Gaurav-Gosain/jev-go",
+   "ogImage": "https://opengraph.githubassets.com/f02b1df6cd259b712903ab935f81329fa71dfa5566f5a5ca89d40b9ef16a9f1d/Gaurav-Gosain/jev-go",
    "topics": [],
    "description": "Go client for TypeSafe's System One API and its model Jev: typed judgments and calibrated probabilities instead of generated text",
    "homepage": null
@@ -3669,7 +3669,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e31cbbe989e0dccb166f351f766d9c867d72df2e90690e062a1ff337f381e996/zhirschtritt/typesafe-go",
+   "ogImage": "https://opengraph.githubassets.com/4f876df2c1c2f6a8c7c04041b33b97bd72a85cf66a31b8ce12ab75601ecf1792/zhirschtritt/typesafe-go",
    "topics": [
     "ai",
     "jev",
@@ -3688,7 +3688,7 @@
    "language": "Rust",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/01877820b2decdd24d5a3a7ba9d74da33e58a32e14f4ccad590315cca8b7e166/Twister915/typesafe-ai",
+   "ogImage": "https://opengraph.githubassets.com/2c806bb6d88ab172a893faf5bd3495bc0bca8649d04f3c191ead857ac99f8b1b/Twister915/typesafe-ai",
    "topics": [],
    "description": "Typed TypeSafe AI clients for Rust, with async and blocking backends and observable retries.",
    "homepage": null
@@ -3701,7 +3701,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/6d8ffaedb072b92451d359dde3d0b703c3ab33dfd181f1382ef5447eac68f198/gilljon/typesafe-ai-rs",
+   "ogImage": "https://opengraph.githubassets.com/79d06b86e7851699bda97c05fb78d50e554a06d5800ac2726543d20e6809f45a/gilljon/typesafe-ai-rs",
    "topics": [
     "ai",
     "api-client",
@@ -3713,14 +3713,14 @@
    "homepage": "https://docs.rs/typesafe-ai-rs"
   },
   "dannote/jev": {
-   "stars": 15,
+   "stars": 16,
    "forks": 0,
    "pushedAt": "2026-09-18T08:24:51Z",
    "createdAt": "2026-09-17T20:53:28Z",
    "language": "Elixir",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/73a01bfb7f7e23d73cc7236320b558f6db350f6d0e1c08c19452fb74c5c85df4/dannote/jev",
+   "ogImage": "https://opengraph.githubassets.com/78abf770dc12bc6f7c2b06eaa9ca0d918d5ec4c18536a32339a5f0c38206704d/dannote/jev",
    "topics": [],
    "description": "TypeSafe Jev for OTP: reply to Jev from a GenServer and pattern match on its answer",
    "homepage": null
@@ -3733,7 +3733,7 @@
    "language": "Ruby",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5990df81e1ab7c22ecf58e7f41210b33a11469e2c096e73961458fe983cab11d/joshmn/typesafe-sdk",
+   "ogImage": "https://opengraph.githubassets.com/bf681751a8f071776c3cdc2036ebfd8ac1d70ee7cc51fac255f67597e5de30d1/joshmn/typesafe-sdk",
    "topics": [],
    "description": "Ruby client for typesafe.ai",
    "homepage": null
@@ -3746,7 +3746,7 @@
    "language": "Ruby",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/64d04ec7b3a27e09beba8f460d4251a432b21c9f19cb961c119197165d961040/kieranklaassen/ruby_llm-typesafe",
+   "ogImage": "https://opengraph.githubassets.com/8ec16680ccabcfe0ccb86f703f318334900a4b438af30289fdf6984a7d9c29de/kieranklaassen/ruby_llm-typesafe",
    "topics": [],
    "description": "TypeSafe structured-output provider for RubyLLM 2",
    "homepage": null
@@ -3759,7 +3759,7 @@
    "language": "PHP",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5d037e4af15045dcd6529d8cafc17d1d4ca6381510630b97d2108003d173d596/Butochnikov/laravel-typesafe-jev",
+   "ogImage": "https://opengraph.githubassets.com/39390fbed69976c29485ebf8abeddc6ab2bb8d09d3e7052dfa237940c09cfe93/Butochnikov/laravel-typesafe-jev",
    "topics": [],
    "description": "Unofficial Laravel integration for TypeSafe Jev AI with typed responses, async requests, scoped dependency injection, and testing fakes.",
    "homepage": null
@@ -3772,7 +3772,7 @@
    "language": "Java",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/41d266d7ef1b72e52786cb51b51ae6581859fbfb9c2540af8dfa9eacd8e523cb/Premo-Cloud/typesafe-sdk-java",
+   "ogImage": "https://opengraph.githubassets.com/b1866247ca10e2000c8aa18b14376d468188b7873638e065ac980c71cd7ff5e9/Premo-Cloud/typesafe-sdk-java",
    "topics": [
     "java",
     "sdk",
@@ -3793,7 +3793,7 @@
    "language": "Swift",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/ddc33e370b25607337a8a07c532f97e9fd9a3c27aed9067569b3306d352462ae/alterhq/typesafe-sdk-swift",
+   "ogImage": "https://opengraph.githubassets.com/e1ffaebf62ba2a4bb4f4f1e19c49da170bdba7c03fec25cfe090ebf0e5da4892/alterhq/typesafe-sdk-swift",
    "topics": [],
    "description": "Unofficial Swift library for the TypeSafe API",
    "homepage": "https://typesafe.ai/"
@@ -3806,7 +3806,7 @@
    "language": "C#",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9845c6681baf7587f4f5f90ee6d1df93b7143059c956268320afe6ba805f9b8a/Hawxy/TypeSafeAI.Net",
+   "ogImage": "https://opengraph.githubassets.com/ec33f70a1cf447cd97c6f17724e38f76518b7bcdc7df9eb3c892421fe3089e39/Hawxy/TypeSafeAI.Net",
    "topics": [
     "csharp",
     "typesafe-ai"
@@ -3822,7 +3822,7 @@
    "language": "Scala",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/27c6f3e15ace3ac5548f053c7ee7f64e0f6d5d46503982751fe3da7d52e60e41/jamesward/zio-typesafe-ai",
+   "ogImage": "https://opengraph.githubassets.com/d999da92af6d9a2ffd2a73c4af1c62fff94dc00db044f57ba1e2ba8f908a3d68/jamesward/zio-typesafe-ai",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3835,20 +3835,20 @@
    "language": "Haskell",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/c9ca53b4f497a1a43d02815b372ef2939f308ea415ee0f383dd2c421d7957402/inanna-malick/jev-dsl",
+   "ogImage": "https://opengraph.githubassets.com/773374c11343c8d5f551fd7d3e2c3a318d4a5a0b3ccd4740d89eae835dea2bcc/inanna-malick/jev-dsl",
    "topics": [],
    "description": "Agent-first Haskell DSL for TypeSafe's Jev judgment model: typed packets, inferred types, answers under the same labels",
    "homepage": null
   },
   "pithings/advocaat": {
-   "stars": 81,
+   "stars": 84,
    "forks": 1,
    "pushedAt": "2026-09-18T17:55:50Z",
    "createdAt": "2026-09-16T21:23:24Z",
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e30a9e62a5cbd344f748571a7297927c1d4f8de0d0777e0b00ca587d11b48c79/pithings/advocaat",
+   "ogImage": "https://opengraph.githubassets.com/87559f34648e29c5a9ea1dd92fedfd467a1dc8ff41619665fe030a5974a81874/pithings/advocaat",
    "topics": [],
    "description": "A small, type-safe client for asking AI questions about your data, powered by TypeSafe Jev.",
    "homepage": null
@@ -3861,7 +3861,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/b42d46a16b246c22194dcaed729ddf983963664c958633d24da2a146d0d28885/mateonunez/jod",
+   "ogImage": "https://opengraph.githubassets.com/58dc55ee12145f01c3c2b95279fb70c1008ac398324596b22c0d45a068306c97/mateonunez/jod",
    "topics": [
     "ai",
     "jev",
@@ -3879,7 +3879,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d47200b4b6867d892daf668d4a243e3dfdccc6fe14311d9549f889d29f697e2b/DomMonte/n8n-nodes-typesafe-ai",
+   "ogImage": "https://opengraph.githubassets.com/8fb25cc2a3bca0f6c122bca2a7a75420d759c2855e628f739eb697202e8ab3fc/DomMonte/n8n-nodes-typesafe-ai",
    "topics": [],
    "description": "n8n community node for the TypeSafe AI System One API — typed yes/no, choice and score questions with calibrated probabilities",
    "homepage": "https://docs.typesafe.ai"
@@ -3892,7 +3892,7 @@
    "language": "Python",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/43a568908e387ee8189dc9154f2d6dff23e8714c55ae15b5aa9ce5245731b3d8/AboveColin/jevclient",
+   "ogImage": "https://opengraph.githubassets.com/a0e833432b84d2f7364164d291c532889b5ccaf48321783ed3c2a8f804f9b727/AboveColin/jevclient",
    "topics": [
     "async",
     "asyncio",
@@ -3912,7 +3912,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/558d4b0f7e8ff25e66b7e41d67813a5713fd5cde885ac2b582f50cb2ec5231f2/AbdelStark/s1-rs",
+   "ogImage": "https://opengraph.githubassets.com/a218fe92ed41a7225c063013da090d415aed38663ca2c65d9dedd26a5b51247c/AbdelStark/s1-rs",
    "topics": [
     "machine-learning",
     "sdk",
@@ -3929,7 +3929,7 @@
    "language": "Rust",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/890dccdd1d39b09046561b5d7892a4616c77cb65d33009520fa817729e774519/AbdelStark/typesafe-rs",
+   "ogImage": "https://opengraph.githubassets.com/2ef45338dee379b667dd18307cb3c7b16bb9e4136839ab481b1042955318dd99/AbdelStark/typesafe-rs",
    "topics": [
     "machine-learning",
     "typesafe-ai"
@@ -3945,7 +3945,7 @@
    "language": "Rust",
    "license": "Apache-2.0",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/446532e9761ddd7babaf305861e1b106c300c5979bd21565e07c17cfd6a496eb/kunobi-ninja/kunobi-jev",
+   "ogImage": "https://opengraph.githubassets.com/bc7fd5a443351ea7716deefb3f102da7615a7115f30e7f390ad8bdc17c6e7d99/kunobi-ninja/kunobi-jev",
    "topics": [],
    "description": "Rust client for the TypeSafe System One API (Jev)",
    "homepage": null
@@ -3958,7 +3958,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/b5270ca6055335bb5e17af383a428275fe2ae524e3195b631b3ff320c8a1d372/Stumble/jev-go",
+   "ogImage": "https://opengraph.githubassets.com/9d056ec464448f0fe87abb738a8ff66ec421f680b92c4ccb21ba9f3a7ecaf236/Stumble/jev-go",
    "topics": [],
    "description": "Community Go SDK for TypeSafe AI Jev / System One",
    "homepage": null
@@ -3971,7 +3971,7 @@
    "language": "Ruby",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/cb58b86e378b43bcedc308df959d522030e7cab710f33b18fc24b6dca02b4926/GenieRobot/typesafe-ai-rails",
+   "ogImage": "https://opengraph.githubassets.com/24efa968209d9aecd8d82c87633fa8f00fcd0f5a8a3728407cfe22715d054e6a/GenieRobot/typesafe-ai-rails",
    "topics": [],
    "description": null,
    "homepage": null
@@ -3984,7 +3984,7 @@
    "language": "Elixir",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/5eb29636bdb593ca765250b700ddc3c7cef5c31cc226c519ed28da6efb34e3aa/nshkrdotcom/typesafe_sdk",
+   "ogImage": "https://opengraph.githubassets.com/b708b75ed737e974b3ef6648b246b1535d3d3f029c073e29f784bc7b8ec2fa09/nshkrdotcom/typesafe_sdk",
    "topics": [
     "agents",
     "ai",
@@ -4001,14 +4001,14 @@
    "homepage": null
   },
   "obie/ruby_decision_model": {
-   "stars": 42,
+   "stars": 44,
    "forks": 2,
    "pushedAt": "2026-09-18T17:55:07Z",
    "createdAt": "2026-09-18T15:30:56Z",
    "language": "Ruby",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/9f0863ee5681f4f224dfc0e8a04620101bfba5dc661c4cf10e5a4d1ced2f2b63/obie/ruby_decision_model",
+   "ogImage": "https://opengraph.githubassets.com/2dd55403612081716759c6275eb0d3eb00a4dab924cfea603ec9298d604c9d72/obie/ruby_decision_model",
    "topics": [],
    "description": "Ruby client for decision models such as Typesafe Jev",
    "homepage": null
@@ -4021,7 +4021,7 @@
    "language": "TypeScript",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/09ab5423378e5750afad9cfc5b5b77b22be69fcb22b448d8b4056a57cefed13f/jomatsu/zod-jev",
+   "ogImage": "https://opengraph.githubassets.com/339a42ae6b8377e4d92327035015a3dae53be6227798328b1eef94e6f29c9151/jomatsu/zod-jev",
    "topics": [],
    "description": null,
    "homepage": null
@@ -4034,7 +4034,7 @@
    "language": "C#",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/af2b691444500b59065c7b09f486d1cf6fb61a90fded460ae94e1db01d359727/saibimajdi/typesafeai-dotnet-sdk",
+   "ogImage": "https://opengraph.githubassets.com/0669e817473613be85b7f581314ef75d4c8d8a989e5660c66c217fa04ef8accd/saibimajdi/typesafeai-dotnet-sdk",
    "topics": [
     "ai",
     "classification",
@@ -4056,7 +4056,7 @@
    "language": "Go",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/e82906d2ab53455b3a9fc3c5f4bec2c38161c31617c777d65eeca12136ff025f/Tangerg/typesafe-sdk-go",
+   "ogImage": "https://opengraph.githubassets.com/bd7b97d4a7a0238ce69e7b834d184d8ef9364f93c470cd9b10a7784c972b252a/Tangerg/typesafe-sdk-go",
    "topics": [],
    "description": "Go SDK for the TypeSafe AI API — typed questions in, probability distributions out.",
    "homepage": null
@@ -4069,7 +4069,7 @@
    "language": "Swift",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/a146e57c11739ac492004c49d1839b14921eab2d786b26ace7518f5b41dfb304/ainame/swift-typesafe",
+   "ogImage": "https://opengraph.githubassets.com/136bdb8572ce0b55f6a90bab56c3f0ff2c4aa85d925ed53eddeb56a8bfe918a6/ainame/swift-typesafe",
    "topics": [],
    "description": "Unofficial Swift SDK for TypeSafe",
    "homepage": null
@@ -4082,7 +4082,7 @@
    "language": "PHP",
    "license": "MIT",
    "archived": false,
-   "ogImage": "https://opengraph.githubassets.com/d43ac48a8f43f6e3e44df1879205f5a94eb6d39abc62f03725c5176c7d754a7b/Butochnikov/typesafe-sdk-php",
+   "ogImage": "https://opengraph.githubassets.com/ccba6cbe02a0ac633e776320c54ec17458282dffc3c8103b2f5020f09e7debd0/Butochnikov/typesafe-sdk-php",
    "topics": [],
    "description": null,
    "homepage": null

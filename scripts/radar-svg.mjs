@@ -54,13 +54,13 @@ export function radarSvg({
   const uid = `jr-${theme}-${size}`;
 
   const rings = RINGS.map(
-    (t) => `<circle cx="${c}" cy="${c}" r="${f(R * t)}" fill="none" stroke="${th.ring}" stroke-width="${f(Math.max(0.5, k))}"/>`,
+    (t) => `<circle class="ring" cx="${c}" cy="${c}" r="${f(R * t)}" fill="none" stroke="${th.ring}" stroke-width="${f(Math.max(0.5, k))}"/>`,
   ).join("");
 
   const spokes = sectors
     .map((_, i) => {
       const [x, y] = at(startOf(i), R * 0.92);
-      return `<line x1="${c}" y1="${c}" x2="${f(x)}" y2="${f(y)}" stroke="${th.spoke}" stroke-width="${f(Math.max(0.5, k))}"/>`;
+      return `<line class="spoke" x1="${c}" y1="${c}" x2="${f(x)}" y2="${f(y)}" stroke="${th.spoke}" stroke-width="${f(Math.max(0.5, k))}"/>`;
     })
     .join("");
 
@@ -77,7 +77,7 @@ export function radarSvg({
           const pad = 10 * k;
           const x =
             anchor === "start" ? Math.min(x0, size - pad - w) : anchor === "end" ? Math.max(x0, pad + w) : x0;
-          const el = `<text x="${f(x)}" y="${f(y)}" fill="${th.label}" text-anchor="${anchor}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(11 * k)}">${esc(text)}</text>`;
+          const el = `<text class="slabel" x="${f(x)}" y="${f(y)}" fill="${th.label}" text-anchor="${anchor}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(11 * k)}">${esc(text)}</text>`;
           const url = labelHref(name);
           return url ? `<a href="${esc(url)}" class="sector">${el}</a>` : el;
         })
@@ -92,9 +92,11 @@ export function radarSvg({
       const jitter = (frac(d.id + "|j") - 0.5) * 0.12 * R;
       const [x, y] = at(a, RINGS[ringOf(stars)] * R + jitter);
       const r = (2.5 + 2.5 * Math.log10(stars + 1)) * k;
-      const fill = d.accent === "amber" ? th.amber : d.accent === "muted" ? th.grey : th.dot;
+      const tone = d.accent === "amber" ? "amber" : d.accent === "muted" ? "grey" : "cyan";
+      const fill = tone === "amber" ? th.amber : tone === "grey" ? th.grey : th.dot;
       // A canvas-colored hairline keeps overlapping dots readable where a category is crowded.
-      const dot = `<circle class="dot" cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="${fill}" stroke="${th.canvas}" stroke-width="${f(k)}" filter="url(#${uid})"><title>${esc(d.name)} · ${stars}★</title></circle>`;
+      // The colours are inline for the standalone banner; data-tone lets the site retheme them.
+      const dot = `<circle class="dot" cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="${fill}" stroke="${th.canvas}" stroke-width="${f(k)}" data-tone="${tone}" filter="url(#${uid})"><title>${esc(d.name)} · ${stars}★</title></circle>`;
       const url = href(d);
       return url ? `<a href="${esc(url)}">${dot}</a>` : dot;
     })

@@ -55,7 +55,7 @@ const charts: { title: string; note: string; svg: string | null }[] = [
   <p class="micro">{dataFetchedAt ? t(lang, "dataDate", { d: dataFetchedAt.slice(0, 10) }) : "GitHub metadata lands with the first daily refresh."}</p>
 
   <section class="panel scope">
-    <Radar lang={lang} size={900} />
+    <Radar lang={lang} size={900} dotLabels={300} period={12} />
     <p class="scope-note micro">Rings are stars: 1k+ at the centre, then 100 to 1k, 10 to 100, under 10 on the rim. Wedges follow the readme order.</p>
   </section>
 

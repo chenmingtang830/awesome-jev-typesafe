@@ -167,5 +167,6 @@
   },
   "active": "active",
   "quiet": "quiet",
-  "fromReadme": "From the readme"
+  "fromReadme": "From the readme",
+  "radarHint": "The beam finds a repo, it blips, then fades over five seconds. Hover any dot to hold it."
 }

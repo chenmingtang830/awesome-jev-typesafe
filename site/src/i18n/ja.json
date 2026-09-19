@@ -167,5 +167,6 @@
   },
   "active": "活発",
   "quiet": "休止",
-  "fromReadme": "readme より"
+  "fromReadme": "readme より",
+  "radarHint": "ビームがリポジトリを捉えると一度光り、5 秒かけて薄れていきます。点にカーソルを重ねると表示が保持されます。"
 }

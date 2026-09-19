@@ -167,5 +167,6 @@
   },
   "active": "活跃",
   "quiet": "沉寂",
-  "fromReadme": "来自 readme"
+  "fromReadme": "来自 readme",
+  "radarHint": "扫描线找到一个仓库时它会闪亮一下，随后在五秒内淡去。悬停任意圆点可让它保持显示。"
 }

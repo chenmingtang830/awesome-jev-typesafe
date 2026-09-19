@@ -167,5 +167,6 @@
   },
   "active": "활발",
   "quiet": "조용함",
-  "fromReadme": "readme에서"
+  "fromReadme": "readme에서",
+  "radarHint": "빔이 저장소를 찾으면 한 번 반짝인 뒤 5초에 걸쳐 사라집니다. 점 위에 마우스를 올리면 계속 표시됩니다."
 }

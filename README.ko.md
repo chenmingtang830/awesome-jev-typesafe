@@ -2,7 +2,7 @@
 
 > 이 파일은 영어 목록에서 자동 생성됩니다. 직접 수정하지 말고 [readme.md](readme.md)에 기여해 주세요.
 
-[English](readme.md) · [网站 / サイト / 사이트](https://awesome-jev.vercel.app/ko/)
+[English](readme.md) · [사이트](https://awesomejev.vercel.app/ko/) · [영어 사이트](https://awesomejev.vercel.app/)
 
 ## 여기서 시작
 

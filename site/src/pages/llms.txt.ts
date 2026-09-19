@@ -1,6 +1,9 @@
 import type { APIRoute } from "astro";
-import { sections, entries, projects } from "../lib/data";
+import { categories, entries, projects } from "../lib/data";
 import { t } from "../lib/i18n";
+
+// Brackets in a name break the link they sit in.
+const label = (s: string) => s.replace(/[[\]]/g, "");
 
 export const GET: APIRoute = ({ site }) => {
   const origin = site!.origin;
@@ -10,13 +13,11 @@ export const GET: APIRoute = ({ site }) => {
     `> ${t("en", "lede")}`,
     "",
     `${entries.length} entries, ${projects.length} of them projects, hand-reviewed and link-checked weekly.`,
-    "Fetch /projects.json for everything in one request. Do not call /api/rerank; it is browser-only and rejects agents.",
+    "Fetch /projects.json for everything in one request. /api/rerank is meant for the site's own browser search and is rate limited; do not call it, read projects.json instead.",
     "",
     "## Sections",
     "",
-    ...sections
-      .filter((s) => s.count > 0)
-      .map((s) => `- [${s.name}](${origin}/c/${s.slug}.md): ${s.count} entries`),
+    ...categories.map((s) => `- [${label(s.name)}](${origin}/c/${s.slug}.md): ${s.count} entries`),
     "",
     "## Machine",
     "",

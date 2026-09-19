@@ -2,7 +2,7 @@
 
 > このファイルは英語のリストから自動生成されています。直接編集せず、[readme.md](readme.md) に貢献してください。
 
-[English](readme.md) · [网站 / サイト / 사이트](https://awesome-jev.vercel.app/ja/)
+[English](readme.md) · [サイト](https://awesomejev.vercel.app/ja/) · [英語サイト](https://awesomejev.vercel.app/)
 
 ## ここから始める
 

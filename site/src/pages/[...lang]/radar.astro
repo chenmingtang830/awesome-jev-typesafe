@@ -52,6 +52,7 @@ const charts: { title: string; note: string; svg: string | null }[] = [
   <p class="crumbs"><a href={localePath(lang, "/")}>{t(lang, "home")}</a> / <span>{t(lang, "radar")}</span></p>
   <h1>{t(lang, "radar")}</h1>
   <p class="lede">{t(lang, "radarLede")}</p>
+  <p class="muted radar-hint">{t(lang, "radarHint")}</p>
   <p class="micro">{dataFetchedAt ? t(lang, "dataDate", { d: dataFetchedAt.slice(0, 10) }) : "GitHub metadata lands with the first daily refresh."}</p>
 
   <section class="panel scope">

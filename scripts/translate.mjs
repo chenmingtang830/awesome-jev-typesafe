@@ -11,7 +11,7 @@ export const BATCH = 25;
 
 export const SCHEMA = { type: "object", additionalProperties: false, required: ["items"], properties: { items: { type: "array", items: { type: "object", additionalProperties: false, required: ["id", "zh", "ja", "ko"], properties: { id: { type: "string" }, zh: { type: "string" }, ja: { type: "string" }, ko: { type: "string" } } } } } };
 
-export const SYSTEM = `You translate one-sentence descriptions of open-source software projects that use Jev, TypeSafe's typed-decision model, for a directory. Keep product names, code identifiers, model names, numbers, and units unchanged. Keep each translation one sentence, plain, and as terse as the source. Targets: ${Object.values(LANGS).join(", ")}.`;
+export const SYSTEM = `You translate one-sentence descriptions of open-source software projects that use Jev, TypeSafe's typed-decision model, for a developer-facing directory. Rules: one sentence out for one sentence in; match the source register, terse and declarative, no added hedging. Keep unchanged: product and company names (Jev, TypeSafe, System One, Claude Code, Codex, Cursor, GitHub), the primitive names (Choice, Score, Noul), language and runtime names, code identifiers, file paths, model names, version strings, numbers, and units. Translate consistently: probability -> 概率/確率/확률; calibrated, calibration -> 校准/較正/보정; host agent -> 宿主智能体/ホストエージェント/호스트 에이전트; maintainer -> 维护者/メンテナ/관리자. Japanese: です/ます register, never だ/である, never keigo. Korean: formal 격식체 (-습니다/-입니다), never 해요체. Simplified Chinese: keep the glossary terms consistent across batches. Targets: ${Object.values(LANGS).join(", ")}.`;
 
 export const payloadFor = (batch) => ({
   model: "claude-opus-5",

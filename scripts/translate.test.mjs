@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { pending, hashOf, payloadFor, absorb, langFile, SCHEMA } from "./translate.mjs";
+import { pending, hashOf, payloadFor, absorb, langFile, SCHEMA, SYSTEM, LANGS } from "./translate.mjs";
 
 test("pending skips entries whose hash matches", () => {
   const entries = [{ id: "a", description: "One." }, { id: "b", description: "Two." }];
@@ -32,4 +32,15 @@ test("langFile keeps only entries the cache covers", () => {
   const entries = [{ id: "a", description: "One." }, { id: "b", description: "Two." }];
   const cache = { a: { hash: hashOf("One."), zh: "一", ja: "いち", ko: "하나" } };
   assert.deepEqual(langFile(entries, cache, "ja"), { a: "いち" });
+});
+
+test("system prompt names every target language and pins the glossary", () => {
+  for (const name of Object.values(LANGS)) assert.ok(SYSTEM.includes(name), name);
+  for (const term of ["概率/確率/확률", "校准/較正/보정", "宿主智能体", "维护者/メンテナ/관리자"])
+    assert.ok(SYSTEM.includes(term), term);
+});
+
+test("system prompt fixes the japanese and korean register", () => {
+  assert.match(SYSTEM, /です\/ます register, never だ\/である/);
+  assert.match(SYSTEM, /격식체 \(-습니다\/-입니다\)/);
 });

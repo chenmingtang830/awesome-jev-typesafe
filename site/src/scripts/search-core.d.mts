@@ -10,6 +10,8 @@ export function buildIndex(docs: Doc[]): {
 };
 export const SYNONYMS: Record<string, string[]>;
 export function expandQuery(q: string): Query;
+export function facetValue(doc: Doc, key: string): string | boolean | null | undefined;
 export function applyFacets(docs: Doc[], facets: Record<string, string[]>): Doc[];
+export function facetCounts(docs: Doc[], facets: Record<string, string[]>, key: string): Map<string, number>;
 export function matchIntent(query: string, intents: string[]): string | null;
 export function sortDocs(docs: Doc[], sort: string): Doc[];

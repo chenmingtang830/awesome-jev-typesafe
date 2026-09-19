@@ -10,18 +10,29 @@ export function buildIndex(docs) {
   return ms;
 }
 
+// Media, maintainer and stars are derived; every other facet maps onto a doc field.
+export const facetValue = (d, k) =>
+  k === "media" ? (d.hasMedia ? "yes" : "no")
+  : k === "maintainer" ? (d.maintainer ? "yes" : "no")
+  : k === "stars" ? d.starsBucket
+  : d[k];
+
 export function applyFacets(docs, facets) {
   return docs.filter((d) =>
-    Object.entries(facets).every(([k, vals]) => {
-      if (!vals?.length) return true;
-      const v =
-        k === "media" ? (d.hasMedia ? "yes" : "no")
-        : k === "maintainer" ? (d.maintainer ? "yes" : "no")
-        : k === "stars" ? d.starsBucket
-        : d[k];
-      return vals.includes(v);
-    }),
+    Object.entries(facets).every(([k, vals]) => !vals?.length || vals.includes(facetValue(d, k))),
   );
+}
+
+// What each chip of one facet would yield: the pool minus that facet's own selection,
+// so picking a value never zeroes out its siblings.
+export function facetCounts(docs, facets, key) {
+  const counts = new Map();
+  for (const d of applyFacets(docs, { ...facets, [key]: [] })) {
+    const v = facetValue(d, key);
+    if (v == null) continue;
+    counts.set(String(v), (counts.get(String(v)) ?? 0) + 1);
+  }
+  return counts;
 }
 
 const words = (s) => new Set(s.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2));

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildIndex, applyFacets, expandQuery, matchIntent, sortDocs } from "./search-core.mjs";
+import { buildIndex, applyFacets, expandQuery, facetCounts, matchIntent, sortDocs } from "./search-core.mjs";
 
 const docs = [
   { id: "a", name: "fast-jev-compaction", description: "Replaces the compaction summary with Jev decisions.", section: "Coding agents", host: "Claude Code", language: "TypeScript", license: "MIT", stars: 50, starsBucket: "10-100", hasMedia: false, maintainer: false, intents: { "compact context": 0.9 } },
@@ -62,4 +62,16 @@ test("subsection text is searchable", () => {
     { id: "b", name: "jev-other", description: "Does another thing.", section: "Coding agents", subsection: "Routing" },
   ]);
   assert.deepEqual(idx.search("sandboxing").map((r) => r.id), ["a"]);
+});
+
+test("facet counts ignore that facet's own selection", () => {
+  const counts = facetCounts(docs, { language: ["Python"] }, "language");
+  assert.equal(counts.get("Python"), 1);
+  assert.equal(counts.get("TypeScript"), 1);
+});
+
+test("facet counts follow the other facets", () => {
+  const counts = facetCounts(docs, { maintainer: ["yes"] }, "language");
+  assert.equal(counts.get("Python"), 1);
+  assert.equal(counts.get("TypeScript"), undefined);
 });

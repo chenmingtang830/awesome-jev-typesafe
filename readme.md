@@ -29,7 +29,7 @@ Jev does not write. You hand it some state and a list of typed questions, and it
   - [Pi](#pi)
   - [Hermes](#hermes)
   - [Agent Zero](#agent-zero)
-  - [Any agent via MCP](#any-agent-via-mcp)
+  - [Any agent](#any-agent)
   - [Skills for writing Jev code](#skills-for-writing-jev-code)
 - [Browser and computer use](#browser-and-computer-use)
 - [Open models and replicas](#open-models-and-replicas)
@@ -162,7 +162,7 @@ Copied from the vendor's pages on 2026-09-18; every page is linked under Start h
 
 - [a0-typesafe-ai](https://github.com/3clyp50/a0-typesafe-ai) - Typed tools and probability cards for Agent Zero.
 
-### Any agent via MCP
+### Any agent
 
 - [skillbox](https://github.com/kitze/skillbox) - Self-hosted, versioned skills library served over MCP, with Jev recommending which skill to load.
 - [jev-mcp by jkudish](https://github.com/jkudish/jev-mcp) - The first MCP server for Jev, and still the most linked.
@@ -170,6 +170,7 @@ Copied from the vendor's pages on 2026-09-18; every page is linked under Start h
 - [jev-mcp by blakestone-x](https://github.com/blakestone-x/jev-mcp) - Classify, score, check, match, and screen, with confidence on every answer.
 - [Jevbridge](https://github.com/tacticocc/Jevbridge) - ACP and MCP adapter that pairs Jev with any LLM for computer use and typed decisions.
 - [jev-eval-mcp](https://github.com/BYK/jev-mcp) - Eval-first MCP server: prototype a question, map it over many items, then measure variants against labeled examples with a threshold sweep.
+- [azdaja](https://github.com/kubet/azdaja) - Recursive language model layer for Claude Code, Codex, Gemini, and OpenCode that keeps full sources in a local evaluator; Jev is an optional leaf for reranking, verification, classification, and semantic joins, with budgeted, checkpointed batches.
 
 ### Skills for writing Jev code
 

@@ -1,0 +1,120 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Bar from "../../../components/Bar.astro";
+import { entries, byId, describe, image, hostOf, hasOwnImage, readmePath, slug } from "../../../lib/data";
+import { t, sect, localePath, langFromParams, locales } from "../../../lib/i18n";
+
+export function getStaticPaths() {
+  const langs = [undefined, ...locales.filter((l) => l !== "en")];
+  return langs.flatMap((lang) => entries.map((e) => ({ params: { lang, id: e.id } })));
+}
+
+const lang = langFromParams(Astro.params);
+const e = byId[Astro.params.id!];
+const g = e.github;
+const desc = describe(e, lang);
+const host = hostOf(e);
+const tags: [string, number][] = e.jev
+  ? [["router", e.jev.router], ["gate", e.jev.gate], ["compaction", e.jev.compaction], ["judge", e.jev.judge],
+     ["browser agent", e.jev.browserAgent], ["numbers", e.jev.hasNumbers], ["bulk scaffold", e.jev.riskBulkScaffold]]
+  : [];
+const intents = Object.entries(e.jev?.intents ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+const pkg = (() => {
+  const topics = g?.topics ?? [];
+  const home = g?.homepage ?? "";
+  if (topics.includes("npm") || /npmjs\.com/.test(home)) return `npm i ${e.repo}`;
+  if (topics.includes("pypi") || /pypi\.org/.test(home)) return `pip install ${e.repo}`;
+  if (topics.includes("crates") || /crates\.io/.test(home)) return `cargo add ${e.repo}`;
+  return null;
+})();
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: e.name,
+  description: e.description,
+  codeRepository: e.url,
+  ...(g?.language ? { programmingLanguage: g.language } : {}),
+  ...(g?.license ? { license: g.license } : {}),
+};
+---
+<Base title={`${e.name} · Awesome Jev`} description={desc} lang={lang} path={`/p/${e.id}/`} image={`/og/${e.id}.png`} jsonld={jsonld}>
+  <p class="crumbs">
+    <a href={localePath(lang, "/")}>{t(lang, "home")}</a> /
+    <a href={localePath(lang, `/c/${slug(e.section)}/`)}>{sect(lang, e.section)}</a> /
+    <span>{e.name}</span>
+  </p>
+
+  <div class="detail">
+    <div>
+      <h1>{e.name}</h1>
+      <p class="lede">{desc}</p>
+      {lang !== "en" && <p class="micro">{t(lang, "generated")}</p>}
+      <div class="actions">
+        <a class="btn primary" href={e.url} rel="noopener">{t(lang, "openOnGithub")}</a>
+        <a class="btn" href={readmePath(e)} rel="noopener">{t(lang, "sourceLine", { n: e.line })}</a>
+      </div>
+      {hasOwnImage(e) && (
+        <div class="shot"><img src={image(e)} alt={e.name} width="1200" height="630" loading="lazy" /></div>
+      )}
+      {pkg && (
+        <div class="install">
+          <code id="pkg">{pkg}</code>
+          <button class="btn" type="button" id="copy" data-copied={t(lang, "copied")}>{t(lang, "copy")}</button>
+        </div>
+      )}
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2>{t(lang, "details")}</h2>
+        <dl class="facts">
+          <dt>{t(lang, "section")}</dt>
+          <dd><a href={localePath(lang, `/c/${slug(e.section)}/`)}>{sect(lang, e.section)}</a></dd>
+          {host && <><dt>{t(lang, "host")}</dt><dd>{sect(lang, host)}</dd></>}
+          {e.owner && <><dt>owner</dt><dd><a href={`https://github.com/${e.owner}`} rel="noopener">{e.owner}</a></dd></>}
+          {g && <><dt>{t(lang, "stars")}</dt><dd class="num">{g.stars.toLocaleString("en-US")}</dd></>}
+          {g && <><dt>{t(lang, "forks")}</dt><dd class="num">{g.forks.toLocaleString("en-US")}</dd></>}
+          {g?.pushedAt && <><dt>{t(lang, "pushed")}</dt><dd class="num">{g.pushedAt.slice(0, 10)}</dd></>}
+          {g?.language && <><dt>{t(lang, "facets.language")}</dt><dd>{g.language}</dd></>}
+          {g?.license && <><dt>{t(lang, "facets.license")}</dt><dd>{g.license}</dd></>}
+          {e.languageHint && <><dt>readme</dt><dd>{e.languageHint}</dd></>}
+          {e.trustPhrase && <><dt>claim</dt><dd class="muted">{e.trustPhrase}</dd></>}
+        </dl>
+        <div class="card-meta">
+          {g?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
+          {e.maintainer && <span class="tag accent">{t(lang, "maintainer")}</span>}
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>{t(lang, "jevSays")}</h2>
+        {tags.length === 0 && <p class="empty-note">{t(lang, "noJevYet")}</p>}
+        {tags.map(([k, p]) => <Bar p={p} label={k} />)}
+        {e.jev && (
+          <dl class="facts">
+            <dt>{t(lang, "section")}</dt><dd>{e.jev.section} <span class="num muted">{e.jev.sectionP.toFixed(2)}</span></dd>
+            <dt>{t(lang, "host")}</dt><dd>{e.jev.hostAgent} <span class="num muted">{e.jev.hostAgentP.toFixed(2)}</span></dd>
+          </dl>
+        )}
+      </div>
+
+      {intents.length > 0 && (
+        <div class="panel">
+          <h2>{t(lang, "intentMatches")}</h2>
+          {intents.map(([k, p]) => <Bar p={p} label={k} small />)}
+        </div>
+      )}
+    </div>
+  </div>
+</Base>
+<script>
+  const btn = document.getElementById("copy");
+  btn?.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(document.getElementById("pkg")?.textContent ?? "");
+    const was = btn.textContent;
+    btn.textContent = btn.dataset.copied ?? "Copied";
+    setTimeout(() => (btn.textContent = was), 1500);
+  });
+</script>

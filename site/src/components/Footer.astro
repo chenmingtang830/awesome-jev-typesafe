@@ -1,0 +1,19 @@
+---
+import { t, localePath } from "../lib/i18n";
+import { entries } from "../lib/data";
+interface Props { lang: string }
+const { lang } = Astro.props;
+---
+<footer class="ftr">
+  <div class="ftr-in">
+    <span class="muted">{t(lang, "entriesCount", { n: entries.length })} · {t(lang, "checkedWeekly")} · CC0</span>
+    <a href="https://github.com/valentynkit/awesome-jev-typesafe">{t(lang, "source")}</a>
+    <a href={localePath(lang, "/about/")}>{t(lang, "about")}</a>
+    <span class="machine mono">
+      <a href="/llms.txt">llms.txt</a>
+      <a href="/projects.json">projects.json</a>
+      <a href="/skill.md">skill.md</a>
+      <a href="/feed.xml">feed.xml</a>
+    </span>
+  </div>
+</footer>

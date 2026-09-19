@@ -2,7 +2,7 @@ import MiniSearch from "minisearch";
 
 export function buildIndex(docs) {
   const ms = new MiniSearch({
-    fields: ["name", "description", "section", "host", "owner", "topics"],
+    fields: ["name", "description", "section", "subsection", "host", "owner", "topics"],
     storeFields: ["id"],
     searchOptions: { boost: { name: 3, description: 1.5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" },
   });
@@ -10,18 +10,29 @@ export function buildIndex(docs) {
   return ms;
 }
 
+// Media, maintainer and stars are derived; every other facet maps onto a doc field.
+export const facetValue = (d, k) =>
+  k === "media" ? (d.hasMedia ? "yes" : "no")
+  : k === "maintainer" ? (d.maintainer ? "yes" : "no")
+  : k === "stars" ? d.starsBucket
+  : d[k];
+
 export function applyFacets(docs, facets) {
   return docs.filter((d) =>
-    Object.entries(facets).every(([k, vals]) => {
-      if (!vals?.length) return true;
-      const v =
-        k === "media" ? (d.hasMedia ? "yes" : "no")
-        : k === "maintainer" ? (d.maintainer ? "yes" : "no")
-        : k === "stars" ? d.starsBucket
-        : d[k];
-      return vals.includes(v);
-    }),
+    Object.entries(facets).every(([k, vals]) => !vals?.length || vals.includes(facetValue(d, k))),
   );
+}
+
+// What each chip of one facet would yield: the pool minus that facet's own selection,
+// so picking a value never zeroes out its siblings.
+export function facetCounts(docs, facets, key) {
+  const counts = new Map();
+  for (const d of applyFacets(docs, { ...facets, [key]: [] })) {
+    const v = facetValue(d, key);
+    if (v == null) continue;
+    counts.set(String(v), (counts.get(String(v)) ?? 0) + 1);
+  }
+  return counts;
 }
 
 const words = (s) => new Set(s.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2));
@@ -46,4 +57,22 @@ export function sortDocs(docs, sort) {
     az: (a, b) => a.name.localeCompare(b.name),
   };
   return by[sort] ? [...docs].sort(by[sort]) : docs;
+}
+
+// A handful of words people type instead of the word the README uses. Expanded as
+// nested OR subqueries so the AND between the typed words still holds.
+export const SYNONYMS = {
+  compaction: ["compaction", "pruning"], pruning: ["pruning", "compaction"],
+  router: ["router", "routing", "route"], routing: ["routing", "router", "route"], route: ["route", "router", "routing"],
+  gate: ["gate", "guard", "approve", "approval"], guard: ["guard", "gate", "approve", "approval"],
+  mcp: ["mcp", "model", "context", "protocol"],
+  cli: ["cli", "command", "terminal"],
+  rerank: ["rerank", "reranker", "ranking", "rank"], reranker: ["reranker", "rerank", "ranking", "rank"],
+  hook: ["hook", "hooks"], skill: ["skill", "skills"], judge: ["judge", "verify", "verifier", "review"],
+};
+
+export function expandQuery(q) {
+  const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const parts = words.map((w) => (SYNONYMS[w] ? { queries: SYNONYMS[w], combineWith: "OR" } : w));
+  return parts.length > 1 ? { queries: parts, combineWith: "AND" } : (parts[0] ?? q);
 }

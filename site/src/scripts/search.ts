@@ -1,4 +1,4 @@
-import { buildIndex, applyFacets, matchIntent, sortDocs, type Doc } from "./search-core.mjs";
+import { buildIndex, applyFacets, expandQuery, facetCounts, matchIntent, sortDocs, type Doc } from "./search-core.mjs";
 
 const FACET_KEYS = ["section", "host", "language", "license", "media", "stars", "maintainer"];
 
@@ -22,13 +22,21 @@ export async function mount(lang: string) {
   const byId = new Map(docs.map((d) => [d.id, d]));
   const intentLabels = [...new Set(docs.flatMap((d) => Object.keys(d.intents ?? {})))];
 
-  const params = new URLSearchParams(location.search);
   const facets: Record<string, string[]> = {};
-  for (const k of FACET_KEYS) facets[k] = params.getAll(k);
-  input.value = params.get("q") ?? "";
-  sortSel.value = params.get("sort") ?? "relevance";
+  function readUrl() {
+    const params = new URLSearchParams(location.search);
+    for (const k of FACET_KEYS) facets[k] = params.getAll(k);
+    input!.value = params.get("q") ?? "";
+    sortSel!.value = params.get("sort") ?? "relevance";
+  }
+  readUrl();
 
-  const chips = [...document.querySelectorAll<HTMLButtonElement>(".chip")];
+  const chips = [...document.querySelectorAll<HTMLButtonElement>(".chip[data-facet][data-value]")];
+  const chipsByFacet = new Map<string, HTMLButtonElement[]>();
+  for (const c of chips) {
+    const key = c.dataset.facet!;
+    chipsByFacet.set(key, [...(chipsByFacet.get(key) ?? []), c]);
+  }
   const paintChips = () => {
     for (const c of chips) {
       const on = facets[c.dataset.facet!]?.includes(c.dataset.value!) ?? false;
@@ -43,27 +51,47 @@ export async function mount(lang: string) {
   let abort: AbortController | null = null;
   let rerankTimer = 0;
 
-  function localRank(): Doc[] {
+  // Everything the query matches, in relevance order and before any facet applies.
+  // The facet counts need this pool too, so it is computed once per render.
+  function queryPool(): Doc[] {
     const q = input!.value.trim();
-    let pool = applyFacets(docs, facets);
-    if (!q) return sortDocs(pool, sortSel!.value === "relevance" ? "stars" : sortSel!.value);
-    const allowed = new Set(pool.map((d) => d.id));
-    const intent = matchIntent(q, intentLabels);
-    const scored = index
-      .search(q)
-      .filter((r) => allowed.has(r.id))
+    if (!q) return docs;
+    const intent = intentLabels.length ? matchIntent(q, intentLabels) : null;
+    return index
+      .search(expandQuery(q))
       .map((r) => {
         const doc = byId.get(r.id)!;
         const bonus = intent ? 2 * (doc.intents?.[intent] ?? 0) : 0;
         return { doc, score: r.score + bonus };
       })
-      .sort((a, b) => b.score - a.score)
+      .sort((a, b) => b.score - a.score || (b.doc.stars ?? 0) - (a.doc.stars ?? 0))
       .map((r) => r.doc);
-    return sortSel!.value === "relevance" ? scored : sortDocs(scored, sortSel!.value);
+  }
+
+  function localRank(pool = queryPool()): Doc[] {
+    const ranked = applyFacets(pool, facets);
+    if (sortSel!.value !== "relevance") return sortDocs(ranked, sortSel!.value);
+    return input!.value.trim() ? ranked : sortDocs(ranked, "stars");
+  }
+
+  function paintCounts(pool: Doc[]) {
+    for (const [key, group] of chipsByFacet) {
+      const counts = facetCounts(pool, facets, key);
+      for (const c of group) {
+        const n = counts.get(c.dataset.value!) ?? 0;
+        const num = c.querySelector(".num");
+        if (num) num.textContent = String(n);
+        c.classList.toggle("chip-empty", n === 0);
+        if (n === 0) c.setAttribute("aria-disabled", "true");
+        else c.removeAttribute("aria-disabled");
+      }
+    }
   }
 
   function render() {
-    const ranked = localRank();
+    const pool = queryPool();
+    const ranked = localRank(pool);
+    paintCounts(pool);
     let ids = ranked.map((d) => d.id);
     if (reranked.length) {
       const head = reranked.filter((id) => ids.includes(id));
@@ -92,14 +120,37 @@ export async function mount(lang: string) {
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
+  // The rerank bars only mean something while a Jev response is on screen.
+  function showBars(ranked: { id: string; p: number }[]) {
+    for (const { id, p } of ranked) {
+      const card = cards.get(id);
+      if (!card) continue;
+      const fill = card.querySelector<HTMLElement>(".bar-fill");
+      if (!fill) continue;
+      fill.style.width = `${Math.round(p * 100)}%`;
+      const bar = card.querySelector<HTMLElement>(".bar-rerank");
+      if (bar) bar.hidden = false;
+    }
+  }
+
+  function hideBars() {
+    for (const card of cards.values()) {
+      const bar = card.querySelector<HTMLElement>(".bar-rerank");
+      if (bar) bar.hidden = true;
+      const fill = card.querySelector<HTMLElement>(".bar-fill");
+      if (fill) fill.style.width = "";
+    }
+    badge?.setAttribute("hidden", "");
+  }
+
   // Jev reranks the local shortlist. Any failure keeps the local order and stays quiet.
   function rerank() {
     const q = input!.value.trim();
     clearTimeout(rerankTimer);
     abort?.abort();
     if (q.length < 3) {
+      hideBars();
       if (reranked.length) { reranked = []; render(); }
-      badge?.setAttribute("hidden", "");
       return;
     }
     rerankTimer = window.setTimeout(() => {
@@ -116,16 +167,14 @@ export async function mount(lang: string) {
         .then((data: { ranked: { id: string; p: number }[] }) => {
           if (input!.value.trim() !== q || !Array.isArray(data?.ranked)) return;
           reranked = data.ranked.map((r) => r.id);
-          for (const { id, p } of data.ranked) {
-            const fill = cards.get(id)?.querySelector<HTMLElement>(".bar-fill");
-            if (fill) fill.style.width = `${Math.round(p * 100)}%`;
-          }
+          showBars(data.ranked);
           badge?.removeAttribute("hidden");
           render();
         })
         .catch(() => {
+          // 503 means the site has no key today; every other failure is just as quiet.
           reranked = [];
-          badge?.setAttribute("hidden", "");
+          hideBars();
         });
     }, 350);
   }
@@ -152,6 +201,13 @@ export async function mount(lang: string) {
     input.value = "";
     paintChips();
     update();
+  });
+
+  addEventListener("popstate", () => {
+    readUrl();
+    paintChips();
+    render();
+    rerank();
   });
 
   addEventListener("keydown", (e) => {

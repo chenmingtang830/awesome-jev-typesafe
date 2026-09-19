@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildIndex, applyFacets, matchIntent, sortDocs } from "./search-core.mjs";
+import { buildIndex, applyFacets, expandQuery, facetCounts, matchIntent, sortDocs } from "./search-core.mjs";
 
 const docs = [
   { id: "a", name: "fast-jev-compaction", description: "Replaces the compaction summary with Jev decisions.", section: "Coding agents", host: "Claude Code", language: "TypeScript", license: "MIT", stars: 50, starsBucket: "10-100", hasMedia: false, maintainer: false, intents: { "compact context": 0.9 } },
@@ -31,4 +31,47 @@ test("no intent matches an unrelated query", () => {
 
 test("sort by stars puts the bigger repo first", () => {
   assert.deepEqual(sortDocs(docs, "stars").map((d) => d.id), ["a", "b"]);
+});
+
+test("a synonym word expands to an OR subquery", () => {
+  assert.deepEqual(expandQuery("router"), { queries: ["router", "routing", "route"], combineWith: "OR" });
+});
+
+test("two words AND together, synonyms expanded in place", () => {
+  assert.deepEqual(expandQuery("stop hook"), {
+    combineWith: "AND",
+    queries: ["stop", { queries: ["hook", "hooks"], combineWith: "OR" }],
+  });
+});
+
+test("a plain word stays a plain query", () => {
+  assert.equal(expandQuery("drone"), "drone");
+});
+
+test("compaction also finds the repo that says pruning", () => {
+  const idx = buildIndex([
+    { id: "a", name: "fast-jev-compaction", description: "Rewrites the compaction summary.", section: "Coding agents" },
+    { id: "b", name: "jev-prune", description: "Context pruning driven by Jev.", section: "Coding agents" },
+  ]);
+  assert.deepEqual(idx.search(expandQuery("compaction")).map((r) => r.id).sort(), ["a", "b"]);
+});
+
+test("subsection text is searchable", () => {
+  const idx = buildIndex([
+    { id: "a", name: "jev-thing", description: "Does a thing.", section: "Coding agents", subsection: "Sandboxing" },
+    { id: "b", name: "jev-other", description: "Does another thing.", section: "Coding agents", subsection: "Routing" },
+  ]);
+  assert.deepEqual(idx.search("sandboxing").map((r) => r.id), ["a"]);
+});
+
+test("facet counts ignore that facet's own selection", () => {
+  const counts = facetCounts(docs, { language: ["Python"] }, "language");
+  assert.equal(counts.get("Python"), 1);
+  assert.equal(counts.get("TypeScript"), 1);
+});
+
+test("facet counts follow the other facets", () => {
+  const counts = facetCounts(docs, { maintainer: ["yes"] }, "language");
+  assert.equal(counts.get("Python"), 1);
+  assert.equal(counts.get("TypeScript"), undefined);
 });

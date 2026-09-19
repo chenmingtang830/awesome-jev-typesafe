@@ -68,5 +68,8 @@
   "caveats": "Jev にできないこと",
   "contributing": "コントリビュート",
   "resources": "読みもの",
-  "sourceLine": "readme {n} 行目"
+  "sourceLine": "readme {n} 行目",
+  "labelProjects": "プロジェクト",
+  "labelSections": "セクション",
+  "labelEntries": "件"
 }

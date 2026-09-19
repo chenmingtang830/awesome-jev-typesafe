@@ -68,5 +68,8 @@
   "caveats": "Jev가 못 하는 것",
   "contributing": "기여하기",
   "resources": "읽을거리",
-  "sourceLine": "readme {n}번째 줄"
+  "sourceLine": "readme {n}번째 줄",
+  "labelProjects": "프로젝트",
+  "labelSections": "섹션",
+  "labelEntries": "항목"
 }

@@ -1,0 +1,107 @@
+---
+import Base from "../../layouts/Base.astro";
+import Card from "../../components/Card.astro";
+import Gauge from "../../components/Gauge.astro";
+import SearchBox from "../../components/SearchBox.astro";
+import { projects, categories, gallery, byId, entries, newSince, hostOf, starsBucket } from "../../lib/data";
+import { t, sect, localePath, langFromParams, staticLangs } from "../../lib/i18n";
+
+export const getStaticPaths = staticLangs;
+const lang = langFromParams(Astro.params);
+
+const counted = (pairs: (string | null)[]): [string, number][] => {
+  const m = new Map<string, number>();
+  for (const v of pairs) if (v) m.set(v, (m.get(v) ?? 0) + 1);
+  return [...m].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+};
+const all: Record<string, [string, number][]> = {
+  section: counted(projects.map((e) => e.section)),
+  host: counted(projects.map((e) => hostOf(e))),
+  language: counted(projects.map((e) => e.github?.language ?? null)),
+  license: counted(projects.map((e) => e.github?.license ?? null)),
+  stars: counted(projects.map((e) => (e.github ? starsBucket(e.github.stars) : null))),
+  media: counted(projects.map((e) => (e.image ? "yes" : "no"))),
+  maintainer: counted(projects.map((e) => (e.maintainer ? "yes" : "no"))),
+};
+// Facets that GitHub metadata feeds are empty until the daily enrichment runs.
+const facets = Object.fromEntries(Object.entries(all).filter(([, v]) => v.length > 1));
+
+const fresh = newSince(7).filter((e) => e.type === "project").slice(-12).reverse();
+const tiles = categories.filter((s) => s.count > 2);
+const req = `POST /v1/systemone
+{ "model": "jev-latest",
+  "state": "diff touches auth, adds one dependency",
+  "questions": { "needs_human": { "type": "noul",
+      "instructions": "Should a person review this?" } } }`;
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Awesome Jev",
+  numberOfItems: projects.length,
+  itemListElement: projects.slice(0, 50).map((e, i) => ({
+    "@type": "ListItem", position: i + 1, name: e.name, url: e.url, description: e.description,
+  })),
+};
+---
+<Base title="Awesome Jev" description={t(lang, "lede")} lang={lang} path="/" jsonld={jsonld}>
+  <section class="hero">
+    <div>
+      <p class="micro">TypeSafe Jev · System One</p>
+      <h1>{t(lang, "tagline")}</h1>
+      <p class="lede">{t(lang, "lede")}</p>
+      <div class="stats">
+        <span class="stat"><b>{projects.length}</b><span class="micro">{t(lang, "labelProjects")}</span></span>
+        <span class="stat"><b>{categories.length}</b><span class="micro">{t(lang, "labelSections")}</span></span>
+        <span class="stat"><b>{entries.length}</b><span class="micro">{t(lang, "labelEntries")}</span></span>
+        <span class="stat"><b class="mono">7d</b><span class="micro">{t(lang, "checkedWeekly")}</span></span>
+      </div>
+    </div>
+    <div class="readout">
+      <Gauge p={0.93} label="noul" />
+      <pre class="req mono"><code>{req}</code></pre>
+      <p class="latency muted"><span class="micro">latency</span> <span class="num">70-500 ms</span> <span class="micro">vendor reported</span></p>
+    </div>
+  </section>
+
+  <SearchBox lang={lang} total={projects.length} facets={facets} />
+
+  <div class="rule" id="categories"><h2>{t(lang, "categories")}</h2></div>
+  <div class="tiles">
+    {tiles.map((s) => (
+      <a class="tile reveal" href={localePath(lang, `/c/${s.slug}/`)}>
+        <span class="tile-head"><b>{sect(lang, s.name)}</b><span class="num">{s.count}</span></span>
+        <small>{entries.filter((e) => e.section === s.name).slice(0, 3).map((e) => e.name).join(" · ")}</small>
+      </a>
+    ))}
+  </div>
+
+  {fresh.length > 0 && (
+    <>
+      <div class="rule"><h2>{t(lang, "newThisWeek")}</h2></div>
+      <div class="strip">
+        {fresh.map((e) => <a href={localePath(lang, `/p/${e.id}/`)}>{e.name}</a>)}
+      </div>
+    </>
+  )}
+
+  <div class="rule"><h2>{t(lang, "gallery")}</h2></div>
+  <div class="mosaic">
+    {gallery.map((g) => {
+      const e = Object.values(byId).find((x) => x.url === g.url);
+      return (
+        <a href={e ? localePath(lang, `/p/${e.id}/`) : g.url} title={e?.name}>
+          <img src={`/media/${g.image.replace(/^media\//, "")}`} alt={e?.name ?? ""} loading="lazy" width="600" height="333" />
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="rule"><h2>{t(lang, "allProjects")}</h2></div>
+  <div id="results" class="grid">
+    {projects.map((e) => <Card e={e} lang={lang} />)}
+  </div>
+  <p class="no-results" hidden>
+    <span class="echo"></span> <button class="btn clear-filters" type="button">{t(lang, "clear")}</button>
+  </p>
+</Base>

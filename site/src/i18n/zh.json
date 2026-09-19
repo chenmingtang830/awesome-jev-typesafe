@@ -68,5 +68,8 @@
   "caveats": "Jev 做不到的事",
   "contributing": "参与贡献",
   "resources": "阅读与参考",
-  "sourceLine": "readme 第 {n} 行"
+  "sourceLine": "readme 第 {n} 行",
+  "labelProjects": "项目",
+  "labelSections": "分区",
+  "labelEntries": "条目"
 }

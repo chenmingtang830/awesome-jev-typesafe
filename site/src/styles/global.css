@@ -226,10 +226,10 @@ th { color: var(--muted); font-family: var(--mono); font-size: .72rem; text-tran
 
 #results:empty + .no-results { display: block; }
 .no-results { display: none; padding: 40px 0; color: var(--muted); }
-.reveal { opacity: 1; }
+.reveal, .grid .card { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 42%; }
+    .reveal, .grid .card { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 42%; }
   }
 }
 @keyframes rise { from { opacity: 0; translate: 0 14px; } }

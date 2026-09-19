@@ -68,5 +68,8 @@
   "caveats": "What Jev cannot do",
   "contributing": "Contributing",
   "resources": "Reading and reference",
-  "sourceLine": "Entry {n} in the readme"
+  "sourceLine": "Entry {n} in the readme",
+  "labelProjects": "projects",
+  "labelSections": "sections",
+  "labelEntries": "entries"
 }

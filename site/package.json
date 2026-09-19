@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node ../scripts/parse-readme.mjs && node -e \"require('fs').cpSync('../media','public/media',{recursive:true})\"",
+    "prebuild": "(cd .. && node scripts/parse-readme.mjs) && node -e \"require('fs').cpSync('../media','public/media',{recursive:true})\"",
     "build": "npm run prebuild && astro build",
     "preview": "astro preview",
     "test": "node --test src/lib/*.test.mjs src/scripts/*.test.mjs src/styles/*.test.mjs"

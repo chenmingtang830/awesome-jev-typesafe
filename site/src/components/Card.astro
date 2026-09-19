@@ -7,7 +7,7 @@ const { e, lang } = Astro.props;
 const top = topTag(e);
 const host = hostOf(e);
 ---
-<article class="card reveal" data-id={e.id}>
+<article class="card" data-id={e.id}>
   <a class="card-img" href={localePath(lang, `/p/${e.id}/`)} tabindex="-1" aria-hidden="true">
     <img src={image(e)} alt="" loading="lazy" width="640" height="336" />
   </a>

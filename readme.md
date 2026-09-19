@@ -132,6 +132,7 @@ Copied from the vendor's pages on 2026-09-18; every page is linked under Start h
 - [save-token-jev](https://github.com/IAmUnbounded/save-token-jev-clean) - Compaction that asks Jev which tool calls still matter and keeps the rest verbatim, with adapters for Claude Code, Codex, OpenCode, and raw API transcripts.
 - [jev-pruner](https://github.com/tamaratran/jev-pruner) - Trims long Bash output with Jev after the command runs and before the model sees it; short output, errors, and structured formats pass untouched.
 - [jev-rules](https://github.com/EliaAlberti/jev-rules) - Scores your standing rules against each prompt and delivers only the ones that apply, once per session.
+- [jev-belay](https://github.com/valentynkit/jev-belay) - Stop hook that blocks an unverified "done": reads the transcript for evidence and, only when files changed with no passing check since, spends one four-question Jev call; fails open on every error path. By this list's maintainer.
 
 ### Codex
 
@@ -246,6 +247,7 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [perch](https://github.com/lakeday-org/perch) - Semantic linting: rules in plain language, each file judged by Jev, run locally or in CI.
 - [jeff by Alurith](https://github.com/Alurith/jeff) - Read-only Go CLI that checks files against coded rules such as hidden side effects and weak error handling.
 - [jev-pref](https://github.com/doeixd/jev-pref) - Turns the preferences in your AGENTS.md into a linter that runs on code changes and reports back to the agent.
+- [jev-commit](https://github.com/valentynkit/jev-commit) - Pre-commit hook: one Jev call judges whether the commit message matches the staged diff, plus debug leftovers, unmentioned work, and a credential belt; warns except on a secret, which it blocks. By this list's maintainer.
 
 ## Routing and gateways
 
@@ -330,6 +332,8 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [safer-with-jev](https://github.com/andrelandgraf/safer-with-jev) - Neon Function proxy for the Neon AI Gateway with Jev routing in front.
 - [Sponsor Skip](https://github.com/trungdq88/youtube-sponsor-detection) - Chrome extension that finds sponsor reads from the transcript or live audio and jumps past them; code owns every timestamp, under a cent an hour in transcript mode.
 - [jev-seo](https://github.com/AkashPriyadarshii/jev-seo) - Rust CLI and MCP server for SEO and GEO checks over DuckDuckGo results, scored by Jev.
+- [jev.nvim](https://github.com/valentynkit/jev.nvim) - Neovim plugin: ask the buffer a plain-language question, Treesitter splits it into functions, Jev scores each one, and the answers land in quickfix ranked by probability. By this list's maintainer.
+- [jev-skip](https://github.com/valentynkit/jev-skip) - Browser extension that reads the caption track and paints a per-segment sponsor probability on the seek bar before the intro ends, no crowd database; reports 77 percent of SponsorBlock's sponsor seconds caught over 23 videos at $0.0008 a video. By this list's maintainer.
 
 ## Games, robotics and simulation
 
@@ -349,6 +353,7 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [snake-jev](https://github.com/siroccomask/snake-jev) - Snake controlled by parallel Jev assessments, one API call per tick.
 - [JevPilot](https://github.com/standardagents/jevpilot) - Three.js driving simulator where Jev picks steering and speed from sampled paths up to four times a second; [drive it](https://jevpilot.standardagents.ai).
 - [live-jev](https://github.com/vinilana/live-jev) - Top-down car in the browser sending four typed questions every 200 ms, with confidence-gated overrides in code.
+- [jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red) - Pokemon Red on PyBoy: code owns the route and the arithmetic, Jev picks only at branches, and every battle turn logs a faint prediction scored by Brier against what the RAM says. By this list's maintainer.
 
 ## Finance and trading
 

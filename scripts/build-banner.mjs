@@ -10,7 +10,7 @@
  * and include `media` in the `git add` of the commit step.
  *
  * The output is self-contained: no external fonts, no embedded images, so GitHub renders
- * it inside an <img> and the SMIL sweep still animates there.
+ * it inside an <img> and the SMIL sweep and blips still animate there.
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { radarSvg } from "./radar-svg.mjs";
@@ -117,10 +117,20 @@ const banner = (th) => {
       return p.svg;
     })
     .join("");
-  const radar = radarSvg({ dots, sectors, size: 260, labels: false, sweep: true, dotLabels: 1500, theme: th.name }).replace(
-    "<svg ",
-    '<svg x="880" y="20" ',
-  );
+  // smil because a README image cannot borrow the site's keyframes: the beam turns on its
+  // own clock and the thirty loudest repos blip as it reaches them, the rest just sit there.
+  const radar = radarSvg({
+    dots,
+    sectors,
+    size: 260,
+    labels: false,
+    sweep: true,
+    dotLabels: 1500,
+    theme: th.name,
+    period: 10,
+    smil: true,
+    smilBlips: 30,
+  }).replace("<svg ", '<svg x="880" y="20" ');
   return (
     `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Awesome Jev: ${repoCount} repos across ${sectionCount} categories">` +
     `<title>Awesome Jev</title>` +

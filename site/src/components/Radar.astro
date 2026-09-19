@@ -1,0 +1,36 @@
+---
+import { radarSvg, radarDots, radarSectors, sectorHref } from "../lib/radar";
+import { t } from "../lib/i18n";
+
+interface Props { lang: string; size?: number; labels?: boolean; sweep?: boolean; compact?: boolean }
+const { lang, size = 800, labels = true, sweep = true, compact = false } = Astro.props;
+
+const dots = radarDots(lang);
+const svg = radarSvg({
+  dots,
+  sectors: radarSectors,
+  size,
+  labels,
+  sweep,
+  href: (d) => d.href ?? null,
+  labelHref: labels ? sectorHref(lang) : () => null,
+});
+const key: [string, string][] = [
+  ["dot", t(lang, "labelProjects")],
+  ["amber", `${t(lang, "maintainer")} · ${t(lang, "newThisWeek")}`],
+  ["grey", t(lang, "archived")],
+];
+---
+<figure class={compact ? "radar compact" : "radar"}>
+  <Fragment set:html={svg} />
+  {!compact && (
+    <figcaption>
+      <p class="radar-count"><b class="num">{dots.length}</b> <span class="micro">{t(lang, "reposIndexed")}</span></p>
+      <ul class="radar-key">
+        {key.map(([tone, label]) => (
+          <li><i class={`key-dot ${tone}`} aria-hidden="true"></i><span class="micro">{label}</span></li>
+        ))}
+      </ul>
+    </figcaption>
+  )}
+</figure>

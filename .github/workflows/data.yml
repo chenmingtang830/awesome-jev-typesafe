@@ -22,14 +22,11 @@ jobs:
       - run: node scripts/enrich-github.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      # tag-jev and translate exit 0 with a message when their key is missing,
+      # tag-jev exits 0 with a message when its key is missing,
       # so the refresh still runs before the secrets exist.
       - run: node scripts/tag-jev.mjs
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
-      - run: node scripts/translate.mjs
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - run: node scripts/build-readme-i18n.mjs
       - run: node scripts/build-banner.mjs
       - name: Commit refreshed data

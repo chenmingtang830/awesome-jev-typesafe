@@ -8,8 +8,5 @@
     "lint": "npx awesome-lint",
     "count-check": "node scripts/count-check.mjs",
     "banner": "node scripts/build-banner.mjs"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.127.0"
   }
 }

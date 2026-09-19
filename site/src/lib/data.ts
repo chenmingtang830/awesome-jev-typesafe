@@ -127,10 +127,12 @@ export const jevText = (lang: string, ns: JevNs, key: string) => {
 };
 
 /** Use cases Jev is at least `threshold` sure about, strongest first. */
+// Top three only: broad Nouls such as playgrounds fire on most of the list, and a facet needs to discriminate.
 export const useCasesOf = (e: Entry, threshold = 0.6): [string, number][] =>
   Object.entries(e.jev?.useCases ?? {})
     .filter(([, p]) => p >= threshold)
-    .sort((a, b) => b[1] - a[1]);
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3);
 
 export const formOf = (e: Entry) => e.jev?.form ?? null;
 

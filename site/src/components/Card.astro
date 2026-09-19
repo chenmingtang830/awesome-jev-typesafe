@@ -22,7 +22,6 @@ const shot = image(e);
       {e.github && <span class="stars">★ {e.github.stars.toLocaleString("en-US")}</span>}
       {e.github?.language && <span>{e.github.language}</span>}
       {host && <span class="tag accent">{sect(lang, host)}</span>}
-      {e.maintainer && <span class="tag warn">{t(lang, "maintainer")}</span>}
       {e.github?.archived && <span class="tag danger">{t(lang, "archived")}</span>}
     </div>
     <div class="bar bar-rerank small" hidden>

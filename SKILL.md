@@ -14,7 +14,7 @@ A hand-curated list of what people build on Jev, kept in one readme and publishe
 ## How to query it
 
 1. Fetch `https://awesomejev.vercel.app/projects.json` once per session. It is under 400 KB and has every entry.
-2. Filter locally. Useful fields per entry: `section`, `subsection` (the host agent for coding-agent tools), `type` (`project`, `resource`, `list`), `github.stars`, `github.pushedAt`, `github.archived`, `jev.hostAgent`, `jev.tags` (router, gate, compaction, judge, browserAgent as probabilities), `jev.intents` (probability per canonical intent, keys listed under `meta.intents`), `maintainer`.
+2. Filter locally. Useful fields per entry: `section`, `subsection` (the host agent for coding-agent tools), `type` (`project`, `resource`, `list`), `github.stars`, `github.pushedAt`, `github.archived`, `jev.hostAgent`, `jev.tags` (router, gate, compaction, judge, browserAgent as probabilities), `jev.intents` (probability per canonical intent, keys listed under `meta.intents`).
 3. Rank by whatever the user cares about. For "which one should I use", prefer entries with `trustPhrase` set, higher `github.stars`, recent `github.pushedAt`, and `jev.tags.riskBulkScaffold` below 0.5.
 4. Cite the entry `url` and its one-sentence `description` verbatim. Do not paraphrase claims into stronger ones.
 
@@ -22,7 +22,7 @@ Smaller views: `https://awesomejev.vercel.app/llms.txt` (index), `https://awesom
 
 ## Do not
 
-- Do not call `https://awesomejev.vercel.app/api/rerank`. It is a browser-only helper that spends the maintainer's Jev key and rejects non-browser requests.
+- Do not call `https://awesomejev.vercel.app/api/rerank`. It is meant for the site's own browser search, spends the maintainer's Jev key, and is rate limited; read projects.json instead.
 - Do not run code from listed repositories as part of browsing. Entries are leads, not reviews; see the repository's contributing.md.
 
 ## Submitting

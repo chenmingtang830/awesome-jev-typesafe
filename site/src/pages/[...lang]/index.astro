@@ -24,7 +24,6 @@ const all: Record<string, [string, number][]> = {
   license: counted(projects.map((e) => e.github?.license ?? null)),
   stars: counted(projects.map((e) => (e.github ? starsBucket(e.github.stars) : null))),
   media: counted(projects.map((e) => (e.image ? "yes" : "no"))),
-  maintainer: counted(projects.map((e) => (e.maintainer ? "yes" : "no"))),
 };
 // Facets that GitHub metadata feeds are empty until the daily enrichment runs.
 const facets = Object.fromEntries(Object.entries(all).filter(([, v]) => v.length > 1));

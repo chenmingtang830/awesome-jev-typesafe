@@ -1,6 +1,6 @@
 import { buildIndex, applyFacets, expandQuery, facetCounts, matchIntent, sortDocs, type Doc } from "./search-core.mjs";
 
-const FACET_KEYS = ["section", "host", "language", "license", "media", "stars", "maintainer"];
+const FACET_KEYS = ["section", "host", "language", "license", "media", "stars"];
 
 export async function mount(lang: string) {
   const box = document.querySelector<HTMLElement>(".searchbox");

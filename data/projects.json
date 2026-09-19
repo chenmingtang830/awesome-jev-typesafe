@@ -934,7 +934,7 @@
       "order": 46,
       "type": "project",
       "image": null,
-      "maintainer": true,
+      "maintainer": false,
       "languageHint": null,
       "trustPhrase": null,
       "line": 158
@@ -2328,7 +2328,7 @@
       "order": 128,
       "type": "project",
       "image": null,
-      "maintainer": true,
+      "maintainer": false,
       "languageHint": null,
       "trustPhrase": null,
       "line": 273
@@ -3382,7 +3382,7 @@
       "order": 190,
       "type": "project",
       "image": null,
-      "maintainer": true,
+      "maintainer": false,
       "languageHint": null,
       "trustPhrase": null,
       "line": 358
@@ -3399,7 +3399,7 @@
       "order": 191,
       "type": "project",
       "image": null,
-      "maintainer": true,
+      "maintainer": false,
       "languageHint": null,
       "trustPhrase": "reports 77 percent of SponsorBlock's sponsor seconds caught over 23 videos at $0",
       "line": 359
@@ -3654,7 +3654,7 @@
       "order": 206,
       "type": "project",
       "image": null,
-      "maintainer": true,
+      "maintainer": false,
       "languageHint": null,
       "trustPhrase": null,
       "line": 379

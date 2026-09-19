@@ -4,3 +4,4 @@ site/.vercel/
 site/.astro/
 site/public/media/
 .env
+tools/promo/out/

@@ -22,11 +22,14 @@ export async function mount(lang: string) {
   const byId = new Map(docs.map((d) => [d.id, d]));
   const intentLabels = [...new Set(docs.flatMap((d) => Object.keys(d.intents ?? {})))];
 
-  const params = new URLSearchParams(location.search);
   const facets: Record<string, string[]> = {};
-  for (const k of FACET_KEYS) facets[k] = params.getAll(k);
-  input.value = params.get("q") ?? "";
-  sortSel.value = params.get("sort") ?? "relevance";
+  function readUrl() {
+    const params = new URLSearchParams(location.search);
+    for (const k of FACET_KEYS) facets[k] = params.getAll(k);
+    input!.value = params.get("q") ?? "";
+    sortSel!.value = params.get("sort") ?? "relevance";
+  }
+  readUrl();
 
   const chips = [...document.querySelectorAll<HTMLButtonElement>(".chip[data-facet][data-value]")];
   const chipsByFacet = new Map<string, HTMLButtonElement[]>();
@@ -198,6 +201,13 @@ export async function mount(lang: string) {
     input.value = "";
     paintChips();
     update();
+  });
+
+  addEventListener("popstate", () => {
+    readUrl();
+    paintChips();
+    render();
+    rerank();
   });
 
   addEventListener("keydown", (e) => {

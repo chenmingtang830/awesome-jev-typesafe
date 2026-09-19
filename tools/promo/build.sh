@@ -6,9 +6,9 @@ cd "$(dirname "$0")/out"
 X=0.45
 # scene trims (seconds): start, duration
 ffmpeg -y -loglevel error -loop 1 -t 2.4 -i 00-title.png -vf "fps=30,format=yuv420p" c0.mp4
-ffmpeg -y -loglevel error -ss 0.4 -t 4.2 -i 01-hero.webm -vf "fps=30,scale=1920:1080,zoompan=z='min(zoom+0.0005,1.06)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1920x1080,format=yuv420p" c1.mp4
+ffmpeg -y -loglevel error -ss 0.4 -t 4.2 -i 01-hero.webm -vf "fps=30,scale=1920:1080,scale=w='iw*(1+0.015*t)':h='ih*(1+0.015*t)':eval=frame,crop=1920:1080,format=yuv420p" c1.mp4
 ffmpeg -y -loglevel error -ss 0.6 -t 4.6 -i 02-search.webm -vf "fps=30,scale=1920:1080,format=yuv420p" c2.mp4
-ffmpeg -y -loglevel error -ss 0.4 -t 3.2 -i 03-radar.webm -vf "fps=30,scale=1920:1080,zoompan=z='min(zoom+0.0007,1.07)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1920x1080,format=yuv420p" c3.mp4
+ffmpeg -y -loglevel error -ss 0.4 -t 3.2 -i 03-radar.webm -vf "fps=30,scale=1920:1080,scale=w='iw*(1+0.02*t)':h='ih*(1+0.02*t)':eval=frame,crop=1920:1080,format=yuv420p" c3.mp4
 ffmpeg -y -loglevel error -ss 0.3 -t 2.2 -i 04-trending.webm -vf "fps=30,scale=1920:1080,format=yuv420p" c4.mp4
 ffmpeg -y -loglevel error -loop 1 -t 2.6 -i 99-end.png -vf "fps=30,format=yuv420p" c5.mp4
 # crossfade chain; offsets accumulate: sum of previous durations minus one fade each

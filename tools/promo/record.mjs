@@ -35,7 +35,7 @@ const smoothScroll = async (page, to, ms = 1400) => {
 
 async function scene(name, fn) {
   const browser = await chromium.launch();
-  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, recordVideo: { dir: out, size: { width: 1920, height: 1080 } }, colorScheme: "dark" });
+  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, recordVideo: { dir: out, size: { width: W, height: H } }, colorScheme: "dark" });
   await ctx.addInitScript((k) => { localStorage.setItem(k, "shown"); localStorage.setItem("theme", "dark"); }, NUDGE_KEY);
   const page = await ctx.newPage();
   await fn(page);

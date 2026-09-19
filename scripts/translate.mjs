@@ -60,7 +60,8 @@ async function main() {
     const res = await client.messages.create(payloadFor(batch));
     if (res.stop_reason === "refusal") throw new Error(`Claude refused batch at ${i}: ${res.stop_details?.explanation ?? ""}`);
     const text = res.content.find((b) => b.type === "text")?.text ?? "{}";
-    absorb(batch, text, cache);
+    const got = absorb(batch, text, cache);
+    if (got < batch.length) console.warn(`batch returned ${got} of ${batch.length} translations; the rest stay pending`);
     writeFileSync(cachePath, JSON.stringify(cache, null, 1) + "\n");
     console.log(`${Math.min(i + BATCH, todo.length)}/${todo.length}`);
   }

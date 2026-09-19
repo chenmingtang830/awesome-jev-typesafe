@@ -28,10 +28,12 @@ async function main() {
   for (const batch of batches(repos, 50)) {
     const q = `{ ${batch.map((full, i) => { const [o, n] = full.split("/"); return `r${i}: repository(owner:${JSON.stringify(o)}, name:${JSON.stringify(n)}) { ${FIELDS} }`; }).join("\n")} rateLimit { remaining cost } }`;
     const { data, errors } = await gql(q, token);
+    const notFound = new Set((errors ?? []).filter((e) => e.type === "NOT_FOUND").map((e) => e.path?.[0]));
     batch.forEach((full, i) => {
       const node = data?.[`r${i}`];
       if (node) out[full] = toMeta(node);
-      else { gone.push(full); if (out[full]) out[full].gone = true; else out[full] = { gone: true }; }
+      else if (notFound.has(`r${i}`)) { gone.push(full); out[full] = { ...(out[full] ?? {}), gone: true }; }
+      // any other null (rate limit, server error) keeps yesterday's data
     });
     if (errors?.some((e) => e.type !== "NOT_FOUND")) console.error(JSON.stringify(errors.filter((e) => e.type !== "NOT_FOUND"), null, 1));
     console.log(`batch done, rate limit remaining ${data?.rateLimit?.remaining}`);

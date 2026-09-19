@@ -75,7 +75,7 @@ async function main() {
   let calls = 0, tokens = 0;
   for (const e of projects) {
     const state = stateFor(e, e.owner ? gh[`${e.owner}/${e.repo}`] : null);
-    const h = hashOf(state + JSON.stringify(Object.keys(questions)));
+    const h = hashOf(state + JSON.stringify(questions, Object.keys(questions).sort()));
     if (file.entries[e.id]?.hash === h) continue;
     const { answers, usage } = await ask(state, questions);
     calls++; tokens += usage?.input_tokens ?? 0;

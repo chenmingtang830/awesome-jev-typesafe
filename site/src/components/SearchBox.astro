@@ -1,0 +1,41 @@
+---
+import { t, sect } from "../lib/i18n";
+interface Props { lang: string; total: number; facets: Record<string, [string, number][]> }
+const { lang, total, facets } = Astro.props;
+const label = (key: string, v: string) =>
+  key === "media" || key === "maintainer" ? t(lang, v === "yes" ? "yes" : "no") : key === "section" || key === "host" ? sect(lang, v) : v;
+---
+<search class="searchbox" data-results={t(lang, "results")} data-no-results={t(lang, "noResults")}>
+  <input id="q" type="search" placeholder={t(lang, "search")} aria-label={t(lang, "search")} autocomplete="off" />
+  <span class="muted hint"><kbd>/</kbd> {t(lang, "searchHint")}</span>
+  <label class="sort" for="sort">{t(lang, "sort")}
+    <select id="sort">
+      <option value="relevance">{t(lang, "relevance")}</option>
+      <option value="stars">{t(lang, "stars")}</option>
+      <option value="newest">{t(lang, "newest")}</option>
+      <option value="recent">{t(lang, "recent")}</option>
+      <option value="az">{t(lang, "az")}</option>
+    </select>
+  </label>
+  <span id="count" class="num muted">{t(lang, "results", { n: total, total })}</span>
+  <span id="ranked-by-jev" class="tag accent" hidden>{t(lang, "rankedByJev")}</span>
+</search>
+<div class="facets">
+  {Object.entries(facets).map(([key, vals]) => (
+    <details class="facet" open={key === "section"}>
+      <summary>{t(lang, `facets.${key}`)}</summary>
+      <div class="chips">
+        {vals.map(([v, n]) => (
+          <button class="chip" type="button" aria-pressed="false" data-facet={key} data-value={v}>
+            {label(key, v)} <span class="num muted">{n}</span>
+          </button>
+        ))}
+      </div>
+    </details>
+  ))}
+</div>
+<script>
+  import { mount } from "../scripts/search";
+  const lang = document.documentElement.lang;
+  mount(lang.startsWith("zh") ? "zh" : lang);
+</script>

@@ -1,0 +1,11 @@
+{
+  "name": "awesome-jev-typesafe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "parse": "node scripts/parse-readme.mjs && node scripts/history.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "lint": "npx awesome-lint",
+    "count-check": "node scripts/count-check.mjs"
+  }
+}

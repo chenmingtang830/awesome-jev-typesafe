@@ -24,7 +24,7 @@ Three tracks run in parallel. They meet at `data/projects.json`.
 
 Above the fold, in this order, each its own markdown block separated by blank lines so awesome-lint's heading rule does not merge them:
 
-1. Banner: `<picture>` with `media/banner-dark.svg` and `media/banner-light.svg`, 1200x300, text only: "Awesome Jev", "Typed decisions, System One", "369 projects, every link checked weekly". Verified working on GitHub by awesome-chatgpt-prompts and awesome-claude-code. Run `npx awesome-lint` locally before commit; the heading rule is subtle.
+1. Banner: `<picture>` with `media/banner-dark.svg` and `media/banner-light.svg`, 1200x300, text only: "Awesome Jev", "Typed decisions, System One", "348 projects, every link checked weekly". Verified working on GitHub by awesome-chatgpt-prompts and awesome-claude-code. Run `npx awesome-lint` locally before commit; the heading rule is subtle.
 2. `# Awesome Jev [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)` unchanged.
 3. Badge row, flat-square, max six: Lint (existing `lint.yml` status), Links (new `links.yml` status), Entries (static number, CI job fails if `grep -c '^- \[' README.md` disagrees), Last commit (`img.shields.io/github/last-commit`), License (`img.shields.io/github/license`), Live site (added only once the Vercel URL resolves).
 4. Nav line: Search the site, Categories, Contribute, Agent skill, llms.txt.
@@ -76,7 +76,7 @@ Classification rules found in the current README:
 - Gallery `<table>` tiles must each match a body entry by URL, else error.
 - Section banner `<a><img>` attaches to the section and to the one entry whose URL matches its href.
 
-Counts today: 369 linked entries, 277 GitHub, 92 other, 24 H2, 10 H3, 5 maintainer entries, 6 gallery tiles, 18 section banners.
+Counts today: 348 linked entries, 277 GitHub, 92 other, 24 H2, 10 H3, 5 maintainer entries, 6 gallery tiles, 18 section banners.
 
 ### Enrichment
 
@@ -138,7 +138,7 @@ Search indexes the active language's descriptions plus English names, so a Chine
 
 ### Machine access
 
-Agents get everything as static files and do the searching themselves; 369 entries fit in any context window, so no server-side search exists for them and no Jev cost is incurred on their behalf.
+Agents get everything as static files and do the searching themselves; 348 entries fit in any context window, so no server-side search exists for them and no Jev cost is incurred on their behalf.
 
 - `/projects.json`: every entry with parser fields, GitHub metadata, Jev tags, and the intent-probability matrix. This is the API.
 - `/llms.txt`: short index per llmstxt.org, one line per section with counts and the URL of each section's markdown twin. `/llms-full.txt`: the whole list as markdown.
@@ -227,7 +227,7 @@ docs/superpowers/specs/, plans/
 
 - `scripts/*.test.mjs` with `node --test`: parser fixtures for every edge case above, a fixture README that must throw, enrichment response mapping, tag request shape and cache skip.
 - Build gate: `parse-readme` exits non-zero on drift; `links.yml` count check.
-- Site: one Playwright smoke run in CI-less local use: home renders 369 entries in `projects.json`, search for "compaction" returns fast-jev-compaction first, facet chip filters, project page has bars.
+- Site: one Playwright smoke run in CI-less local use: home renders 348 entries in `projects.json`, search for "compaction" returns fast-jev-compaction first, facet chip filters, project page has bars.
 - Contrast: a script that resolves the CSS variables and asserts 4.5:1 for text roles in both themes.
 - Rerank endpoint: local run with a fake upstream, asserts cap 30, origin rejection, 429 after 20, 503 after the daily ceiling.
 

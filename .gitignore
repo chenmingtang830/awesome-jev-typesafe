@@ -1,0 +1,6 @@
+node_modules/
+site/dist/
+site/.vercel/
+site/.astro/
+site/public/media/
+.env

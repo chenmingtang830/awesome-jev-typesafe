@@ -1,6 +1,6 @@
 # Awesome Jev: README face-lift, directory site, Jev-powered search
 
-Date: 2026-09-19. Status: draft for maintainer review.
+Date: 2026-09-19. Status: implemented 2026-09-19, see docs/superpowers/plans/2026-09-19-directory-site.md
 
 ## Goal
 
@@ -240,3 +240,12 @@ Parallel tracks with one shared prerequisite: the parser and `data/projects.json
 - C: enrich, tag, translate, derived READMEs, `data.yml`, rerank endpoint, client wiring, bars.
 
 New projects the maintainer lists go straight into README at any time; the parser picks them up on next build.
+
+## Deviations
+
+What shipped differs from the design above in four places:
+
+- Entry count is 348, not the 369 quoted for the live search counter. The larger number counted table-of-contents lines as entries.
+- Rerank rate limiting is an in-process limiter in the endpoint plus a Vercel WAF rule, not Upstash Redis. One less service to hold a secret for, at the cost of per-instance counters.
+- Translations are produced with claude-opus-5.
+- The entries badge is unlinked and the nav "Contribute" points at the readme's own section anchor rather than contributing.md. Both are awesome-lint's no-duplicate-links rule, not a preference.

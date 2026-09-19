@@ -568,3 +568,5 @@ What "curated" means here: every link is checked weekly by CI, every entry is re
 ## Footnotes
 
 Gallery and section images belong to the linked projects; licenses and original paths are in [media/sources.md](media/sources.md). This list is independent and not affiliated with TypeSafe AI. Prices, limits, and model aliases are copied from the vendor's pages on 2026-09-18, rechecked 2026-09-19, and will drift.
+
+The site, the data files, and the translated readmes are all generated from this file by `scripts/parse-readme.mjs`, the only source of truth, and the site's search reranking calls Jev with the maintainer's key from the browser and nowhere else.

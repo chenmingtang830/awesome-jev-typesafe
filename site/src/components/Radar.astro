@@ -2,8 +2,11 @@
 import { radarSvg, radarDots, radarSectors, sectorHref } from "../lib/radar";
 import { t } from "../lib/i18n";
 
-interface Props { lang: string; size?: number; labels?: boolean; sweep?: boolean; compact?: boolean }
-const { lang, size = 800, labels = true, sweep = true, compact = false } = Astro.props;
+interface Props { lang: string; size?: number; labels?: boolean; sweep?: boolean; compact?: boolean; dotLabels?: number }
+const { lang, size = 800, labels = true, sweep = true, compact = false, dotLabels } = Astro.props;
+// The hero is half the width and gets no sector gutter, so it can only carry the
+// headline names; the full radar has room to go three times deeper.
+const names = dotLabels ?? (compact ? 500 : 300);
 
 const dots = radarDots(lang);
 const svg = radarSvg({
@@ -12,13 +15,15 @@ const svg = radarSvg({
   size,
   labels,
   sweep,
+  dotLabels: names,
   href: (d) => d.href ?? null,
   labelHref: labels ? sectorHref(lang) : () => null,
 });
 const key: [string, string][] = [
-  ["dot", t(lang, "labelProjects")],
-  ["amber", `${t(lang, "maintainer")} · ${t(lang, "newThisWeek")}`],
-  ["grey", t(lang, "archived")],
+  ["active", "active"],
+  ["quiet", "quiet"],
+  ["archived", t(lang, "archived")],
+  ["rising", t(lang, "rising")],
 ];
 ---
 <figure class={compact ? "radar compact" : "radar"}>

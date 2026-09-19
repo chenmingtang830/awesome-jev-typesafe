@@ -5,14 +5,25 @@
  * banner in Node and the /radar/ page at build time. Everything is deterministic:
  * a repo id always lands on the same spot, which keeps git diffs on the banner small.
  * Rings are star buckets, inner is the brightest: 1k+, 100 to 1k, 10 to 100, under 10.
+ *
+ * Motion is split by medium. The sweep is SMIL, because the banner ships as an <img>
+ * and CSS keyframes there cannot be slowed down per viewer; the pings and the dot
+ * labels are CSS keyframes carried by a `--d` delay per dot, and the same rules are
+ * embedded in a <style> inside the SVG so the banner animates on GitHub too.
  */
 
 const THEMES = {
-  dark: { ring: "#222A33", spoke: "#1A222A", dot: "#4CC9F0", amber: "#FFB454", grey: "#3A434D", label: "#7C8791", canvas: "#0B0E11" },
-  light: { ring: "#D9DEE3", spoke: "#E4E9ED", dot: "#0E8FB5", amber: "#B8690A", grey: "#98A1AA", label: "#5B6670", canvas: "#F4F6F8" },
+  dark: { text: "#E8EDF2", dot: "#4CC9F0", amber: "#FFB454", quiet: "#3F5563", grey: "#3A434D", label: "#7C8791", canvas: "#0B0E11" },
+  light: { text: "#14181D", dot: "#0E8FB5", amber: "#B8690A", quiet: "#7E96A3", grey: "#98A1AA", label: "#5B6670", canvas: "#F4F6F8" },
 };
 const RINGS = [0.22, 0.42, 0.62, 0.82];
 const SWEEP_DEG = 40;
+/** One turn of the sweep. The ping delays are this same clock, so they have to agree. */
+const PERIOD = 8;
+const SLOW_PERIOD = 24;
+/** accent on a dot to the data-tone it paints with; anything else is an active repo. */
+const TONES = { rising: "rising", quiet: "quiet", archived: "archived" };
+const FILLS = { active: "dot", rising: "amber", quiet: "quiet", archived: "grey" };
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -36,6 +47,7 @@ export function radarSvg({
   size = 800,
   sweep = true,
   labels = true,
+  dotLabels = 0,
   theme = "dark",
   href = () => null,
   labelHref = () => null,
@@ -52,15 +64,20 @@ export function radarSvg({
   const f = (x) => x.toFixed(1);
   const at = (a, r) => [c + Math.cos(a) * r, c + Math.sin(a) * r];
   const uid = `jr-${theme}-${size}`;
+  const line = f(Math.max(0.6, k));
 
   const rings = RINGS.map(
-    (t) => `<circle class="ring" cx="${c}" cy="${c}" r="${f(R * t)}" fill="none" stroke="${th.ring}" stroke-width="${f(Math.max(0.5, k))}"/>`,
+    (t) =>
+      `<circle class="ring" cx="${c}" cy="${c}" r="${f(R * t)}" fill="none" stroke="${th.text}" stroke-opacity="0.35" stroke-width="${line}"/>`,
   ).join("");
+  // The rim carries the eye around the disc, so it gets a blurred double under the stroke.
+  const rim =
+    `<circle class="ring rim" cx="${c}" cy="${c}" r="${f(R * RINGS[3])}" fill="none" stroke="${th.dot}" stroke-opacity="0.3" stroke-width="${f(Math.max(1, 2 * k))}" filter="url(#${uid}-b)"/>`;
 
   const spokes = sectors
     .map((_, i) => {
       const [x, y] = at(startOf(i), R * 0.92);
-      return `<line class="spoke" x1="${c}" y1="${c}" x2="${f(x)}" y2="${f(y)}" stroke="${th.spoke}" stroke-width="${f(Math.max(0.5, k))}"/>`;
+      return `<line class="spoke" x1="${c}" y1="${c}" x2="${f(x)}" y2="${f(y)}" stroke="${th.text}" stroke-opacity="0.18" stroke-width="${line}"/>`;
     })
     .join("");
 
@@ -84,6 +101,8 @@ export function radarSvg({
         .join("")
     : "";
 
+  // Boxes of the names already drawn, so a crowded corner stacks instead of overprinting.
+  const placed = [];
   const marks = dots
     .map((d) => {
       const stars = Number(d.stars) || 0;
@@ -92,28 +111,102 @@ export function radarSvg({
       const jitter = (frac(d.id + "|j") - 0.5) * 0.12 * R;
       const [x, y] = at(a, RINGS[ringOf(stars)] * R + jitter);
       const r = (2.5 + 2.5 * Math.log10(stars + 1)) * k;
-      const tone = d.accent === "amber" ? "amber" : d.accent === "muted" ? "grey" : "cyan";
-      const fill = tone === "amber" ? th.amber : tone === "grey" ? th.grey : th.dot;
+      const tone = TONES[d.accent] ?? "active";
+      const fill = th[FILLS[tone]];
+      // Degrees clockwise from twelve, which is where the sweep's leading edge sits at t=0.
+      // The ping then fires exactly as the edge crosses the dot.
+      const deg = (((a + Math.PI / 2) * 180) / Math.PI + 360) % 360;
+      const delay = `--d:${((deg / 360) * PERIOD).toFixed(2)}s`;
       // A canvas-colored hairline keeps overlapping dots readable where a category is crowded.
       // The colours are inline for the standalone banner; data-tone lets the site retheme them.
-      const dot = `<circle class="dot" cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="${fill}" stroke="${th.canvas}" stroke-width="${f(k)}" data-tone="${tone}" filter="url(#${uid})"><title>${esc(d.name)} · ${stars}★</title></circle>`;
+      const dot =
+        `<circle class="dot" cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="${fill}" stroke="${th.canvas}" stroke-width="${line}" data-tone="${tone}" style="${delay}" filter="url(#${uid})"><title>${esc(d.name)} · ${stars}★</title></circle>`;
+
+      let label = "";
+      if (dotLabels > 0 && stars >= dotLabels) {
+        const text = clip(d.name, 18);
+        // Floored, because the 260px banner would otherwise name its dots at three pixels.
+        const fs = Math.max(7, 10 * k);
+        const w = text.length * 0.61 * fs;
+        const pad = 4 * k;
+        // Names read outward, away from the middle, so they never cross the dot they name.
+        const out = Math.cos(a) >= 0;
+        const x0 = x + (out ? r + 5 * k : -(r + 5 * k));
+        const lx = out ? Math.min(x0, size - pad - w) : Math.max(x0, pad + w);
+        const left = out ? lx : lx - w;
+        const fits = (v) => !placed.some((b) => left < b.x1 && left + w > b.x0 && Math.abs(v - b.y) < fs * 1.2);
+        const clampY = (v) => Math.min(size - pad, Math.max(pad + fs, v));
+        let ly = clampY(y);
+        for (const step of [0, 1.4, -1.4, 2.8, -2.8, 4.2, -4.2]) {
+          ly = clampY(y + step * fs);
+          if (fits(ly)) break;
+        }
+        placed.push({ x0: left, x1: left + w, y: ly });
+        // paint-order puts the canvas-coloured stroke under the glyphs, so a name stays
+        // readable where it crosses the dots it is not naming.
+        label = `<text class="dot-label" x="${f(lx)}" y="${f(ly)}" fill="${th.text}" stroke="${th.canvas}" stroke-width="${f(fs * 0.28)}" paint-order="stroke" text-anchor="${out ? "start" : "end"}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(fs)}">${esc(text)}</text>`;
+      }
+
       const url = href(d);
-      return url ? `<a href="${esc(url)}">${dot}</a>` : dot;
+      const body = url ? `<a href="${esc(url)}">${dot}${label}</a>` : dot + label;
+      return `<g class="dot-group" style="${delay}">${body}</g>`;
     })
     .join("");
 
-  const [sx, sy] = at(-Math.PI / 2, R);
-  const [ex, ey] = at(-Math.PI / 2 + (SWEEP_DEG * Math.PI) / 180, R);
-  const beam = sweep
-    ? `<g data-sweep="1"><path d="M${c},${c} L${f(sx)},${f(sy)} A${f(R)},${f(R)} 0 0 1 ${f(ex)},${f(ey)} Z" fill="url(#${uid}-s)"/>` +
-      `<animateTransform attributeName="transform" type="rotate" from="0 ${c} ${c}" to="360 ${c} ${c}" dur="8s" repeatCount="indefinite"/></g>`
+  // The wedge trails its leading edge, which starts at twelve o'clock and turns clockwise.
+  const lead = -Math.PI / 2;
+  const tail = lead - (SWEEP_DEG * Math.PI) / 180;
+  const glowFrom = lead - (75 * Math.PI) / 180;
+  const [tx, ty] = at(tail, R);
+  const [lx, ly] = at(lead, R);
+  const [gx, gy] = at(glowFrom, R);
+  const beam =
+    // A faint half-disc brightening ahead of the wedge, so the turn reads even on a crowded radar.
+    `<circle cx="${c}" cy="${c}" r="${f(R)}" fill="url(#${uid}-scan)"/>` +
+    `<path d="M${f(gx)},${f(gy)} A${f(R)},${f(R)} 0 0 1 ${f(lx)},${f(ly)}" fill="none" stroke="url(#${uid}-g)" stroke-width="${f(Math.max(1.2, 2.5 * k))}" stroke-linecap="round"/>` +
+    `<path d="M${c},${c} L${f(tx)},${f(ty)} A${f(R)},${f(R)} 0 0 1 ${f(lx)},${f(ly)} Z" fill="url(#${uid}-s)"/>` +
+    `<line x1="${c}" y1="${c}" x2="${f(lx)}" y2="${f(ly)}" stroke="${th.dot}" stroke-opacity="0.75" stroke-width="${f(Math.max(0.8, 1.4 * k))}"/>`;
+  const spin = (dur) =>
+    `<animateTransform attributeName="transform" type="rotate" from="0 ${c} ${c}" to="360 ${c} ${c}" dur="${dur}s" repeatCount="indefinite"/>`;
+  // Two copies, both SMIL: the site's global reduced-motion reset kills CSS keyframes with
+  // !important, so a calm sweep has to come from a second SMIL clock the media query reveals.
+  const sweepEls = sweep
+    ? `<g class="sweep-fast" data-sweep="fast">${beam}${spin(PERIOD)}</g>` +
+      `<g class="sweep-slow" data-sweep="slow">${beam}${spin(SLOW_PERIOD)}</g>`
     : "";
 
+  const pulse = (begin) =>
+    `<circle cx="${c}" cy="${c}" r="0" fill="none" stroke="${th.dot}" stroke-width="${line}" opacity="0">` +
+    `<animate attributeName="r" values="0;${f(R)}" dur="4s" begin="${begin}" repeatCount="indefinite"/>` +
+    `<animate attributeName="opacity" values="0.35;0" dur="4s" begin="${begin}" repeatCount="indefinite"/></circle>`;
+  const pulses = sweep ? `<g class="pulse-ring" data-pulse="1">${pulse("0s")}${pulse("-2s")}</g>` : "";
+
+  // Scoped to the radar's own root so an inlined copy cannot reach the rest of the page.
+  const css =
+    `svg[data-radar] .dot{opacity:.7;transform-box:fill-box;transform-origin:center;animation:ping ${PERIOD}s linear infinite var(--d)}` +
+    `svg[data-radar] .dot-label{opacity:0;animation:ping-label ${PERIOD}s linear infinite var(--d)}` +
+    `svg[data-radar] .sweep-slow{display:none}` +
+    `@keyframes ping{0%{opacity:1;transform:scale(1.6)}12%{opacity:.7;transform:scale(1)}100%{opacity:.7;transform:scale(1)}}` +
+    `@keyframes ping-label{0%{opacity:0}2%{opacity:1}25%{opacity:1}34%{opacity:0}100%{opacity:0}}` +
+    `@media (prefers-reduced-motion:reduce){` +
+    `svg[data-radar] .dot,svg[data-radar] .dot-label{animation:none;opacity:1}` +
+    `svg[data-radar] .pulse-ring{display:none}` +
+    `svg[data-radar] .sweep-fast{display:none}` +
+    `svg[data-radar] .sweep-slow{display:block}}`;
+
+  const gradient = (id, a1, a2, r, to) =>
+    `<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="${f(at(a1, r)[0])}" y1="${f(at(a1, r)[1])}" x2="${f(at(a2, r)[0])}" y2="${f(at(a2, r)[1])}">` +
+    `<stop offset="0" stop-color="${th.dot}" stop-opacity="0"/><stop offset="1" stop-color="${th.dot}" stop-opacity="${to}"/></linearGradient>`;
+
   return (
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="Radar of ${dots.length} repos across ${n} categories, rings are star counts">` +
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" data-radar="1" role="img" aria-label="Radar of ${dots.length} repos across ${n} categories, rings are star counts">` +
+    `<style>${css}</style>` +
     `<defs>` +
     `<filter id="${uid}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="${f(2 * k)}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>` +
-    `<linearGradient id="${uid}-s" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="${th.dot}" stop-opacity="0"/><stop offset="1" stop-color="${th.dot}" stop-opacity="0.35"/></linearGradient>` +
-    `</defs>${rings}${spokes}${beam}${sectorLabels}${marks}</svg>`
+    `<filter id="${uid}-b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="${f(Math.max(1, 3 * k))}"/></filter>` +
+    gradient(`${uid}-s`, tail, lead, R * 0.6, "0.45") +
+    gradient(`${uid}-g`, glowFrom, lead, R, "0.5") +
+    gradient(`${uid}-scan`, lead + Math.PI, lead, R, "0.1") +
+    `</defs>${rings}${rim}${spokes}${pulses}${sweepEls}${sectorLabels}${marks}</svg>`
   );
 }

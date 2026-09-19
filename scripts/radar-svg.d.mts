@@ -3,7 +3,8 @@ export type RadarDot = {
   name: string;
   sector: string;
   stars: number;
-  accent?: "amber" | "muted";
+  /** Leave unset for an active repo, which paints cyan. */
+  accent?: "rising" | "quiet" | "archived";
   /** Carried through for the href callback; radarSvg itself ignores extra keys. */
   href?: string | null;
 };
@@ -14,6 +15,8 @@ export type RadarOptions = {
   size?: number;
   sweep?: boolean;
   labels?: boolean;
+  /** Star floor for naming a dot on the radar. 0 turns the names off. */
+  dotLabels?: number;
   theme?: "dark" | "light";
   href?: (d: RadarDot) => string | null;
   labelHref?: (sector: string) => string | null;

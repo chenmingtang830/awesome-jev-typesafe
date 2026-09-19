@@ -4,9 +4,12 @@ export type Doc = {
   starsBucket: string; hasMedia: boolean; maintainer: boolean; intents: Record<string, number>;
   firstSeen: string; pushedAt: string;
 };
+export type Query = string | { queries: Query[]; combineWith: string };
 export function buildIndex(docs: Doc[]): {
-  search(q: string): { id: string; score: number }[];
+  search(q: Query): { id: string; score: number }[];
 };
+export const SYNONYMS: Record<string, string[]>;
+export function expandQuery(q: string): Query;
 export function applyFacets(docs: Doc[], facets: Record<string, string[]>): Doc[];
 export function matchIntent(query: string, intents: string[]): string | null;
 export function sortDocs(docs: Doc[], sort: string): Doc[];

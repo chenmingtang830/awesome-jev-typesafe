@@ -1,4 +1,4 @@
-import { buildIndex, applyFacets, matchIntent, sortDocs, type Doc } from "./search-core.mjs";
+import { buildIndex, applyFacets, expandQuery, matchIntent, sortDocs, type Doc } from "./search-core.mjs";
 
 const FACET_KEYS = ["section", "host", "language", "license", "media", "stars", "maintainer"];
 
@@ -50,7 +50,7 @@ export async function mount(lang: string) {
     const allowed = new Set(pool.map((d) => d.id));
     const intent = matchIntent(q, intentLabels);
     const scored = index
-      .search(q)
+      .search(expandQuery(q))
       .filter((r) => allowed.has(r.id))
       .map((r) => {
         const doc = byId.get(r.id)!;

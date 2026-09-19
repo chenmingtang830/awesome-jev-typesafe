@@ -47,3 +47,21 @@ export function sortDocs(docs, sort) {
   };
   return by[sort] ? [...docs].sort(by[sort]) : docs;
 }
+
+// A handful of words people type instead of the word the README uses. Expanded as
+// nested OR subqueries so the AND between the typed words still holds.
+export const SYNONYMS = {
+  compaction: ["compaction", "pruning"], pruning: ["pruning", "compaction"],
+  router: ["router", "routing", "route"], routing: ["routing", "router", "route"], route: ["route", "router", "routing"],
+  gate: ["gate", "guard", "approve", "approval"], guard: ["guard", "gate", "approve", "approval"],
+  mcp: ["mcp", "model", "context", "protocol"],
+  cli: ["cli", "command", "terminal"],
+  rerank: ["rerank", "reranker", "ranking", "rank"], reranker: ["reranker", "rerank", "ranking", "rank"],
+  hook: ["hook", "hooks"], skill: ["skill", "skills"], judge: ["judge", "verify", "verifier", "review"],
+};
+
+export function expandQuery(q) {
+  const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const parts = words.map((w) => (SYNONYMS[w] ? { queries: SYNONYMS[w], combineWith: "OR" } : w));
+  return parts.length > 1 ? { queries: parts, combineWith: "AND" } : (parts[0] ?? q);
+}

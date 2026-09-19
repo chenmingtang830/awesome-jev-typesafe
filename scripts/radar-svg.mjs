@@ -101,6 +101,8 @@ export function radarSvg({
         .join("")
     : "";
 
+  // Boxes of the names already drawn, so a crowded corner stacks instead of overprinting.
+  const placed = [];
   const marks = dots
     .map((d) => {
       const stars = Number(d.stars) || 0;
@@ -123,15 +125,26 @@ export function radarSvg({
       let label = "";
       if (dotLabels > 0 && stars >= dotLabels) {
         const text = clip(d.name, 18);
-        const fs = 10 * k;
-        const w = text.length * 6.1 * k;
+        // Floored, because the 260px banner would otherwise name its dots at three pixels.
+        const fs = Math.max(7, 10 * k);
+        const w = text.length * 0.61 * fs;
         const pad = 4 * k;
         // Names read outward, away from the middle, so they never cross the dot they name.
         const out = Math.cos(a) >= 0;
         const x0 = x + (out ? r + 5 * k : -(r + 5 * k));
         const lx = out ? Math.min(x0, size - pad - w) : Math.max(x0, pad + w);
-        const ly = Math.min(size - pad, Math.max(pad + fs, y));
-        label = `<text class="dot-label" x="${f(lx)}" y="${f(ly)}" fill="${th.text}" text-anchor="${out ? "start" : "end"}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(fs)}">${esc(text)}</text>`;
+        const left = out ? lx : lx - w;
+        const fits = (v) => !placed.some((b) => left < b.x1 && left + w > b.x0 && Math.abs(v - b.y) < fs * 1.2);
+        const clampY = (v) => Math.min(size - pad, Math.max(pad + fs, v));
+        let ly = clampY(y);
+        for (const step of [0, 1.4, -1.4, 2.8, -2.8, 4.2, -4.2]) {
+          ly = clampY(y + step * fs);
+          if (fits(ly)) break;
+        }
+        placed.push({ x0: left, x1: left + w, y: ly });
+        // paint-order puts the canvas-coloured stroke under the glyphs, so a name stays
+        // readable where it crosses the dots it is not naming.
+        label = `<text class="dot-label" x="${f(lx)}" y="${f(ly)}" fill="${th.text}" stroke="${th.canvas}" stroke-width="${f(fs * 0.28)}" paint-order="stroke" text-anchor="${out ? "start" : "end"}" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="${f(fs)}">${esc(text)}</text>`;
       }
 
       const url = href(d);

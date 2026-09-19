@@ -12,7 +12,7 @@
  * The output is self-contained: no external fonts, no embedded images, so GitHub renders
  * it inside an <img> and the SMIL sweep still animates there.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { radarSvg } from "./radar-svg.mjs";
 
 const root = new URL("../", import.meta.url);
@@ -44,6 +44,44 @@ const sectionCount = new Set(entries.filter((e) => e.section !== "Other lists").
 
 const radarEntries = hosted.filter((e) => e.type === "project");
 const sectors = [...new Set(radarEntries.map((e) => e.section))];
+
+/**
+ * Star gain per "owner/repo" over the week, on the same rule /trending/ uses: newest
+ * snapshot minus the oldest one still inside the window, anchored on the newest file.
+ * Nothing to report until two snapshots exist.
+ */
+const starGain = (() => {
+  const dir = new URL("data/stars/", root);
+  const out = {};
+  if (!existsSync(dir)) return out;
+  const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+  if (files.length < 2) return out;
+  const snaps = files.map((f) => ({ date: f.slice(0, -5), stars: JSON.parse(readFileSync(new URL(f, dir), "utf8")) }));
+  const newest = snaps[snaps.length - 1];
+  const cut = new Date(Date.parse(`${newest.date}T00:00:00Z`) - 7 * 864e5).toISOString().slice(0, 10);
+  const window = snaps.filter((s) => s.date >= cut);
+  if (window.length < 2) return out;
+  for (const [repo, stars] of Object.entries(newest.stars)) {
+    const before = window[0].stars[repo];
+    if (typeof before === "number") out[repo] = stars - before;
+  }
+  return out;
+})();
+
+// The list arrived in one import, so its shared firstSeen day is the seed, not an arrival.
+const seeded = Object.values(firstSeen).sort()[0] ?? "";
+const weekAgo = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+const STALE = 90 * 864e5;
+
+/** Archived beats everything, then a week's worth of movement, then plain activity. */
+const toneOf = (e, meta) => {
+  if (meta?.archived) return "archived";
+  const seen = firstSeen[e.id];
+  if ((seen && seen > seeded && seen >= weekAgo) || (starGain[`${e.owner}/${e.repo}`] ?? 0) >= 10) return "rising";
+  const pushed = meta ? Date.parse(meta.pushedAt) : NaN;
+  return Number.isFinite(pushed) && Date.now() - pushed < STALE ? undefined : "quiet";
+};
+
 const dots = radarEntries
   // Oldest first, so a fresh arrival draws on top of the crowd instead of under it.
   .sort((a, b) => (firstSeen[a.id] ?? "").localeCompare(firstSeen[b.id] ?? ""))
@@ -54,7 +92,7 @@ const dots = radarEntries
       name: e.name,
       sector: e.section,
       stars: meta?.stars ?? 0,
-      accent: meta?.archived ? "muted" : e.maintainer ? "amber" : undefined,
+      accent: toneOf(e, meta),
     };
   });
 
@@ -79,7 +117,7 @@ const banner = (th) => {
       return p.svg;
     })
     .join("");
-  const radar = radarSvg({ dots, sectors, size: 260, labels: false, sweep: true, theme: th.name }).replace(
+  const radar = radarSvg({ dots, sectors, size: 260, labels: false, sweep: true, dotLabels: 1500, theme: th.name }).replace(
     "<svg ",
     '<svg x="880" y="20" ',
   );

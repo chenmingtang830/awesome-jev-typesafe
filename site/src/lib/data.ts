@@ -1,6 +1,7 @@
 import projectsRaw from "../../../data/projects.json";
 import historyRaw from "../../../data/history.json";
 import { readFileSync, existsSync } from "node:fs";
+import { t } from "./i18n";
 import { fileURLToPath } from "node:url";
 
 export type RawEntry = {
@@ -18,13 +19,24 @@ export type GithubMeta = {
   language: string | null; license: string | null; archived: boolean;
   ogImage: string | null; topics: string[]; description: string | null;
   homepage: string | null; gone?: boolean;
+  /** Build-time tagging input only. Stripped before anything reaches the browser. */
+  readmeExcerpt?: string;
 };
+/** The live shape. Entries tagged before the question set changed carry only what
+ * they carried then, so everything the new questions added is optional. */
 export type JevTags = {
-  section: string; sectionP: number; hostAgent: string; hostAgentP: number;
-  maturity: number; hasNumbers: number; router: number; gate: number; compaction: number;
-  judge: number; browserAgent: number; riskBulkScaffold: number; intents: Record<string, number>;
+  hash?: string;
+  useCases?: Record<string, number>;
+  form?: string; formP?: number;
+  host?: string; hostP?: number;
+  audience?: string; audienceP?: number;
+  maturity: number; docsQuality?: number;
+  hasNumbers: number; looksTemplated?: number; callsJevForReal?: number;
+  intents: Record<string, number>;
 };
-type JevFile = { intents?: string[]; entries?: Record<string, JevTags> };
+export type JevMeta = { useCases?: Labels; forms?: Labels; hosts?: Labels; audiences?: Labels };
+type Labels = Record<string, string>;
+type JevFile = { intents?: string[]; meta?: JevMeta; entries?: Record<string, JevTags> };
 
 // Track C writes these; the site has to build before they exist. cwd is site/ under
 // astro, but node --test and the Vercel builder can start elsewhere, so try both roots.
@@ -50,6 +62,7 @@ export type Entry = RawEntry & { github: GithubMeta | null; jev: JevTags | null;
 export const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 export const gallery = raw.gallery;
 export const intents = jev.intents ?? [];
+export const jevMeta: JevMeta = jev.meta ?? {};
 
 export const entries: Entry[] = raw.entries.map((e) => ({
   ...e,
@@ -101,14 +114,44 @@ export const newSince = (days: number) => {
   return entries.filter((e) => (firstSeen[e.id] ?? "9999") >= cut);
 };
 
-export const topTag = (e: Entry): [string, number] | null => {
-  if (!e.jev) return null;
-  const pairs: [string, number][] = [
-    ["router", e.jev.router], ["gate", e.jev.gate], ["compaction", e.jev.compaction],
-    ["judge", e.jev.judge], ["browser agent", e.jev.browserAgent],
-  ];
-  return pairs.sort((a, b) => b[1] - a[1])[0];
+/** Jev answers in keys; the label maps live next to them in data/jev.json so a new
+ * key shows up here with a readable name before anyone writes a translation for it. */
+const labelBucket: Record<JevNs, keyof JevMeta> = {
+  useCase: "useCases", form: "forms", host: "hosts", audience: "audiences",
 };
+export type JevNs = "useCase" | "form" | "host" | "audience";
+export const jevText = (lang: string, ns: JevNs, key: string) => {
+  const path = `${ns}.${key}`;
+  const translated = t(lang, path);
+  return translated === path ? jevMeta[labelBucket[ns]]?.[key] ?? key : translated;
+};
+
+/** Use cases Jev is at least `threshold` sure about, strongest first. */
+export const useCasesOf = (e: Entry, threshold = 0.6): [string, number][] =>
+  Object.entries(e.jev?.useCases ?? {})
+    .filter(([, p]) => p >= threshold)
+    .sort((a, b) => b[1] - a[1]);
+
+export const formOf = (e: Entry) => e.jev?.form ?? null;
+
+/** What the readme says the project plugs into, and only then what Jev guessed. */
+export const hostOfJev = (e: Entry) => {
+  const sub = hostOf(e);
+  if (sub) return sub.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+  return e.jev?.host && (e.jev.hostP ?? 0) >= 0.6 ? e.jev.host : null;
+};
+
+export const tally = (values: (string | null | undefined)[]): [string, number][] => {
+  const m = new Map<string, number>();
+  for (const v of values) if (v) m.set(v, (m.get(v) ?? 0) + 1);
+  return [...m].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+};
+
+/** Chip lists for the two facets that exist only because Jev answered. */
+export const facetsFromJev = (list: Entry[]) => ({
+  useCase: tally(list.flatMap((e) => useCasesOf(e).map(([k]) => k))),
+  form: tally(list.map((e) => formOf(e))),
+});
 
 export const readmePath = (e: Entry) =>
   `https://github.com/valentynkit/awesome-jev-typesafe/blob/main/readme.md?plain=1#L${e.line}`;

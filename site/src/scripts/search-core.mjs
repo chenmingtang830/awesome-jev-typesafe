@@ -2,7 +2,7 @@ import MiniSearch from "minisearch";
 
 export function buildIndex(docs) {
   const ms = new MiniSearch({
-    fields: ["name", "description", "section", "subsection", "host", "owner", "topics"],
+    fields: ["name", "description", "section", "subsection", "host", "owner", "topics", "useCases", "form"],
     storeFields: ["id"],
     searchOptions: { boost: { name: 3, description: 1.5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" },
   });
@@ -10,16 +10,19 @@ export function buildIndex(docs) {
   return ms;
 }
 
-// Media, maintainer and stars are derived; every other facet maps onto a doc field.
+// Maintainer and stars are derived; every other facet maps onto a doc field. A facet
+// may answer with an array, and then the doc counts as having every value in it.
 export const facetValue = (d, k) =>
-  k === "media" ? (d.hasMedia ? "yes" : "no")
-  : k === "maintainer" ? (d.maintainer ? "yes" : "no")
+  k === "maintainer" ? (d.maintainer ? "yes" : "no")
   : k === "stars" ? d.starsBucket
+  : k === "useCase" ? d.useCases ?? []
   : d[k];
+
+const values = (v) => (Array.isArray(v) ? v : [v]);
 
 export function applyFacets(docs, facets) {
   return docs.filter((d) =>
-    Object.entries(facets).every(([k, vals]) => !vals?.length || vals.includes(facetValue(d, k))),
+    Object.entries(facets).every(([k, vals]) => !vals?.length || values(facetValue(d, k)).some((v) => vals.includes(v))),
   );
 }
 
@@ -28,9 +31,10 @@ export function applyFacets(docs, facets) {
 export function facetCounts(docs, facets, key) {
   const counts = new Map();
   for (const d of applyFacets(docs, { ...facets, [key]: [] })) {
-    const v = facetValue(d, key);
-    if (v == null) continue;
-    counts.set(String(v), (counts.get(String(v)) ?? 0) + 1);
+    for (const v of values(facetValue(d, key))) {
+      if (v == null) continue;
+      counts.set(String(v), (counts.get(String(v)) ?? 0) + 1);
+    }
   }
   return counts;
 }

@@ -117,14 +117,37 @@ export async function mount(lang: string) {
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
+  // The rerank bars only mean something while a Jev response is on screen.
+  function showBars(ranked: { id: string; p: number }[]) {
+    for (const { id, p } of ranked) {
+      const card = cards.get(id);
+      if (!card) continue;
+      const fill = card.querySelector<HTMLElement>(".bar-fill");
+      if (!fill) continue;
+      fill.style.width = `${Math.round(p * 100)}%`;
+      const bar = card.querySelector<HTMLElement>(".bar-rerank");
+      if (bar) bar.hidden = false;
+    }
+  }
+
+  function hideBars() {
+    for (const card of cards.values()) {
+      const bar = card.querySelector<HTMLElement>(".bar-rerank");
+      if (bar) bar.hidden = true;
+      const fill = card.querySelector<HTMLElement>(".bar-fill");
+      if (fill) fill.style.width = "";
+    }
+    badge?.setAttribute("hidden", "");
+  }
+
   // Jev reranks the local shortlist. Any failure keeps the local order and stays quiet.
   function rerank() {
     const q = input!.value.trim();
     clearTimeout(rerankTimer);
     abort?.abort();
     if (q.length < 3) {
+      hideBars();
       if (reranked.length) { reranked = []; render(); }
-      badge?.setAttribute("hidden", "");
       return;
     }
     rerankTimer = window.setTimeout(() => {
@@ -141,16 +164,14 @@ export async function mount(lang: string) {
         .then((data: { ranked: { id: string; p: number }[] }) => {
           if (input!.value.trim() !== q || !Array.isArray(data?.ranked)) return;
           reranked = data.ranked.map((r) => r.id);
-          for (const { id, p } of data.ranked) {
-            const fill = cards.get(id)?.querySelector<HTMLElement>(".bar-fill");
-            if (fill) fill.style.width = `${Math.round(p * 100)}%`;
-          }
+          showBars(data.ranked);
           badge?.removeAttribute("hidden");
           render();
         })
         .catch(() => {
+          // 503 means the site has no key today; every other failure is just as quiet.
           reranked = [];
-          badge?.setAttribute("hidden", "");
+          hideBars();
         });
     }, 350);
   }

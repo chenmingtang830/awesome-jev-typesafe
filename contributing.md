@@ -39,9 +39,13 @@ Several repos published by one author on the same day, sharing a scaffold, each 
 - Add to the bottom of the most specific section unless the entry clearly outranks what is there.
 - One link per URL across the whole file.
 
+## What happens to your line
+
+The readme is the source, and `scripts/parse-readme.mjs` turns it into `data/projects.json`. CI runs that parser on every pull request, and it throws on any bullet that does not match the format above, so a stray dash or a second link fails the build. The format is strict on purpose: one shape is what keeps the list readable by machines without a second copy of the data to maintain. From that JSON, the site at https://awesome-jev.vercel.app rebuilds whenever main moves, and a scheduled job refreshes GitHub stars and activity once a day. The translated readmes are generated from the same data, so fix the English line and let the next refresh carry it over; never edit `README.zh-CN.md`, `README.ja.md`, or `README.ko.md` by hand. Section images are a single line of the form `<a href="repo"><img src="media/file"></a>` placed right under a heading, and the parser hands the image to whichever entry has the same URL.
+
 ## Before you open a PR
 
-Run `npx awesome-lint` in the repo root and fix what it reports. The only expected failure is `awesome-git-repo-age` until the repo is thirty days old.
+Run `npx awesome-lint`, `npm test`, and `npm run parse` in the repo root and fix what they report. The only expected lint failure is `awesome-git-repo-age` until the repo is thirty days old. `npm run parse` rewrites `data/projects.json`; commit that alongside your entry, because CI fails if the committed data is stale.
 
 ## Removing things
 

@@ -567,7 +567,13 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 
 ## Contributing
 
-[![Star history](https://api.star-history.com/svg?repos=valentynkit/awesome-jev-typesafe&type=Date)](https://star-history.com/#valentynkit/awesome-jev-typesafe&Date)
+<a href="https://star-history.com/#valentynkit/awesome-jev-typesafe&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=valentynkit/awesome-jev-typesafe&type=Date&t=2026-09-20&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=valentynkit/awesome-jev-typesafe&type=Date&t=2026-09-20" />
+    <img alt="Star history" src="https://api.star-history.com/svg?repos=valentynkit/awesome-jev-typesafe&type=Date&t=2026-09-20" width="720" />
+  </picture>
+</a>
 
 Read [contributing.md](contributing.md) first. Removal is as welcome as addition.
 

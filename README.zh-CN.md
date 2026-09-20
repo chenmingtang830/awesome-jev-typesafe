@@ -78,6 +78,7 @@
 - [pi-typesafe-jev](https://github.com/legacybridge-tech/pi-typesafe-jev) - Pi 扩展，把 Jev 的判断暴露为五个 Pi 工具。
 - [pi-typesafe](https://github.com/DevMortimer/pi-typesafe) - 批量评估工具、终端演练场，以及给 Pi 扩展作者的带类型 API。
 - [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) - 把每次有副作用的工具调用对照你在会话前面说过的话做检查，这样“只做复核”在上下文压缩后依然成立。
+- [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) - 用 Jev 检查 Pi 的工具调用、工具输出和回复中的风险操作与提示注入，带用户审批、上下文复检、密钥擦除和可选的任务锁定。
 ### Hermes
 
 - [typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) - 在模型调用前指出唯一值得加载的那个技能；仅用标准库，每回合约千分之一美元。
@@ -149,6 +150,7 @@
 - [openjev by daseinlabs](https://github.com/daseinlabs/open-jev) - 在 Gemma 3 4B 上用 MLX 做一次 prefill，并在一次填充过的传播中为所有选项打分；演示中从终端玩 Doom。
 - [jeff by logan-markewich](https://github.com/logan-markewich/jeff) - 基于 400M 的 GLiFormer 自托管的 System One API，基准测试直言它在哪些地方落后于 Jev。
 - [JevForge](https://github.com/zwliJay/jev-forge) - 端到端技术栈：可审计的数据构建、Qwen3.5-0.8B 训练、固定的 Mind2Web 与 OOD 评测、本地部署，以及初步的 RLCD 基线。
+- [PlayJev](https://github.com/OmniJev/PlayJev) - 在微调过的 Qwen3.5-0.8B 上仅凭画面玩十款浏览器游戏，每步一次前向传播，开放权重并附浏览器演示。
 
 ## 代码审查与质量
 
@@ -184,6 +186,7 @@
 - [reranker](https://github.com/hev/reranker) - 把 Jev 当作校准过的重排器：一次调用，最多 30 篇文档，每篇给出一个概率。
 - [llama-index-jev](https://github.com/WiktorB2004/llama-index-jev) - LlamaIndex 的重排器与路由器，比 LLM 评判更便宜。
 - [jev-tree](https://github.com/reachjalil/jev-tree) - 在分类体系上做递归选择，突破 255 个选项的上限。
+- [jev-folio-recursive-classifier](https://github.com/mttrbrts/jev-folio-recursive-classifier) - 用递归的 Jev Choice、束搜索、按置信度停在叶节点以及上下文长度基准测试，把 OCR 后的法律协议按 FOLIO 文档类型本体分类。
 - [neo4jev](https://github.com/jexp/neo4jev) - 通过对相邻关系做分类来遍历 Neo4j 图。
 - [jev-sift](https://github.com/kbhuw/jev-sift) - MCP 工具，批量为文件、URL 或片段的相关性打分，让智能体只打开真正要紧的那些。
 - [jev-scout](https://github.com/AkashPriyadarshii/jev-scout) - Rust CLI 与 MCP 服务器，针对自然语言请求找出真实且有人维护的仓库和 crate，由 Jev 为候选项打分。
@@ -316,6 +319,7 @@
 - [Jev Guard demo](https://guard-jev.vercel.app) - 托管的评论审核演练场。
 - [Companion](https://jev-demo.vercel.app) - 托管的机器人界面，每回合回答九个带类型问题来决定执行、追问还是摊手，不生成任何文本。
 - [Jev System One](https://github.com/haseeb-heaven/jev-system-one) - 终端界面，由 OpenAI 作答，Jev 单独为相关性、可靠性和质量打分。
+- [jev-web-analyzer](https://github.com/replynodes/jev-web-analyzer) - 把 SaaS 落地页转成 Markdown，向 Jev 提十个有界的 Choice 问题，判断首次访客能理解什么，并以创始人视角的拆解呈现。
 
 ## 命令行
 

@@ -179,6 +179,7 @@ Copied from the vendor's pages on 2026-09-18; every page is linked under Start h
 - [pi-typesafe-jev](https://github.com/legacybridge-tech/pi-typesafe-jev) - Pi extension exposing Jev judgments as five Pi tools.
 - [pi-typesafe](https://github.com/DevMortimer/pi-typesafe) - Batched evaluation tool, terminal playground, and a typed API for Pi extension authors.
 - [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) - Checks every side-effecting tool call against what you said earlier in the session, so "review only" still holds after compaction.
+- [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) - Checks Pi tool calls, tool outputs, and replies for risky actions and prompt injection, with user approvals, context re-checks, secret scrubbing, and optional task pinning.
 
 ### Hermes
 
@@ -445,6 +446,7 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [Jev Guard demo](https://guard-jev.vercel.app) - Hosted comment-moderation playground.
 - [Companion](https://jev-demo.vercel.app) - Hosted robot interface answering nine typed questions per turn to decide act, ask, or shrug, no generated text.
 - [Jev System One](https://github.com/haseeb-heaven/jev-system-one) - Terminal interface where OpenAI answers and Jev separately scores relevance, reliability, and quality.
+- [jev-web-analyzer](https://github.com/replynodes/jev-web-analyzer) - Turns a SaaS landing page into Markdown and asks Jev ten bounded Choice questions about what a first-time visitor understands, shown as a founder teardown.
 
 ## Command line
 

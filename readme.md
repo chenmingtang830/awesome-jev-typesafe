@@ -7,7 +7,7 @@
 
 [![Lint](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/lint.yml/badge.svg)](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/lint.yml)
 [![Links](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/links.yml/badge.svg)](https://github.com/valentynkit/awesome-jev-typesafe/actions/workflows/links.yml)
-![Entries](https://img.shields.io/badge/entries-355-4CC9F0?style=flat-square&labelColor=0B0E11)
+![Entries](https://img.shields.io/badge/entries-356-4CC9F0?style=flat-square&labelColor=0B0E11)
 [![Last commit](https://img.shields.io/github/last-commit/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](https://github.com/valentynkit/awesome-jev-typesafe/commits/main)
 [![License](https://img.shields.io/github/license/valentynkit/awesome-jev-typesafe?style=flat-square&labelColor=0B0E11&color=E8EDF2)](license)
 
@@ -390,6 +390,7 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 - [Inbox Zero](https://github.com/elie222/inbox-zero) - AI email assistant where Jev is one of two pluggable classifier backends for sorting incoming mail.
 - [openclaw](https://github.com/openclaw/openclaw) - Personal agent platform with a bundled extension that exposes Jev as an evaluation tool.
 - [omniget](https://github.com/tonhowtf/omniget) - Desktop downloader with an optional Jev judge that prunes tool calls and results from its agent's context.
+- [openpoke-meets-jev](https://github.com/0xShin0221/openpoke-meets-jev) - OpenPoke fork that moves email screening, a tool-call guardrail, and search reranking onto Jev, with an A/B against the Sonnet call it replaced and an adversarial run on the injection gate.
 
 ## Games, robotics and simulation
 

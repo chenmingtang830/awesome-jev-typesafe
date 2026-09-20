@@ -271,6 +271,7 @@
 - [Inbox Zero](https://github.com/elie222/inbox-zero) - AI 邮件助手，Jev 是用于归类来信的两个可插拔分类后端之一。
 - [openclaw](https://github.com/openclaw/openclaw) - 个人智能体平台，自带一个把 Jev 暴露为评估工具的扩展。
 - [omniget](https://github.com/tonhowtf/omniget) - 桌面下载器，带一个可选的 Jev 评判器，从其智能体的上下文中裁剪工具调用和结果。
+- [openpoke-meets-jev](https://github.com/0xShin0221/openpoke-meets-jev) - OpenPoke 分支，把邮件筛选、工具调用护栏和搜索重排序移到 Jev 上，附带与被替换的 Sonnet 调用的 A/B 对比，以及对注入门控的对抗测试。
 
 ## 游戏、机器人与仿真
 

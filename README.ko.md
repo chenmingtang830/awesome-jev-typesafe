@@ -271,6 +271,7 @@
 - [Inbox Zero](https://github.com/elie222/inbox-zero) - AI 이메일 비서로, 수신 메일 분류에 쓰는 교체 가능한 두 분류 백엔드 중 하나가 Jev입니다.
 - [openclaw](https://github.com/openclaw/openclaw) - 개인 에이전트 플랫폼으로, Jev를 평가 도구로 노출하는 확장을 기본 탑재합니다.
 - [omniget](https://github.com/tonhowtf/omniget) - 데스크톱 다운로더로, 선택적 Jev 판정기가 에이전트 컨텍스트에서 도구 호출과 결과를 잘라냅니다.
+- [openpoke-meets-jev](https://github.com/0xShin0221/openpoke-meets-jev) - OpenPoke 포크로, 이메일 선별, 도구 호출 가드레일, 검색 재순위를 Jev로 옮기며, 대체한 Sonnet 호출과의 A/B 비교와 인젝션 게이트에 대한 공격 실험을 포함합니다.
 
 ## 게임, 로보틱스, 시뮬레이션
 

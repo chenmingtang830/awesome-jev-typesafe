@@ -41,6 +41,16 @@
 - [Vercel AI SDK provider](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) - `@ai-sdk/typesafe-ai` 通过 `experimental_evaluate` 暴露 Jev。
 - [eve](https://github.com/vercel/eve) - Vercel 的智能体框架；Jev 在其 evaluate 步骤中充当带类型的评判。
 - [ai-cli](https://github.com/vercel-labs/ai-cli) - 终端里的 Vercel AI SDK，其 evaluate 路径跑在 Jev 上。
+- [langchain-typesafe](https://github.com/langchain-ai/langchain) - LangChain 合作伙伴包：一个 Runnable，把状态和带类型的问题发给 Jev，返回带概率的答案。
+- [@langchain/typesafe](https://github.com/langchain-ai/langchainjs) - 同样的带类型分类，以 LangChain.js Runnable 的形式提供，多个问题合并成一次调用。
+- [litellm](https://github.com/BerriAI/litellm) - 代理端的护栏钩子用 Jev 拦截高风险请求，另有一个路由策略按 Jev 打出的复杂度分数选模型。
+- [pydantic-ai](https://github.com/pydantic/pydantic-ai) - TypeSafe 模型提供方，用 Jev 问题而不是文本模型来回答智能体的带类型输出。
+- [rig-typesafeai](https://github.com/0xPlaygrounds/rig) - Rig 的 Rust crate：发送一个装着带类型问题的结构体，拿回同一个结构体，答案已填好。
+- [composio-typesafe](https://github.com/ComposioHQ/composio) - Composio 提供方，根据自然语言请求挑选并运行工具，并给出这次挑选的置信度。
+- [@effect/ai-typesafe](https://github.com/Effect-TS/effect) - 把 Jev 作为 Effect 服务，按 schema 定义类型，用于对状态做分类或打分。
+- [baml](https://github.com/BoundaryML/baml) - BAML 内置的客户端类型，通过 Jev 把提示词变成带类型的布尔值、浮点数或枚举选择。
+- [@ax-llm/ax](https://github.com/ax-llm/ax) - 把 Jev 作为 Ax 提供方，让 DSPy 风格的程序得到带类型的是/否或选择答案，而不是自由文本。
+- [@tanstack/ai-typesafe](https://github.com/TanStack/ai) - 把 Jev 接入 TanStack AI 的 decide() 助手的适配器，用于布尔、选择和打分决策。
 
 ## 编程智能体
 
@@ -62,6 +72,7 @@
 - [jev-rules](https://github.com/EliaAlberti/jev-rules) - 针对每个提示词为你的常驻规则打分，每个会话只投送一次真正适用的那些。
 - [jev-belay](https://github.com/valentynkit/jev-belay) - Stop 钩子，拦截未经验证的“完成”：读取记录寻找证据，仅当文件有改动且此后没有通过的检查时，才花一次四问的 Jev 调用；所有错误路径均失败放行。
 - [jev-use](https://github.com/shitianfang/jev-use) - 把 Claude Code、Codex 和 pi 中无需文本输出的步骤交给 Jev 处理，并为所有它不该决定的事项提供类型化的升级契约。
+- [claude-code-templates](https://github.com/davila7/claude-code-templates) - 两个可安装的 mod：一个逐轮选择模型档位和推理力度，另一个推荐匹配的技能。
 ### Codex
 
 - [jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) - 为每个 Codex 回合选择模型、思考深度和速度模式。
@@ -79,12 +90,16 @@
 - [pi-typesafe](https://github.com/DevMortimer/pi-typesafe) - 批量评估工具、终端演练场，以及给 Pi 扩展作者的带类型 API。
 - [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) - 把每次有副作用的工具调用对照你在会话前面说过的话做检查，这样“只做复核”在上下文压缩后依然成立。
 - [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) - 用 Jev 检查 Pi 的工具调用、工具输出和回复中的风险操作与提示注入，带用户审批、上下文复检、密钥擦除和可选的任务锁定。
+- [oh-my-pi](https://github.com/can1357/oh-my-pi) - 带可插拔评判接口的 Pi 分支；原生 Jev 后端为文本和对话输出打分。
+- [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) - 对 MCP 工具结果做可选的带类型评估和语义搜索，受按服务器配置的数据外发白名单约束。
 ### Hermes
 
 - [typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) - 在模型调用前指出唯一值得加载的那个技能；仅用标准库，每回合约千分之一美元。
 - [jev-agent-skill-router](https://github.com/GodsBoy/jev-agent-skill-router) - 带置信度感知的技能路由，包含弃权路径。
 - [hermes-jev](https://github.com/keeltrace/hermes-jev) - 带类型的决策、排序、验证，以及一个可选启用的工具门禁。
 - [ask-jev-skill](https://github.com/shantanugoel/ask-jev-skill) - 让 Hermes 及同类智能体直接向 Jev 提问。
+- [hermes-jev-plugin](https://github.com/ajensenwaud/hermes-jev-plugin) - 四个 Hermes 工具，用于原子检查、路由和量表打分；已收录于 Hermes 插件目录。
+- [hermes-jev-approvals](https://github.com/anpicasso/hermes-jev-approvals) - 在被标记的 shell 命令运行前予以批准、拒绝或升级；提速数据为厂商自报。
 ### Agent Zero
 
 - [a0-typesafe-ai](https://github.com/3clyp50/a0-typesafe-ai) - 给 Agent Zero 的带类型工具和概率卡片。
@@ -168,6 +183,7 @@
 - [jeff by Alurith](https://github.com/Alurith/jeff) - 只读的 Go CLI，按编码规则检查文件，例如隐藏的副作用和薄弱的错误处理。
 - [jev-pref](https://github.com/doeixd/jev-pref) - 把你 AGENTS.md 里的偏好变成一个 linter，在代码变更时运行并把结果回报给智能体。
 - [jev-commit](https://github.com/valentynkit/jev-commit) - 提交前钩子：一次 Jev 调用判断提交信息是否与暂存的 diff 相符，另查调试残留、未提及的改动和凭据带；一律只告警，唯有发现密钥时才阻断。
+- [no-mistakes](https://github.com/kunchenguid/no-mistakes) - 推送前检查器，附带可选的 Jev 预览，列出值得复核的文件；其自身基准测试未发现节省，因此默认关闭。
 
 ## 路由与网关
 
@@ -178,6 +194,8 @@
 - [hono-jev-router](https://github.com/yusukebe/hono-jev-router) - 在 Hono 中按语义路由 HTTP 请求。
 - [JevRouter](https://github.com/BillionsBobby/JevRouter) - 把模型、子智能体、技能、MCP 工具和 CLI 统一为一个候选集；Jev 挑选，路由器负责权限和风险的执行；据报在 Toolathlon 上前五次工具调用命中率 44%，DeepSeek 为 24%。
 - [jev-gateway](https://github.com/vinilana/jev-gateway) - 面向 Codex 和 Claude Code 的本地网关，把“下一步用哪个工具”的决策交给 Jev，其余都交给你平常的模型。
+- [OpenChamber](https://github.com/openchamber/openchamber) - 把每个编码请求归入一个任务类别，并路由到相应的模型和智能体。
+- [Firstmate](https://github.com/kunchenguid/firstmate) - 团队编排 CLI，用一次带类型的选择调用决定由哪个成员档案接手任务简报，可选启用。
 
 ## 搜索、重排与 RAG
 
@@ -224,6 +242,8 @@
 - [jev-audio-beeper](https://github.com/santos-sanz/jev-audio-beeper) - 低延迟音频消音的概念验证：由 Jev 的带类型决策驱动 ffmpeg。
 - [is-malicious](https://github.com/luantak/is-malicious) - 在你运行代码库之前扫描其中隐藏的或窃取数据的行为；报告干净并不等于证明安全，它也这么说。
 - [tripwire](https://github.com/noelzappy/tripwire) - AI SDK 中间件与代理，在用户看到之前对每个 LLM 响应跑七项 Jev 检查；目前还没有准确率数字，它也这么说。
+- [sub2api](https://github.com/Wei-Shaw/sub2api) - AI API 中继，其内容审核可以跑在 Jev 上，是两个可选引擎之一。
+- [Pentest Swarm AI](https://github.com/Armur-Ai/Pentest-Swarm-AI) - 为每条已分级的发现打出它是真实漏洞的概率，在出报告前剔除大概率的误报。
 
 ## 应用与扩展
 
@@ -247,6 +267,10 @@
 - [jev-seo](https://github.com/AkashPriyadarshii/jev-seo) - 面向 SEO 和 GEO 检查的 Rust CLI 与 MCP 服务器，基于 DuckDuckGo 结果，由 Jev 打分。
 - [jev.nvim](https://github.com/valentynkit/jev.nvim) - Neovim 插件：用自然语言向缓冲区提问，Treesitter 把它切成函数，Jev 为每个函数打分，答案按概率排序落入 quickfix。
 - [jev-skip](https://github.com/valentynkit/jev-skip) - 浏览器扩展，读取字幕轨道并在片头结束前把每段的赞助概率画在进度条上，不依赖众包数据库；在 23 个视频上报告捕获了 SponsorBlock 赞助秒数的 77%，每个视频 $0.0008。
+- [World Monitor](https://github.com/koala73/worldmonitor) - 地缘政治看板，用 Jev 评定标题严重程度并把信息流按主题归类。
+- [Inbox Zero](https://github.com/elie222/inbox-zero) - AI 邮件助手，Jev 是用于归类来信的两个可插拔分类后端之一。
+- [openclaw](https://github.com/openclaw/openclaw) - 个人智能体平台，自带一个把 Jev 暴露为评估工具的扩展。
+- [omniget](https://github.com/tonhowtf/omniget) - 桌面下载器，带一个可选的 Jev 评判器，从其智能体的上下文中裁剪工具调用和结果。
 
 ## 游戏、机器人与仿真
 
@@ -272,6 +296,8 @@
 - [trade-jev](https://github.com/justinhe16/trade-jev) - 在 NQ 订单簿数据上回测把 Jev 当作买入、卖出或持有的交易者。
 - [Jev-Trades](https://github.com/zadescoxp/Jev-Trades) - 带回测的加密货币交易机器人。
 - [jev-trade](https://github.com/aowang-ai/jev-trade) - 运行在 Hyperliquid 上的实盘 Jev 交易者。
+- [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - 在订单到达交易所之前，用带类型的选择、概率和置信度对实盘入场订单把关。
+- [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) - 可选的提供方适配器，让交易智能体得到带类型的决策而不是散文。
 
 ## 基准、评测与校准
 

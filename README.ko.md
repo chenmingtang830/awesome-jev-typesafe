@@ -41,6 +41,16 @@
 - [Vercel AI SDK provider](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) - `@ai-sdk/typesafe-ai`는 `experimental_evaluate`를 통해 Jev를 노출합니다.
 - [eve](https://github.com/vercel/eve) - Vercel의 에이전트 프레임워크이며, Jev는 evaluate 단계의 타입 지정 판정입니다.
 - [ai-cli](https://github.com/vercel-labs/ai-cli) - 터미널에서 쓰는 Vercel AI SDK이며, evaluate 경로는 Jev에서 실행됩니다.
+- [langchain-typesafe](https://github.com/langchain-ai/langchain) - LangChain 파트너 패키지로, 상태와 타입이 있는 질문을 Jev에 보내고 확률이 붙은 답을 돌려주는 Runnable입니다.
+- [@langchain/typesafe](https://github.com/langchain-ai/langchainjs) - 같은 타입 분류를 LangChain.js Runnable로 제공하며, 여러 질문을 한 번의 호출로 묶습니다.
+- [litellm](https://github.com/BerriAI/litellm) - 프록시 가드레일 훅이 Jev로 위험한 요청을 차단하고, 라우터 전략이 Jev가 매긴 복잡도 점수로 모델을 고릅니다.
+- [pydantic-ai](https://github.com/pydantic/pydantic-ai) - TypeSafe 모델 프로바이더로, 에이전트의 타입 출력을 텍스트 모델 대신 Jev 질문으로 답합니다.
+- [rig-typesafeai](https://github.com/0xPlaygrounds/rig) - Rig용 Rust 크레이트로, 타입이 있는 질문을 담은 구조체 하나를 보내면 답이 채워진 같은 구조체를 돌려받습니다.
+- [composio-typesafe](https://github.com/ComposioHQ/composio) - Composio 프로바이더로, 자연어 요청에서 도구를 고르고 실행하며 선택에 신뢰도를 붙입니다.
+- [@effect/ai-typesafe](https://github.com/Effect-TS/effect) - Jev를 스키마에 맞춰 타입이 지정된 Effect 서비스로 제공하여 상태를 분류하거나 점수화합니다.
+- [baml](https://github.com/BoundaryML/baml) - BAML 내장 클라이언트 타입으로, Jev를 통해 프롬프트를 타입이 있는 불리언, 실수, 열거형 선택으로 바꿉니다.
+- [@ax-llm/ax](https://github.com/ax-llm/ax) - Jev를 Ax 프로바이더로 추가하여 DSPy 스타일 프로그램이 자유 텍스트 대신 타입이 있는 예/아니오 또는 선택 답을 얻게 합니다.
+- [@tanstack/ai-typesafe](https://github.com/TanStack/ai) - TanStack AI의 decide() 헬퍼에 Jev를 연결하는 어댑터로, 불리언, 선택, 점수 결정에 씁니다.
 
 ## 코딩 에이전트
 
@@ -62,6 +72,7 @@
 - [jev-rules](https://github.com/EliaAlberti/jev-rules) - 상시 규칙을 프롬프트마다 점수화하여 해당되는 것만 세션당 한 번 전달합니다.
 - [jev-belay](https://github.com/valentynkit/jev-belay) - 검증되지 않은 "완료"를 막는 Stop 훅입니다: 기록에서 증거를 읽고, 파일이 바뀐 뒤 통과한 검사가 없을 때만 질문 네 개짜리 Jev 호출을 한 번 쓰며, 모든 오류 경로에서는 열린 채로 실패합니다.
 - [jev-use](https://github.com/shitianfang/jev-use) - Claude Code, Codex, pi에서 텍스트 출력이 필요 없는 단계를 Jev에 맡기고, 결정해서는 안 되는 모든 사항에는 타입이 지정된 에스컬레이션 계약을 둡니다.
+- [claude-code-templates](https://github.com/davila7/claude-code-templates) - 설치 가능한 모드 두 개로, 하나는 턴마다 모델 등급과 추론 강도를 고르고 다른 하나는 맞는 스킬을 제안합니다.
 ### Codex
 
 - [jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) - Codex의 매 턴마다 모델, 사고 깊이, 속도 모드를 고릅니다.
@@ -79,12 +90,16 @@
 - [pi-typesafe](https://github.com/DevMortimer/pi-typesafe) - 일괄 평가 도구, 터미널 플레이그라운드, 그리고 Pi 확장 작성자를 위한 타입 지정 API입니다.
 - [pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) - 부수 효과가 있는 모든 도구 호출을 세션 앞부분에서 한 말과 대조하여, 컨텍스트 압축 이후에도 "검토만"이 유지되게 합니다.
 - [pi-jev-sentinel](https://github.com/harshwasan/pi-jev-sentinel) - Pi의 도구 호출, 도구 출력, 응답을 Jev로 검사하여 위험한 작업과 프롬프트 인젝션을 잡아내며, 사용자 승인, 컨텍스트 재검사, 시크릿 제거, 선택적 작업 고정을 제공합니다.
+- [oh-my-pi](https://github.com/can1357/oh-my-pi) - 교체 가능한 판정 인터페이스를 갖춘 Pi 포크로, 네이티브 Jev 백엔드가 텍스트와 채팅 출력을 점수화합니다.
+- [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) - MCP 도구 결과에 대한 선택적 타입 평가와 시맨틱 검색을 서버별 데이터 반출 허용 목록 뒤에서 제공합니다.
 ### Hermes
 
 - [typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) - 모델 호출 전에 불러올 가치가 있는 스킬 하나를 지목하며, 표준 라이브러리만 쓰고 턴당 약 0.1센트가 듭니다.
 - [jev-agent-skill-router](https://github.com/GodsBoy/jev-agent-skill-router) - 신뢰도를 고려한 스킬 라우팅이며 기권 경로를 제공합니다.
 - [hermes-jev](https://github.com/keeltrace/hermes-jev) - 타입 지정 결정, 순위 매기기, 검증, 그리고 선택형 도구 게이트입니다.
 - [ask-jev-skill](https://github.com/shantanugoel/ask-jev-skill) - Hermes를 비롯한 유사 에이전트가 Jev에 직접 물을 수 있게 합니다.
+- [hermes-jev-plugin](https://github.com/ajensenwaud/hermes-jev-plugin) - 원자적 검사, 라우팅, 루브릭 점수화를 위한 Hermes 도구 네 개이며, Hermes 플러그인 카탈로그에 등재되어 있습니다.
+- [hermes-jev-approvals](https://github.com/anpicasso/hermes-jev-approvals) - 플래그가 붙은 셸 명령을 실행 전에 승인, 거부 또는 상신하며, 속도 향상 수치는 벤더 보고입니다.
 ### Agent Zero
 
 - [a0-typesafe-ai](https://github.com/3clyp50/a0-typesafe-ai) - Agent Zero를 위한 타입 지정 도구와 확률 카드입니다.
@@ -168,6 +183,7 @@
 - [jeff by Alurith](https://github.com/Alurith/jeff) - 숨은 부수 효과나 허술한 오류 처리 같은 규칙에 따라 파일을 검사하는 읽기 전용 Go CLI입니다.
 - [jev-pref](https://github.com/doeixd/jev-pref) - AGENTS.md에 적힌 선호 사항을, 코드 변경 시 실행되어 결과를 에이전트에 돌려주는 린터로 바꿉니다.
 - [jev-commit](https://github.com/valentynkit/jev-commit) - 커밋 전 훅입니다: Jev 호출 한 번으로 커밋 메시지가 스테이징된 diff와 맞는지, 디버그 잔재와 언급되지 않은 작업이 있는지, 자격 증명이 섞였는지 판정하며, 비밀 정보만 차단하고 나머지는 경고합니다.
+- [no-mistakes](https://github.com/kunchenguid/no-mistakes) - 푸시 전 검사기로, 검토할 파일을 나열하는 선택적 Jev 사전 브리핑이 있으며, 자체 벤치마크에서 절감이 없어 기본값은 꺼져 있습니다.
 
 ## 라우팅과 게이트웨이
 
@@ -178,6 +194,8 @@
 - [hono-jev-router](https://github.com/yusukebe/hono-jev-router) - Hono에서 HTTP 요청을 의미에 따라 라우팅합니다.
 - [JevRouter](https://github.com/BillionsBobby/JevRouter) - 모델, 서브에이전트, 스킬, MCP 도구, CLI를 하나의 후보 집합으로 두어 Jev가 고르고 라우터가 권한과 위험을 강제하며, Toolathlon에서 첫 다섯 도구 호출 적중률 44퍼센트로 DeepSeek의 24퍼센트를 앞섰다고 보고합니다.
 - [jev-gateway](https://github.com/vinilana/jev-gateway) - "다음에 어떤 도구를 쓸지" 결정은 Jev로, 나머지는 평소 쓰던 모델로 보내는 Codex와 Claude Code용 로컬 게이트웨이입니다.
+- [OpenChamber](https://github.com/openchamber/openchamber) - 각 코딩 요청을 작업 범주로 분류하고 모델과 에이전트로 라우팅합니다.
+- [Firstmate](https://github.com/kunchenguid/firstmate) - 크루 오케스트레이션 CLI로, 어떤 크루 프로필이 작업 브리프를 맡을지 한 번의 타입 선택 호출로 정하며 선택적으로 켭니다.
 
 ## 검색, 리랭킹, RAG
 
@@ -224,6 +242,8 @@
 - [jev-audio-beeper](https://github.com/santos-sanz/jev-audio-beeper) - 저지연 오디오 검열 개념 증명입니다: Jev의 타입 지정 결정이 ffmpeg를 구동합니다.
 - [is-malicious](https://github.com/luantak/is-malicious) - 실행하기 전에 코드베이스에서 숨은 동작이나 데이터 탈취 행위를 검사하며, 깨끗한 보고서가 증거는 아니라고 스스로 밝힙니다.
 - [tripwire](https://github.com/noelzappy/tripwire) - 사용자가 보기 전에 모든 LLM 응답에 일곱 가지 Jev 검사를 실행하는 AI SDK 미들웨어 겸 프록시이며, 아직 정확도 수치가 없다고 스스로 밝힙니다.
+- [sub2api](https://github.com/Wei-Shaw/sub2api) - AI API 릴레이로, 콘텐츠 검수를 Jev에서 실행할 수 있으며 선택 가능한 두 엔진 중 하나입니다.
+- [Pentest Swarm AI](https://github.com/Armur-Ai/Pentest-Swarm-AI) - 등급이 매겨진 각 발견에 실제 취약점일 확률을 부여하고, 보고서 전에 오탐 가능성이 높은 것을 제거합니다.
 
 ## 애플리케이션과 확장
 
@@ -247,6 +267,10 @@
 - [jev-seo](https://github.com/AkashPriyadarshii/jev-seo) - DuckDuckGo 결과에 대한 SEO 및 GEO 점검을 수행하는 Rust CLI 겸 MCP 서버이며, 점수는 Jev가 매깁니다.
 - [jev.nvim](https://github.com/valentynkit/jev.nvim) - Neovim 플러그인입니다: 버퍼에 평이한 언어로 질문하면 Treesitter가 함수 단위로 쪼개고 Jev가 각각을 점수화하며, 답변은 확률 순으로 quickfix에 쌓입니다.
 - [jev-skip](https://github.com/valentynkit/jev-skip) - 자막 트랙을 읽어 인트로가 끝나기 전에 구간별 협찬 확률을 탐색 바에 그리는 브라우저 확장이며, 크라우드 데이터베이스 없이 영상 23개에서 영상당 $0.0008로 SponsorBlock 협찬 구간 초의 77퍼센트를 잡았다고 보고합니다.
+- [World Monitor](https://github.com/koala73/worldmonitor) - 지정학 대시보드로, Jev로 헤드라인의 심각도를 평가하고 피드를 주제별로 분류합니다.
+- [Inbox Zero](https://github.com/elie222/inbox-zero) - AI 이메일 비서로, 수신 메일 분류에 쓰는 교체 가능한 두 분류 백엔드 중 하나가 Jev입니다.
+- [openclaw](https://github.com/openclaw/openclaw) - 개인 에이전트 플랫폼으로, Jev를 평가 도구로 노출하는 확장을 기본 탑재합니다.
+- [omniget](https://github.com/tonhowtf/omniget) - 데스크톱 다운로더로, 선택적 Jev 판정기가 에이전트 컨텍스트에서 도구 호출과 결과를 잘라냅니다.
 
 ## 게임, 로보틱스, 시뮬레이션
 
@@ -272,6 +296,8 @@
 - [trade-jev](https://github.com/justinhe16/trade-jev) - NQ 호가창 데이터에서 Jev를 매수, 매도, 보유 트레이더로 백테스트합니다.
 - [Jev-Trades](https://github.com/zadescoxp/Jev-Trades) - 백테스트를 지원하는 암호화폐 트레이딩 봇입니다.
 - [jev-trade](https://github.com/aowang-ai/jev-trade) - Hyperliquid에서 실시간으로 거래하는 Jev 트레이더입니다.
+- [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - 주문이 거래소에 도달하기 전에 타입이 있는 선택, 확률, 신뢰도로 실거래 진입 주문을 통제합니다.
+- [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) - 선택적 프로바이더 어댑터로, 트레이딩 에이전트에 산문 대신 타입이 있는 결정을 제공합니다.
 
 ## 벤치마크, 평가, 보정
 

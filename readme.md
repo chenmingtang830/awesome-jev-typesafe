@@ -577,6 +577,8 @@ None of these ship TypeSafe's weights. They reproduce the interface, the paralle
 
 Read [contributing.md](contributing.md) first. Removal is as welcome as addition.
 
+To add a project, open a pull request that adds one line to this file; the template asks the rest and there is nothing to run. Issues are for problems with the site or the data, not for submissions.
+
 What "curated" means here: every link is checked weekly by CI, every entry is read by a person against the bar in contributing.md before it lands, and repos that look like a batch of same-day scaffolds are noted as such rather than listed as proven. Nothing here is a security review.
 
 ## Footnotes

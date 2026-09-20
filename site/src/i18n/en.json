@@ -168,5 +168,9 @@
   "active": "active",
   "quiet": "quiet",
   "fromReadme": "From the readme",
-  "radarHint": "The beam finds a repo, it blips, then fades over five seconds. Hover any dot to hold it."
+  "radarHint": "The beam finds a repo, it blips, then fades over five seconds. Hover any dot to hold it.",
+  "projects": "Projects",
+  "browseAll": "Browse all {n} projects",
+  "projectsLede": "Search and filter every project on the list. Local search finds candidates; Jev reorders the top 30.",
+  "searchButton": "Search"
 }

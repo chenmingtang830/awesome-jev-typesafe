@@ -168,5 +168,9 @@
   "active": "活跃",
   "quiet": "沉寂",
   "fromReadme": "来自 readme",
-  "radarHint": "扫描线找到一个仓库时它会闪亮一下，随后在五秒内淡去。悬停任意圆点可让它保持显示。"
+  "radarHint": "扫描线找到一个仓库时它会闪亮一下，随后在五秒内淡去。悬停任意圆点可让它保持显示。",
+  "projects": "项目",
+  "browseAll": "浏览全部 {n} 个项目",
+  "projectsLede": "搜索并筛选列表中的每一个项目。本地搜索找出候选，Jev 对前 30 个重新排序。",
+  "searchButton": "搜索"
 }
